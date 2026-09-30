@@ -1,317 +1,315 @@
 ﻿tx_id,user_id,ts,amount_iqd,balance_before_iqd,tx_type,recipient_id,recipient_age_days,note,context_message,is_scam,scam_type,case_id
-t_u01_00154,u01,2026-08-04T02:53:32+03:00,361282,2751143,transfer,r_u01_05,200,,,0,,
-t_u01_00054,u01,2026-08-13T17:51:22+03:00,31428,1203401,bill,b_u_u01_4,493,رسوم الاشتراك,,0,,
-t_u01_00153,u01,2026-08-17T22:10:25+03:00,746570,1885755,transfer,rb_u01_5,263,مبلغ العيد لأقربائي,,0,,
-t_u01_00155,u01,2026-09-14T20:00:00+03:00,277176,3817190,transfer,rs_u01_otp_fake_agent_fast,4,,موظف الدعم يطلب رمز تحقق منك، بعده يفعّل الحساب,1,otp_fake_agent,c_u01_otp_fake_agent_fast_0
-t_u01_00156,u01,2026-09-14T20:04:00+03:00,498916,4734942,transfer,rs_u01_otp_fake_agent_fast,4,,موظف الدعم يطلب رمز تحقق منك، بعده يفعّل الحساب,1,otp_fake_agent,c_u01_otp_fake_agent_fast_0
-t_u01_00157,u01,2026-09-14T20:15:00+03:00,692940,5752800,transfer,rs_u01_otp_fake_agent_fast,4,,موظف الدعم يطلب رمز تحقق منك، بعده يفعّل الحساب,1,otp_fake_agent,c_u01_otp_fake_agent_fast_0
-t_u01_00158,u01,2026-09-19T20:00:00+03:00,133970,6745553,transfer,rs_u01_relative_new_number_fast,4,,هاي رقمي الجديد بدل رقم، محتاج سلفة مستعجلة,1,relative_new_number,c_u01_relative_new_number_fast_1
-t_u01_00159,u01,2026-09-19T20:09:00+03:00,241146,7930179,transfer,rs_u01_relative_new_number_fast,4,,هاي رقمي الجديد بدل رقم، محتاج سلفة مستعجلة,1,relative_new_number,c_u01_relative_new_number_fast_1
-t_u01_00160,u01,2026-09-19T20:19:00+03:00,334925,8822882,transfer,rs_u01_relative_new_number_fast,4,,هاي رقمي الجديد بدل رقم، محتاج سلفة مستعجلة,1,relative_new_number,c_u01_relative_new_number_fast_1
-t_u02_00152,u02,2026-07-20T17:15:42+03:00,556178,711780,transfer,rr_u02_2,59,أول دفعة إيجار للمؤجر الجديد,,0,,
-t_u02_00044,u02,2026-08-11T22:38:38+03:00,52486,650644,transfer,r_u02_05,283,على الحساب,,0,,
-t_u02_00057,u02,2026-08-22T17:17:50+03:00,14758,422726,transfer,r_u02_02,18,,,0,,
-t_u02_00157,u02,2026-08-25T20:00:00+03:00,212042,-280588,transfer,rs_u02_advance_payment_seller_fast,4,,بيع تكي، ترسل دفعة مقدمة قبل الشحن ونحجز الطرد,1,advance_payment_seller,c_u02_advance_payment_seller_fast_1
-t_u02_00158,u02,2026-08-25T20:04:00+03:00,381675,-130047,transfer,rs_u02_advance_payment_seller_fast,4,,بيع تكي، ترسل دفعة مقدمة قبل الشحن ونحجز الطرد,1,advance_payment_seller,c_u02_advance_payment_seller_fast_1
-t_u02_00159,u02,2026-08-25T20:10:00+03:00,530105,51584,transfer,rs_u02_advance_payment_seller_fast,4,,بيع تكي، ترسل دفعة مقدمة قبل الشحن ونحجز الطرد,1,advance_payment_seller,c_u02_advance_payment_seller_fast_1
-t_u02_00082,u02,2026-09-09T02:14:32+03:00,36189,541469,bill,b_u_u02_3,640,فاتورة الكهرباء,,0,,
-t_u02_00099,u02,2026-09-20T13:36:07+03:00,34971,332697,transfer,r_u02_04,126,,,0,,
-t_u02_00154,u02,2026-09-26T21:00:00+03:00,308105,-129578,transfer,rs_u02_prize_fee_fast,4,,مبروك ربحت الجائزة، حول رسوم المعالجة ونرسل لك المكافأة,1,prize_fee,c_u02_prize_fee_fast_0
-t_u02_00155,u02,2026-09-26T21:09:00+03:00,554589,47183,transfer,rs_u02_prize_fee_fast,4,,مبروك ربحت الجائزة، حول رسوم المعالجة ونرسل لك المكافأة,1,prize_fee,c_u02_prize_fee_fast_0
-t_u02_00156,u02,2026-09-26T21:15:00+03:00,770262,-29028,transfer,rs_u02_prize_fee_fast,4,,مبروك ربحت الجائزة، حول رسوم المعالجة ونرسل لك المكافأة,1,prize_fee,c_u02_prize_fee_fast_0
-t_u02_00153,u02,2026-10-12T13:11:15+03:00,1320278,594148,merchant,rm_u02_1,103,شراء ذهب,,0,,
-t_u03_00121,u03,2026-08-08T23:00:00+03:00,123459,6775572,transfer,rs_u03_investment_doubling_fast,3,,استثمر معنا، أرباح مضمونة وعائد يومي,1,investment_doubling,c_u03_investment_doubling_fast_1
-t_u03_00122,u03,2026-08-08T23:05:00+03:00,222226,8451184,transfer,rs_u03_investment_doubling_fast,3,,استثمر معنا، أرباح مضمونة وعائد يومي,1,investment_doubling,c_u03_investment_doubling_fast_1
-t_u03_00123,u03,2026-08-08T23:13:00+03:00,308647,10298427,transfer,rs_u03_investment_doubling_fast,3,,استثمر معنا، أرباح مضمونة وعائد يومي,1,investment_doubling,c_u03_investment_doubling_fast_1
-t_u03_00034,u03,2026-08-28T20:18:01+03:00,442912,1474093,transfer,r_u03_09,753,مبلغ أمانة,,0,,
-t_u03_00117,u03,2026-09-05T22:24:41+03:00,1206739,3478156,transfer,rb_u03_3,319,مبلغ العيد لأقربائي,,0,,
-t_u03_00053,u03,2026-09-09T02:12:10+03:00,151284,398509,transfer,r_u03_05,164,حصة الأرض,,0,,
-t_u03_00118,u03,2026-09-10T15:00:00+03:00,160809,3842529,transfer,rs_u03_safe_account_fast,3,,حسابك مخترق، حوّل المبلغ لحساب أمان، بعدها نرجّعه,1,safe_account,c_u03_safe_account_fast_0
-t_u03_00119,u03,2026-09-10T15:05:00+03:00,289456,5141800,transfer,rs_u03_safe_account_fast,3,,حسابك مخترق، حوّل المبلغ لحساب أمان، بعدها نرجّعه,1,safe_account,c_u03_safe_account_fast_0
-t_u03_00120,u03,2026-09-10T15:18:00+03:00,402022,6295929,transfer,rs_u03_safe_account_fast,3,,حسابك مخترق، حوّل المبلغ لحساب أمان، بعدها نرجّعه,1,safe_account,c_u03_safe_account_fast_0
-t_u03_00116,u03,2026-09-16T09:33:40+03:00,939813,3333380,transfer,rs_u03_1,33,أول راتب من جهة العمل الجديدة,,0,,
-t_u04_00101,u04,2026-08-24T03:36:09+03:00,313475,2457461,transfer,r_u04_06,200,,,0,,
-t_u04_00103,u04,2026-08-25T23:00:00+03:00,226068,4831741,transfer,rs_u04_fake_job_fee_fast,5,,وظيفة جديدة، تدفع رسوم التسجيل وبعدها التقديم ينجح,1,fake_job_fee,c_u04_fake_job_fee_fast_0
-t_u04_00104,u04,2026-08-25T23:09:00+03:00,406922,6256628,transfer,rs_u04_fake_job_fee_fast,5,,وظيفة جديدة، تدفع رسوم التسجيل وبعدها التقديم ينجح,1,fake_job_fee,c_u04_fake_job_fee_fast_0
-t_u04_00105,u04,2026-08-25T23:18:00+03:00,565170,7857161,transfer,rs_u04_fake_job_fee_fast,5,,وظيفة جديدة، تدفع رسوم التسجيل وبعدها التقديم ينجح,1,fake_job_fee,c_u04_fake_job_fee_fast_0
-t_u04_00102,u04,2026-09-14T13:08:13+03:00,422640,3912559,transfer,rr_u04_3,87,أول دفعة إيجار للمؤجر الجديد,,0,,
-t_u04_00106,u04,2026-09-29T16:00:00+03:00,202862,9246379,transfer,rs_u04_fake_refund_fast,1,,حسابك موقوف لتسوية مالية، أكد بياناتك وحوّل رسوم الاسترجاع,1,fake_refund,c_u04_fake_refund_fast_1
-t_u04_00107,u04,2026-09-29T16:08:00+03:00,365151,10367655,transfer,rs_u04_fake_refund_fast,1,,حسابك موقوف لتسوية مالية، أكد بياناتك وحوّل رسوم الاسترجاع,1,fake_refund,c_u04_fake_refund_fast_1
-t_u04_00108,u04,2026-09-29T16:18:00+03:00,507155,11395583,transfer,rs_u04_fake_refund_fast,1,,حسابك موقوف لتسوية مالية، أكد بياناتك وحوّل رسوم الاسترجاع,1,fake_refund,c_u04_fake_refund_fast_1
-t_u05_00020,u05,2026-08-11T03:03:11+03:00,163482,937482,transfer,r_u05_03,2,,,0,,
-t_u05_00126,u05,2026-08-21T22:00:00+03:00,23636,2159157,transfer,rs_u05_relative_new_number_slow,572,,شنو الحل؟ محتاج مساعدة بسرية,1,relative_new_number,c_u05_relative_new_number_slow_0
-t_u05_00127,u05,2026-08-22T22:00:00+03:00,36635,3324729,transfer,rs_u05_relative_new_number_slow,572,,شنو الحل؟ محتاج مساعدة بسرية,1,relative_new_number,c_u05_relative_new_number_slow_0
-t_u05_00128,u05,2026-08-23T22:00:00+03:00,56785,3870953,transfer,rs_u05_relative_new_number_slow,572,,شنو الحل؟ محتاج مساعدة بسرية,1,relative_new_number,c_u05_relative_new_number_slow_0
-t_u05_00129,u05,2026-08-25T22:00:00+03:00,88017,4737497,transfer,rs_u05_relative_new_number_slow,572,,شنو الحل؟ محتاج مساعدة بسرية,1,relative_new_number,c_u05_relative_new_number_slow_0
-t_u05_00130,u05,2026-08-26T22:00:00+03:00,136427,5573712,transfer,rs_u05_relative_new_number_slow,572,,شنو الحل؟ محتاج مساعدة بسرية,1,relative_new_number,c_u05_relative_new_number_slow_0
-t_u05_00131,u05,2026-08-27T22:00:00+03:00,211462,6161066,transfer,rs_u05_relative_new_number_slow,572,,شنو الحل؟ محتاج مساعدة بسرية,1,relative_new_number,c_u05_relative_new_number_slow_0
-t_u05_00132,u05,2026-09-08T21:00:00+03:00,38374,6634733,transfer,rs_u05_otp_fake_agent_slow,772,,الحساب يحتاج خطوة ثانية، ساعدني أكملها,1,otp_fake_agent,c_u05_otp_fake_agent_slow_1
-t_u05_00133,u05,2026-09-09T21:00:00+03:00,59479,7487558,transfer,rs_u05_otp_fake_agent_slow,772,,الحساب يحتاج خطوة ثانية، ساعدني أكملها,1,otp_fake_agent,c_u05_otp_fake_agent_slow_1
-t_u05_00134,u05,2026-09-11T21:00:00+03:00,92193,8218303,transfer,rs_u05_otp_fake_agent_slow,772,,الحساب يحتاج خطوة ثانية، ساعدني أكملها,1,otp_fake_agent,c_u05_otp_fake_agent_slow_1
-t_u05_00135,u05,2026-09-12T21:00:00+03:00,142899,9231957,transfer,rs_u05_otp_fake_agent_slow,772,,الحساب يحتاج خطوة ثانية، ساعدني أكملها,1,otp_fake_agent,c_u05_otp_fake_agent_slow_1
-t_u05_00136,u05,2026-09-14T21:00:00+03:00,221494,9748131,transfer,rs_u05_otp_fake_agent_slow,772,,الحساب يحتاج خطوة ثانية، ساعدني أكملها,1,otp_fake_agent,c_u05_otp_fake_agent_slow_1
-t_u05_00137,u05,2026-09-15T21:00:00+03:00,343317,10747203,transfer,rs_u05_otp_fake_agent_slow,772,,الحساب يحتاج خطوة ثانية، ساعدني أكملها,1,otp_fake_agent,c_u05_otp_fake_agent_slow_1
-t_u05_00125,u05,2026-09-19T21:32:58+03:00,684891,1816091,transfer,rs_u05_3,62,أول راتب من جهة العمل الجديدة,,0,,
-t_u05_00084,u05,2026-09-23T04:41:37+03:00,55728,898113,bill,b_u_u05_3,476,فاتورة الهاتف,,0,,
-t_u05_00092,u05,2026-09-28T02:41:31+03:00,38192,749850,transfer,r_u05_04,152,دين لأخي,,0,,
-t_u05_00124,u05,2026-10-01T09:36:50+03:00,2186363,3404980,merchant,rm_u05_3,64,أثاث جديد,,0,,
-t_u06_00114,u06,2026-08-24T20:08:22+03:00,1371635,2428178,transfer,rb_u06_4,386,مبلغ العيد لأقربائي,,0,,
-t_u06_00122,u06,2026-09-06T22:00:00+03:00,21325,11921586,transfer,rs_u06_prize_fee_slow,636,,هاي أول مرة نحچي بيه، حول مبلغ وبعدها نكمل,1,prize_fee,c_u06_prize_fee_slow_1
-t_u06_00123,u06,2026-09-07T22:00:00+03:00,33053,13215383,transfer,rs_u06_prize_fee_slow,636,,هاي أول مرة نحچي بيه، حول مبلغ وبعدها نكمل,1,prize_fee,c_u06_prize_fee_slow_1
-t_u06_00116,u06,2026-09-07T23:00:00+03:00,28797,3505776,transfer,rs_u06_advance_payment_seller_slow,597,,المنتج موجود؟ كم آخر سعر؟,1,advance_payment_seller,c_u06_advance_payment_seller_slow_0
-t_u06_00117,u06,2026-09-08T23:00:00+03:00,44635,5000040,transfer,rs_u06_advance_payment_seller_slow,597,,المنتج موجود؟ كم آخر سعر؟,1,advance_payment_seller,c_u06_advance_payment_seller_slow_0
-t_u06_00115,u06,2026-09-09T01:28:56+03:00,318777,2649949,transfer,r_u06_10,200,,,0,,
-t_u06_00124,u06,2026-09-09T22:00:00+03:00,51233,14941398,transfer,rs_u06_prize_fee_slow,636,,هاي أول مرة نحچي بيه، حول مبلغ وبعدها نكمل,1,prize_fee,c_u06_prize_fee_slow_1
-t_u06_00125,u06,2026-09-10T22:00:00+03:00,79411,16132767,transfer,rs_u06_prize_fee_slow,636,,هاي أول مرة نحچي بيه، حول مبلغ وبعدها نكمل,1,prize_fee,c_u06_prize_fee_slow_1
-t_u06_00118,u06,2026-09-10T23:00:00+03:00,69184,6421528,transfer,rs_u06_advance_payment_seller_slow,597,,المنتج موجود؟ كم آخر سعر؟,1,advance_payment_seller,c_u06_advance_payment_seller_slow_0
-t_u06_00119,u06,2026-09-11T23:00:00+03:00,107236,8076031,transfer,rs_u06_advance_payment_seller_slow,597,,المنتج موجود؟ كم آخر سعر؟,1,advance_payment_seller,c_u06_advance_payment_seller_slow_0
-t_u06_00126,u06,2026-09-12T22:00:00+03:00,123088,17652739,transfer,rs_u06_prize_fee_slow,636,,هاي أول مرة نحچي بيه، حول مبلغ وبعدها نكمل,1,prize_fee,c_u06_prize_fee_slow_1
-t_u06_00127,u06,2026-09-13T22:00:00+03:00,190786,19162542,transfer,rs_u06_prize_fee_slow,636,,هاي أول مرة نحچي بيه، حول مبلغ وبعدها نكمل,1,prize_fee,c_u06_prize_fee_slow_1
-t_u06_00120,u06,2026-09-13T23:00:00+03:00,166216,9244203,transfer,rs_u06_advance_payment_seller_slow,597,,المنتج موجود؟ كم آخر سعر؟,1,advance_payment_seller,c_u06_advance_payment_seller_slow_0
-t_u06_00121,u06,2026-09-14T23:00:00+03:00,257635,10613180,transfer,rs_u06_advance_payment_seller_slow,597,,المنتج موجود؟ كم آخر سعر؟,1,advance_payment_seller,c_u06_advance_payment_seller_slow_0
-t_u06_00067,u06,2026-09-20T12:23:27+03:00,310430,1023225,transfer,r_u06_07,344,رد مبلغ,,0,,
-t_u06_00092,u06,2026-10-05T12:20:36+03:00,386120,1110146,transfer,r_u06_03,5,تسديد دين,,0,,
-t_u07_00013,u07,2026-07-25T23:27:26+03:00,11337,743045,merchant,m_u_u07_3,38,تموين البيت,,0,,
-t_u07_00024,u07,2026-07-31T20:17:57+03:00,21896,317463,transfer,r_u07_05,237,رد مبلغ,,0,,
-t_u07_00025,u07,2026-08-01T19:51:29+03:00,47602,463301,merchant,m_u_u07_6,136,شراء من السوق,,0,,
-t_u07_00149,u07,2026-08-03T20:00:00+03:00,40308,-297801,transfer,rs_u07_investment_doubling_slow,638,,شنو رأيك بالفرصة اللي شرحتها؟,1,investment_doubling,c_u07_investment_doubling_slow_0
-t_u07_00150,u07,2026-08-04T20:00:00+03:00,62477,170384,transfer,rs_u07_investment_doubling_slow,638,,شنو رأيك بالفرصة اللي شرحتها؟,1,investment_doubling,c_u07_investment_doubling_slow_0
-t_u07_00148,u07,2026-08-05T17:15:47+03:00,1375619,643580,merchant,rm_u07_1,32,أثاث جديد,,0,,
-t_u07_00151,u07,2026-08-05T20:00:00+03:00,96839,310863,transfer,rs_u07_investment_doubling_slow,638,,شنو رأيك بالفرصة اللي شرحتها؟,1,investment_doubling,c_u07_investment_doubling_slow_0
-t_u07_00152,u07,2026-08-06T20:00:00+03:00,150101,403783,transfer,rs_u07_investment_doubling_slow,638,,شنو رأيك بالفرصة اللي شرحتها؟,1,investment_doubling,c_u07_investment_doubling_slow_0
-t_u07_00153,u07,2026-08-07T20:00:00+03:00,232658,502182,transfer,rs_u07_investment_doubling_slow,638,,شنو رأيك بالفرصة اللي شرحتها؟,1,investment_doubling,c_u07_investment_doubling_slow_0
-t_u07_00154,u07,2026-08-08T20:00:00+03:00,360619,473102,transfer,rs_u07_investment_doubling_slow,638,,شنو رأيك بالفرصة اللي شرحتها؟,1,investment_doubling,c_u07_investment_doubling_slow_0
-t_u07_00147,u07,2026-08-23T18:40:47+03:00,485358,715456,transfer,rr_u07_3,78,أول دفعة إيجار للمؤجر الجديد,,0,,
-t_u07_00155,u07,2026-08-24T23:00:00+03:00,43766,348647,transfer,rs_u07_safe_account_slow,238,,حسابي ما يشتغل، ساعدني خطوة؟,1,safe_account,c_u07_safe_account_slow_1
-t_u07_00156,u07,2026-08-25T23:00:00+03:00,67837,490078,transfer,rs_u07_safe_account_slow,238,,حسابي ما يشتغل، ساعدني خطوة؟,1,safe_account,c_u07_safe_account_slow_1
-t_u07_00157,u07,2026-08-27T23:00:00+03:00,105147,645150,transfer,rs_u07_safe_account_slow,238,,حسابي ما يشتغل، ساعدني خطوة؟,1,safe_account,c_u07_safe_account_slow_1
-t_u07_00158,u07,2026-08-28T23:00:00+03:00,162979,773243,transfer,rs_u07_safe_account_slow,238,,حسابي ما يشتغل، ساعدني خطوة؟,1,safe_account,c_u07_safe_account_slow_1
-t_u07_00159,u07,2026-08-30T23:00:00+03:00,252617,928980,transfer,rs_u07_safe_account_slow,238,,حسابي ما يشتغل، ساعدني خطوة؟,1,safe_account,c_u07_safe_account_slow_1
-t_u07_00160,u07,2026-08-31T23:00:00+03:00,391557,836745,transfer,rs_u07_safe_account_slow,238,,حسابي ما يشتغل، ساعدني خطوة؟,1,safe_account,c_u07_safe_account_slow_1
-t_u07_00086,u07,2026-09-12T12:37:51+03:00,46025,314972,transfer,r_u07_04,131,على الحساب,,0,,
-t_u08_00154,u08,2026-07-19T15:50:57+03:00,1198020,2876870,transfer,rs_u08_2,69,أول راتب من جهة العمل الجديدة,,0,,
-t_u08_00048,u08,2026-08-06T20:41:21+03:00,502392,727959,transfer,r_u08_13,491,حصة الأرض,,0,,
-t_u08_00156,u08,2026-08-28T21:00:00+03:00,24931,4101353,transfer,rs_u08_fake_refund_slow,524,,عندي مبلغ واصلني، شنو الخطوات؟,1,fake_refund,c_u08_fake_refund_slow_0
-t_u08_00157,u08,2026-08-29T21:00:00+03:00,38643,5459977,transfer,rs_u08_fake_refund_slow,524,,عندي مبلغ واصلني، شنو الخطوات؟,1,fake_refund,c_u08_fake_refund_slow_0
-t_u08_00158,u08,2026-08-30T21:00:00+03:00,59896,6379584,transfer,rs_u08_fake_refund_slow,524,,عندي مبلغ واصلني، شنو الخطوات؟,1,fake_refund,c_u08_fake_refund_slow_0
-t_u08_00159,u08,2026-09-01T21:00:00+03:00,92839,8700667,transfer,rs_u08_fake_refund_slow,524,,عندي مبلغ واصلني، شنو الخطوات؟,1,fake_refund,c_u08_fake_refund_slow_0
-t_u08_00160,u08,2026-09-02T21:00:00+03:00,143901,10741193,transfer,rs_u08_fake_refund_slow,524,,عندي مبلغ واصلني، شنو الخطوات؟,1,fake_refund,c_u08_fake_refund_slow_0
-t_u08_00161,u08,2026-09-03T21:00:00+03:00,223047,12169546,transfer,rs_u08_fake_refund_slow,524,,عندي مبلغ واصلني، شنو الخطوات؟,1,fake_refund,c_u08_fake_refund_slow_0
-t_u08_00155,u08,2026-09-21T22:09:20+03:00,1357830,3691770,transfer,rb_u08_1,350,مبلغ العيد لأقربائي,,0,,
-t_u08_00162,u08,2026-09-28T23:00:00+03:00,43667,12930147,transfer,rs_u08_fake_job_fee_slow,469,,أريد أرسل السيرة الذاتية، من وين أبدأ؟,1,fake_job_fee,c_u08_fake_job_fee_slow_1
-t_u08_00163,u08,2026-09-29T23:00:00+03:00,67683,14936688,transfer,rs_u08_fake_job_fee_slow,469,,أريد أرسل السيرة الذاتية، من وين أبدأ؟,1,fake_job_fee,c_u08_fake_job_fee_slow_1
-t_u08_00164,u08,2026-09-30T23:00:00+03:00,104909,16531315,transfer,rs_u08_fake_job_fee_slow,469,,أريد أرسل السيرة الذاتية، من وين أبدأ؟,1,fake_job_fee,c_u08_fake_job_fee_slow_1
-t_u08_00165,u08,2026-10-01T23:00:00+03:00,162610,18486310,transfer,rs_u08_fake_job_fee_slow,469,,أريد أرسل السيرة الذاتية، من وين أبدأ؟,1,fake_job_fee,c_u08_fake_job_fee_slow_1
-t_u08_00166,u08,2026-10-02T23:00:00+03:00,252046,20256644,transfer,rs_u08_fake_job_fee_slow,469,,أريد أرسل السيرة الذاتية، من وين أبدأ؟,1,fake_job_fee,c_u08_fake_job_fee_slow_1
-t_u08_00167,u08,2026-10-03T23:00:00+03:00,390671,20928957,transfer,rs_u08_fake_job_fee_slow,469,,أريد أرسل السيرة الذاتية، من وين أبدأ؟,1,fake_job_fee,c_u08_fake_job_fee_slow_1
-t_u09_00004,u09,2026-08-08T11:34:27+03:00,944394,6130164,transfer,r_u09_03,16,حصة الأرض,,0,,
-t_u09_00121,u09,2026-08-11T15:57:39+03:00,553861,4343472,transfer,rr_u09_1,40,أول دفعة إيجار للمؤجر الجديد,,0,,
-t_u09_00123,u09,2026-08-17T12:11:09+03:00,199062,6585898,transfer,rs_u09_relative_new_number_silent,482,,الجوال صوبح، ما أگدر أگولج,1,relative_new_number,c_u09_relative_new_number_silent_1
-t_u09_00122,u09,2026-09-19T17:49:50+03:00,189837,5056765,transfer,rs_u09_otp_fake_agent_silent,764,,لازم أگبل خطوة التأكيد حتى أتابع,1,otp_fake_agent,c_u09_otp_fake_agent_silent_0
-t_u09_00120,u09,2026-09-28T03:54:35+03:00,451149,3304747,transfer,r_u09_03,200,,,0,,
-t_u10_00011,u10,2026-07-29T04:58:15+03:00,135610,1568657,transfer,r_u10_02,7,دين لأخي,,0,,
-t_u10_00142,u10,2026-08-18T13:10:29+03:00,111395,1776671,transfer,rs_u10_prize_fee_silent,598,,خلّينا نكمل الموضوع من الأمس,1,prize_fee,c_u10_prize_fee_silent_0
-t_u10_00044,u10,2026-08-23T03:21:40+03:00,124511,305306,transfer,r_u10_02,7,على الحساب,,0,,
-t_u10_00143,u10,2026-08-24T17:58:12+03:00,117257,2388998,transfer,rs_u10_advance_payment_seller_silent,577,,أريد السلعة، كيف أدفع؟,1,advance_payment_seller,c_u10_advance_payment_seller_silent_1
-t_u10_00141,u10,2026-08-31T19:56:50+03:00,988283,1688780,transfer,rs_u10_1,22,أول راتب من جهة العمل الجديدة,,0,,
-t_u10_00140,u10,2026-09-03T18:10:36+03:00,495771,1013998,merchant,rm_u10_4,71,أثاث جديد,,0,,
-t_u11_00099,u11,2026-08-24T02:17:28+03:00,230381,2800360,transfer,r_u11_09,200,,,0,,
-t_u11_00100,u11,2026-09-20T21:16:49+03:00,201484,4130441,transfer,rs_u11_safe_account_silent,248,,لازم أغير الإعدادات تبع حسابي,1,safe_account,c_u11_safe_account_silent_0
-t_u11_00098,u11,2026-09-24T21:46:29+03:00,703603,2163182,transfer,rb_u11_3,254,مبلغ العيد لأقربائي,,0,,
-t_u11_00101,u11,2026-10-02T22:41:20+03:00,187141,5594563,transfer,rs_u11_investment_doubling_silent,364,,تحتاط التوقيع؟,1,investment_doubling,c_u11_investment_doubling_silent_1
-t_u12_00116,u12,2026-08-15T10:41:48+03:00,13468,264037,transfer,rs_u12_fake_refund_silent,409,,حسابي موقوف بحكم، شنو أعمل؟,1,fake_refund,c_u12_fake_refund_silent_1
-t_u12_00114,u12,2026-08-17T21:33:51+03:00,904836,592430,merchant,rm_u12_2,67,أثاث جديد,,0,,
-t_u12_00115,u12,2026-09-03T22:19:16+03:00,19110,55526,transfer,rs_u12_fake_job_fee_silent,716,,شنو الورق المطلوبة؟,1,fake_job_fee,c_u12_fake_job_fee_silent_0
-t_u12_00064,u12,2026-09-16T18:51:19+03:00,21856,491930,transfer,r_u12_04,175,رد مبلغ,,0,,
-t_u12_00113,u12,2026-10-11T13:56:34+03:00,504121,729572,transfer,rr_u12_2,70,أول دفعة إيجار للمؤجر الجديد,,0,,
-t_u13_00005,u13,2026-07-09T21:31:04+03:00,182588,6219470,transfer,r_u13_12,530,على الحساب,,0,,
-t_u13_00170,u13,2026-07-12T19:00:00+03:00,127214,7894776,transfer,rs_u13_otp_fake_agent_fast,5,,هسه لازم تعطيني الكود ورمز التحقق بدون تأخير,1,otp_fake_agent,c_u13_otp_fake_agent_fast_1
-t_u13_00171,u13,2026-07-12T19:06:00+03:00,228985,8790356,transfer,rs_u13_otp_fake_agent_fast,5,,هسه لازم تعطيني الكود ورمز التحقق بدون تأخير,1,otp_fake_agent,c_u13_otp_fake_agent_fast_1
-t_u13_00172,u13,2026-07-12T19:13:00+03:00,318035,9589626,transfer,rs_u13_otp_fake_agent_fast,5,,هسه لازم تعطيني الكود ورمز التحقق بدون تأخير,1,otp_fake_agent,c_u13_otp_fake_agent_fast_1
-t_u13_00166,u13,2026-08-13T18:04:43+03:00,862139,4367692,transfer,rb_u13_2,370,مبلغ العيد لأقربائي,,0,,
-t_u13_00165,u13,2026-09-16T11:15:08+03:00,793313,2907458,transfer,rs_u13_3,35,أول راتب من جهة العمل الجديدة,,0,,
-t_u13_00134,u13,2026-10-02T19:02:53+03:00,240950,1392076,bill,b_u_u13_2,600,فاتورة الماء,,0,,
-t_u13_00167,u13,2026-10-10T15:00:00+03:00,234365,4231462,transfer,rs_u13_relative_new_number_fast,3,,بدل رقم، ما اكدر اتصل، كلمني على الواتساب,1,relative_new_number,c_u13_relative_new_number_fast_0
-t_u13_00168,u13,2026-10-10T15:04:00+03:00,421857,6084131,transfer,rs_u13_relative_new_number_fast,3,,بدل رقم، ما اكدر اتصل، كلمني على الواتساب,1,relative_new_number,c_u13_relative_new_number_fast_0
-t_u13_00169,u13,2026-10-10T15:19:00+03:00,585912,6823105,transfer,rs_u13_relative_new_number_fast,3,,بدل رقم، ما اكدر اتصل، كلمني على الواتساب,1,relative_new_number,c_u13_relative_new_number_fast_0
-t_u13_00158,u13,2026-10-16T21:53:06+03:00,267859,1557243,bill,b_u_u13_1,522,رسوم الاشتراك,,0,,
-t_u14_00010,u14,2026-08-09T19:31:33+03:00,657964,2658964,transfer,r_u14_08,718,,,0,,
-t_u14_00119,u14,2026-08-10T02:44:17+03:00,324017,2904270,transfer,r_u14_02,200,,,0,,
-t_u14_00033,u14,2026-08-21T19:54:21+03:00,182396,539387,transfer,r_u14_08,718,رد مبلغ,,0,,
-t_u14_00121,u14,2026-09-05T21:00:00+03:00,140088,5581914,transfer,rs_u14_advance_payment_seller_fast,5,,دفعة مقدمة قبل الشحن، بعدها الارسال بعد التحويل,1,advance_payment_seller,c_u14_advance_payment_seller_fast_0
-t_u14_00122,u14,2026-09-05T21:04:00+03:00,252158,7209913,transfer,rs_u14_advance_payment_seller_fast,5,,دفعة مقدمة قبل الشحن، بعدها الارسال بعد التحويل,1,advance_payment_seller,c_u14_advance_payment_seller_fast_0
-t_u14_00123,u14,2026-09-05T21:12:00+03:00,350220,8342207,transfer,rs_u14_advance_payment_seller_fast,5,,دفعة مقدمة قبل الشحن، بعدها الارسال بعد التحويل,1,advance_payment_seller,c_u14_advance_payment_seller_fast_0
-t_u14_00067,u14,2026-09-20T22:01:02+03:00,123610,1499861,transfer,r_u14_02,18,حصة الأرض,,0,,
-t_u14_00120,u14,2026-10-02T19:39:21+03:00,454553,4543289,transfer,rr_u14_2,78,أول دفعة إيجار للمؤجر الجديد,,0,,
-t_u14_00124,u14,2026-10-03T15:00:00+03:00,316361,9604259,transfer,rs_u14_prize_fee_fast,6,,شكرا لمشاركتك، فزت بسحب المحفظة، ادفع رسوم التوصيل,1,prize_fee,c_u14_prize_fee_fast_1
-t_u14_00125,u14,2026-10-03T15:05:00+03:00,569449,10970962,transfer,rs_u14_prize_fee_fast,6,,شكرا لمشاركتك، فزت بسحب المحفظة، ادفع رسوم التوصيل,1,prize_fee,c_u14_prize_fee_fast_1
-t_u14_00126,u14,2026-10-03T15:18:00+03:00,790902,12223942,transfer,rs_u14_prize_fee_fast,6,,شكرا لمشاركتك، فزت بسحب المحفظة، ادفع رسوم التوصيل,1,prize_fee,c_u14_prize_fee_fast_1
-t_u14_00102,u14,2026-10-12T19:34:18+03:00,436722,614051,transfer,r_u14_02,18,,,0,,
-t_u14_00106,u14,2026-10-14T10:40:12+03:00,244320,1271934,transfer,r_u14_13,360,,,0,,
-t_u15_00103,u15,2026-08-26T22:00:00+03:00,342047,1341576,transfer,rs_u15_investment_doubling_fast,6,,منصة تداول جديدة، كل إطار نضاعف المبلغ، عائد يومي ثلاثة بالمئة,1,investment_doubling,c_u15_investment_doubling_fast_0
-t_u15_00104,u15,2026-08-26T22:07:00+03:00,615684,2118183,transfer,rs_u15_investment_doubling_fast,6,,منصة تداول جديدة، كل إطار نضاعف المبلغ، عائد يومي ثلاثة بالمئة,1,investment_doubling,c_u15_investment_doubling_fast_0
-t_u15_00105,u15,2026-08-26T22:10:00+03:00,855117,2716027,transfer,rs_u15_investment_doubling_fast,6,,منصة تداول جديدة، كل إطار نضاعف المبلغ، عائد يومي ثلاثة بالمئة,1,investment_doubling,c_u15_investment_doubling_fast_0
-t_u15_00101,u15,2026-09-14T17:42:40+03:00,2343468,2934902,merchant,rm_u15_2,80,أثاث جديد,,0,,
-t_u15_00106,u15,2026-09-26T15:00:00+03:00,375593,2986212,transfer,rs_u15_safe_account_fast,1,,تم اختراق حسابك، سجّل دخولك بحساب أمان جديد,1,safe_account,c_u15_safe_account_fast_1
-t_u15_00107,u15,2026-09-26T15:09:00+03:00,676067,3385637,transfer,rs_u15_safe_account_fast,1,,تم اختراق حسابك، سجّل دخولك بحساب أمان جديد,1,safe_account,c_u15_safe_account_fast_1
-t_u15_00108,u15,2026-09-26T15:18:00+03:00,938982,3599067,transfer,rs_u15_safe_account_fast,1,,تم اختراق حسابك، سجّل دخولك بحساب أمان جديد,1,safe_account,c_u15_safe_account_fast_1
-t_u15_00102,u15,2026-09-30T13:16:57+03:00,971868,1255075,transfer,rs_u15_1,49,أول راتب من جهة العمل الجديدة,,0,,
-t_u15_00077,u15,2026-10-07T01:21:45+03:00,68004,1685958,bill,b_u_u15_4,309,فاتورة الماء,,0,,
-t_u16_00146,u16,2026-08-12T21:00:00+03:00,182564,3493107,transfer,rs_u16_fake_refund_fast,4,,المبلغ محجوز، البنك طالب التحقق، أرسل صورة البطاقة,1,fake_refund,c_u16_fake_refund_fast_0
-t_u16_00147,u16,2026-08-12T21:05:00+03:00,328615,4460672,transfer,rs_u16_fake_refund_fast,4,,المبلغ محجوز، البنك طالب التحقق، أرسل صورة البطاقة,1,fake_refund,c_u16_fake_refund_fast_0
-t_u16_00148,u16,2026-08-12T21:18:00+03:00,456410,5862267,transfer,rs_u16_fake_refund_fast,4,,المبلغ محجوز، البنك طالب التحقق، أرسل صورة البطاقة,1,fake_refund,c_u16_fake_refund_fast_0
-t_u16_00149,u16,2026-08-28T23:00:00+03:00,205040,6610129,transfer,rs_u16_fake_job_fee_fast,3,,عندك عرض عمل، تدفع رسوم التقديم وتدخل مرحلة التوظيف,1,fake_job_fee,c_u16_fake_job_fee_fast_1
-t_u16_00150,u16,2026-08-28T23:04:00+03:00,369072,7925280,transfer,rs_u16_fake_job_fee_fast,3,,عندك عرض عمل، تدفع رسوم التقديم وتدخل مرحلة التوظيف,1,fake_job_fee,c_u16_fake_job_fee_fast_1
-t_u16_00151,u16,2026-08-28T23:13:00+03:00,512600,9146705,transfer,rs_u16_fake_job_fee_fast,3,,عندك عرض عمل، تدفع رسوم التقديم وتدخل مرحلة التوظيف,1,fake_job_fee,c_u16_fake_job_fee_fast_1
-t_u16_00145,u16,2026-09-10T00:37:47+03:00,368829,2492628,transfer,r_u16_03,200,,,0,,
-t_u16_00144,u16,2026-10-03T19:05:26+03:00,1317002,2562780,transfer,rb_u16_1,185,مبلغ العيد لأقربائي,,0,,
-t_u16_00129,u16,2026-10-11T08:22:15+03:00,66750,886933,transfer,r_u16_04,370,تسديد دين,,0,,
-t_u17_00092,u17,2026-08-24T22:00:00+03:00,20918,-382412,transfer,rs_u17_otp_fake_agent_slow,605,,نسيت الخطوة الثانية، ساعدني,1,otp_fake_agent,c_u17_otp_fake_agent_slow_0
-t_u17_00093,u17,2026-08-25T22:00:00+03:00,32422,70211,transfer,rs_u17_otp_fake_agent_slow,605,,نسيت الخطوة الثانية، ساعدني,1,otp_fake_agent,c_u17_otp_fake_agent_slow_0
-t_u17_00094,u17,2026-08-26T22:00:00+03:00,50255,340505,transfer,rs_u17_otp_fake_agent_slow,605,,نسيت الخطوة الثانية، ساعدني,1,otp_fake_agent,c_u17_otp_fake_agent_slow_0
-t_u17_00095,u17,2026-08-27T22:00:00+03:00,77896,453389,transfer,rs_u17_otp_fake_agent_slow,605,,نسيت الخطوة الثانية، ساعدني,1,otp_fake_agent,c_u17_otp_fake_agent_slow_0
-t_u17_00096,u17,2026-08-28T22:00:00+03:00,120738,565598,transfer,rs_u17_otp_fake_agent_slow,605,,نسيت الخطوة الثانية، ساعدني,1,otp_fake_agent,c_u17_otp_fake_agent_slow_0
-t_u17_00097,u17,2026-08-29T22:00:00+03:00,187145,618366,transfer,rs_u17_otp_fake_agent_slow,605,,نسيت الخطوة الثانية، ساعدني,1,otp_fake_agent,c_u17_otp_fake_agent_slow_0
-t_u17_00090,u17,2026-09-24T13:26:13+03:00,403487,628471,transfer,rr_u17_2,53,أول دفعة إيجار للمؤجر الجديد,,0,,
-t_u17_00091,u17,2026-09-26T10:26:32+03:00,1663566,795046,merchant,rm_u17_1,59,أثاث جديد,,0,,
-t_u17_00065,u17,2026-10-05T15:53:40+03:00,44761,412265,bill,b_u_u17_4,864,فاتورة التأمين,,0,,
-t_u17_00098,u17,2026-10-12T23:00:00+03:00,29373,650294,transfer,rs_u17_relative_new_number_slow,698,,رد عليج، وضع طارئ,1,relative_new_number,c_u17_relative_new_number_slow_1
-t_u17_00099,u17,2026-10-13T23:00:00+03:00,45528,820288,transfer,rs_u17_relative_new_number_slow,698,,رد عليج، وضع طارئ,1,relative_new_number,c_u17_relative_new_number_slow_1
-t_u17_00100,u17,2026-10-14T23:00:00+03:00,70568,934600,transfer,rs_u17_relative_new_number_slow,698,,رد عليج، وضع طارئ,1,relative_new_number,c_u17_relative_new_number_slow_1
-t_u17_00101,u17,2026-10-15T23:00:00+03:00,109381,1093225,transfer,rs_u17_relative_new_number_slow,698,,رد عليج، وضع طارئ,1,relative_new_number,c_u17_relative_new_number_slow_1
-t_u17_00102,u17,2026-10-16T23:00:00+03:00,169541,1188327,transfer,rs_u17_relative_new_number_slow,698,,رد عليج، وضع طارئ,1,relative_new_number,c_u17_relative_new_number_slow_1
-t_u17_00103,u17,2026-10-17T23:00:00+03:00,262788,1252288,transfer,rs_u17_relative_new_number_slow,698,,رد عليج، وضع طارئ,1,relative_new_number,c_u17_relative_new_number_slow_1
-t_u17_00082,u17,2026-10-18T23:30:46+03:00,43883,583833,transfer,r_u17_03,5,تسديد دين,,0,,
-t_u17_00084,u17,2026-10-19T21:28:08+03:00,21330,462401,transfer,r_u17_02,4,على الحساب,,0,,
-t_u18_00182,u18,2026-07-11T19:15:33+03:00,656394,2416252,transfer,rb_u18_1,201,مبلغ العيد لأقربائي,,0,,
-t_u18_00087,u18,2026-08-25T00:35:20+03:00,667698,3165144,transfer,r_u18_07,827,,,0,,
-t_u18_00117,u18,2026-09-13T04:08:54+03:00,113890,4490306,bill,b_u_u18_2,798,فاتورة الكهرباء,,0,,
-t_u18_00181,u18,2026-10-01T09:03:16+03:00,1087219,1605800,transfer,rs_u18_1,42,أول راتب من جهة العمل الجديدة,,0,,
-t_u18_00189,u18,2026-10-10T21:00:00+03:00,31496,11654475,transfer,rs_u18_advance_payment_seller_slow,637,,كم يوصلني إذا طلبت الحين؟,1,advance_payment_seller,c_u18_advance_payment_seller_slow_1
-t_u18_00190,u18,2026-10-11T21:00:00+03:00,48818,13716328,transfer,rs_u18_advance_payment_seller_slow,637,,كم يوصلني إذا طلبت الحين؟,1,advance_payment_seller,c_u18_advance_payment_seller_slow_1
-t_u18_00183,u18,2026-10-12T20:00:00+03:00,22839,3996950,transfer,rs_u18_prize_fee_slow,346,,وصلني شي، شنو الخطوة الجاية؟,1,prize_fee,c_u18_prize_fee_slow_0
-t_u18_00191,u18,2026-10-12T21:00:00+03:00,75669,14942189,transfer,rs_u18_advance_payment_seller_slow,637,,كم يوصلني إذا طلبت الحين؟,1,advance_payment_seller,c_u18_advance_payment_seller_slow_1
-t_u18_00184,u18,2026-10-13T20:00:00+03:00,35400,6257826,transfer,rs_u18_prize_fee_slow,346,,وصلني شي، شنو الخطوة الجاية؟,1,prize_fee,c_u18_prize_fee_slow_0
-t_u18_00192,u18,2026-10-13T21:00:00+03:00,117287,16702942,transfer,rs_u18_advance_payment_seller_slow,637,,كم يوصلني إذا طلبت الحين؟,1,advance_payment_seller,c_u18_advance_payment_seller_slow_1
-t_u18_00185,u18,2026-10-14T20:00:00+03:00,54870,7311065,transfer,rs_u18_prize_fee_slow,346,,وصلني شي، شنو الخطوة الجاية؟,1,prize_fee,c_u18_prize_fee_slow_0
-t_u18_00193,u18,2026-10-14T21:00:00+03:00,181795,18805811,transfer,rs_u18_advance_payment_seller_slow,637,,كم يوصلني إذا طلبت الحين؟,1,advance_payment_seller,c_u18_advance_payment_seller_slow_1
-t_u18_00186,u18,2026-10-15T20:00:00+03:00,85049,8396682,transfer,rs_u18_prize_fee_slow,346,,وصلني شي، شنو الخطوة الجاية؟,1,prize_fee,c_u18_prize_fee_slow_0
-t_u18_00194,u18,2026-10-15T21:00:00+03:00,281782,20128898,transfer,rs_u18_advance_payment_seller_slow,637,,كم يوصلني إذا طلبت الحين؟,1,advance_payment_seller,c_u18_advance_payment_seller_slow_1
-t_u18_00187,u18,2026-10-16T20:00:00+03:00,131826,9298290,transfer,rs_u18_prize_fee_slow,346,,وصلني شي، شنو الخطوة الجاية؟,1,prize_fee,c_u18_prize_fee_slow_0
-t_u18_00188,u18,2026-10-17T20:00:00+03:00,204331,11077223,transfer,rs_u18_prize_fee_slow,346,,وصلني شي، شنو الخطوة الجاية؟,1,prize_fee,c_u18_prize_fee_slow_0
-t_u19_00164,u19,2026-07-19T23:00:00+03:00,40477,13628660,transfer,rs_u19_investment_doubling_slow,674,,أريد أزيد دخلي، من وين أبدأ؟,1,investment_doubling,c_u19_investment_doubling_slow_1
-t_u19_00165,u19,2026-07-20T23:00:00+03:00,62739,15401922,transfer,rs_u19_investment_doubling_slow,674,,أريد أزيد دخلي، من وين أبدأ؟,1,investment_doubling,c_u19_investment_doubling_slow_1
-t_u19_00166,u19,2026-07-22T23:00:00+03:00,97245,16616452,transfer,rs_u19_investment_doubling_slow,674,,أريد أزيد دخلي، من وين أبدأ؟,1,investment_doubling,c_u19_investment_doubling_slow_1
-t_u19_00167,u19,2026-07-23T23:00:00+03:00,150731,17854837,transfer,rs_u19_investment_doubling_slow,674,,أريد أزيد دخلي، من وين أبدأ؟,1,investment_doubling,c_u19_investment_doubling_slow_1
-t_u19_00168,u19,2026-07-25T23:00:00+03:00,233633,19295049,transfer,rs_u19_investment_doubling_slow,674,,أريد أزيد دخلي، من وين أبدأ؟,1,investment_doubling,c_u19_investment_doubling_slow_1
-t_u19_00169,u19,2026-07-26T23:00:00+03:00,362131,20871138,transfer,rs_u19_investment_doubling_slow,674,,أريد أزيد دخلي، من وين أبدأ؟,1,investment_doubling,c_u19_investment_doubling_slow_1
-t_u19_00158,u19,2026-07-31T21:00:00+03:00,24989,4558329,transfer,rs_u19_safe_account_slow,609,,صار عندي مشكلة ب الدخول، شنو الحل؟,1,safe_account,c_u19_safe_account_slow_0
-t_u19_00159,u19,2026-08-01T21:00:00+03:00,38732,6182012,transfer,rs_u19_safe_account_slow,609,,صار عندي مشكلة ب الدخول، شنو الحل؟,1,safe_account,c_u19_safe_account_slow_0
-t_u19_00160,u19,2026-08-02T21:00:00+03:00,60036,7383587,transfer,rs_u19_safe_account_slow,609,,صار عندي مشكلة ب الدخول، شنو الحل؟,1,safe_account,c_u19_safe_account_slow_0
-t_u19_00161,u19,2026-08-03T21:00:00+03:00,93055,8923225,transfer,rs_u19_safe_account_slow,609,,صار عندي مشكلة ب الدخول، شنو الحل؟,1,safe_account,c_u19_safe_account_slow_0
-t_u19_00162,u19,2026-08-04T21:00:00+03:00,144236,10452989,transfer,rs_u19_safe_account_slow,609,,صار عندي مشكلة ب الدخول، شنو الحل؟,1,safe_account,c_u19_safe_account_slow_0
-t_u19_00163,u19,2026-08-05T21:00:00+03:00,223566,12354741,transfer,rs_u19_safe_account_slow,609,,صار عندي مشكلة ب الدخول، شنو الحل؟,1,safe_account,c_u19_safe_account_slow_0
-t_u19_00156,u19,2026-08-31T04:07:22+03:00,609795,2494481,transfer,r_u19_09,200,,,0,,
-t_u19_00157,u19,2026-09-10T18:23:17+03:00,511311,3627607,transfer,rr_u19_2,61,أول دفعة إيجار للمؤجر الجديد,,0,,
-t_u20_00114,u20,2026-08-14T23:00:00+03:00,26609,7154110,transfer,rs_u20_fake_refund_slow,347,,المشكلة واصلة، كيف أحلها؟,1,fake_refund,c_u20_fake_refund_slow_1
-t_u20_00115,u20,2026-08-15T23:00:00+03:00,41243,8113985,transfer,rs_u20_fake_refund_slow,347,,المشكلة واصلة، كيف أحلها؟,1,fake_refund,c_u20_fake_refund_slow_1
-t_u20_00116,u20,2026-08-16T23:00:00+03:00,63928,8630555,transfer,rs_u20_fake_refund_slow,347,,المشكلة واصلة، كيف أحلها؟,1,fake_refund,c_u20_fake_refund_slow_1
-t_u20_00117,u20,2026-08-17T23:00:00+03:00,99088,9644083,transfer,rs_u20_fake_refund_slow,347,,المشكلة واصلة، كيف أحلها؟,1,fake_refund,c_u20_fake_refund_slow_1
-t_u20_00118,u20,2026-08-18T23:00:00+03:00,153587,10329712,transfer,rs_u20_fake_refund_slow,347,,المشكلة واصلة، كيف أحلها؟,1,fake_refund,c_u20_fake_refund_slow_1
-t_u20_00119,u20,2026-08-19T23:00:00+03:00,238060,11049863,transfer,rs_u20_fake_refund_slow,347,,المشكلة واصلة، كيف أحلها؟,1,fake_refund,c_u20_fake_refund_slow_1
-t_u20_00108,u20,2026-08-26T20:00:00+03:00,29913,1983975,transfer,rs_u20_fake_job_fee_slow,462,,شلون أبدأ هسه؟,1,fake_job_fee,c_u20_fake_job_fee_slow_0
-t_u20_00109,u20,2026-08-27T20:00:00+03:00,46365,3111388,transfer,rs_u20_fake_job_fee_slow,462,,شلون أبدأ هسه؟,1,fake_job_fee,c_u20_fake_job_fee_slow_0
-t_u20_00107,u20,2026-08-28T15:11:57+03:00,867758,1774556,transfer,rs_u20_2,61,أول راتب من جهة العمل الجديدة,,0,,
-t_u20_00110,u20,2026-08-28T20:00:00+03:00,71865,4246355,transfer,rs_u20_fake_job_fee_slow,462,,شلون أبدأ هسه؟,1,fake_job_fee,c_u20_fake_job_fee_slow_0
-t_u20_00111,u20,2026-08-30T20:00:00+03:00,111392,5209742,transfer,rs_u20_fake_job_fee_slow,462,,شلون أبدأ هسه؟,1,fake_job_fee,c_u20_fake_job_fee_slow_0
-t_u20_00112,u20,2026-08-31T20:00:00+03:00,172658,5948839,transfer,rs_u20_fake_job_fee_slow,462,,شلون أبدأ هسه؟,1,fake_job_fee,c_u20_fake_job_fee_slow_0
-t_u20_00113,u20,2026-09-01T20:00:00+03:00,267619,6321359,transfer,rs_u20_fake_job_fee_slow,462,,شلون أبدأ هسه؟,1,fake_job_fee,c_u20_fake_job_fee_slow_0
-t_u20_00106,u20,2026-09-12T17:22:04+03:00,956971,1378460,merchant,rm_u20_4,67,أثاث جديد,,0,,
-t_u20_00097,u20,2026-10-15T21:51:41+03:00,46435,565219,transfer,r_u20_02,2,,,0,,
-t_u21_00023,u21,2026-08-24T08:09:56+03:00,298385,591693,transfer,r_u21_01,6,,,0,,
-t_u21_00107,u21,2026-08-30T19:50:49+03:00,176424,4171747,transfer,rs_u21_relative_new_number_silent,607,,نرجع للحديث بعدين، الموضوع مهم,1,relative_new_number,c_u21_relative_new_number_silent_0
-t_u21_00106,u21,2026-09-02T00:07:18+03:00,159055,3044800,transfer,r_u21_03,200,,,0,,
-t_u21_00050,u21,2026-09-14T18:19:41+03:00,96519,714047,transfer,r_u21_04,866,رد مبلغ,,0,,
-t_u21_00108,u21,2026-10-01T15:53:09+03:00,162274,5268201,transfer,rs_u21_otp_fake_agent_silent,652,,حسابي، شنو الخطوة اللي بعدين؟,1,otp_fake_agent,c_u21_otp_fake_agent_silent_1
-t_u21_00105,u21,2026-10-04T22:57:08+03:00,1454084,3280667,transfer,rb_u21_4,303,مبلغ العيد لأقربائي,,0,,
-t_u22_00133,u22,2026-07-29T15:46:43+03:00,271334,713247,transfer,rr_u22_2,107,أول دفعة إيجار للمؤجر الجديد,,0,,
-t_u22_00135,u22,2026-08-05T14:43:45+03:00,28355,-24317,transfer,rs_u22_advance_payment_seller_silent,575,,المنتج مهملي، بعدين نكمل الكلام,1,advance_payment_seller,c_u22_advance_payment_seller_silent_0
-t_u22_00134,u22,2026-09-06T17:39:45+03:00,1216930,750705,merchant,rm_u22_2,66,شراء ذهب,,0,,
-t_u22_00063,u22,2026-09-09T14:38:27+03:00,30354,459029,transfer,r_u22_02,3,مبلغ أمانة,,0,,
-t_u22_00136,u22,2026-09-23T19:44:11+03:00,16254,217624,transfer,rs_u22_prize_fee_silent,573,,وصلتني رسالة، خلّيني أچيك بالتفاصيل,1,prize_fee,c_u22_prize_fee_silent_1
-t_u22_00085,u22,2026-09-23T23:09:55+03:00,21099,355998,transfer,r_u22_05,857,,,0,,
-t_u23_00090,u23,2026-09-07T19:15:34+03:00,324187,838735,bill,b_u_u23_1,852,تجديد الاشتراك,,0,,
-t_u23_00104,u23,2026-09-16T19:53:16+03:00,983945,1608921,transfer,r_u23_02,13,تسديد دين,,0,,
-t_u23_00162,u23,2026-09-26T17:33:24+03:00,409391,4917433,transfer,rs_u23_safe_account_silent,577,,ما أعرف شنو نسوي، وين أروح؟,1,safe_account,c_u23_safe_account_silent_1
-t_u23_00160,u23,2026-09-26T22:05:51+03:00,1206187,2075546,transfer,rb_u23_5,276,مبلغ العيد لأقربائي,,0,,
-t_u23_00161,u23,2026-09-28T14:32:55+03:00,468877,3181290,transfer,rs_u23_investment_doubling_silent,413,,شلون تصير الأمور هسه؟,1,investment_doubling,c_u23_investment_doubling_silent_0
-t_u23_00159,u23,2026-10-05T14:49:05+03:00,619865,1276088,transfer,rs_u23_1,30,أول راتب من جهة العمل الجديدة,,0,,
-t_u24_00106,u24,2026-10-04T18:38:11+03:00,238792,5298634,transfer,rs_u24_fake_refund_silent,788,,الموضوع واصلني، خلّيني أچيك,1,fake_refund,c_u24_fake_refund_silent_0
-t_u24_00105,u24,2026-10-06T09:41:17+03:00,491178,4077183,transfer,rr_u24_2,103,أول دفعة إيجار للمؤجر الجديد,,0,,
-t_u24_00107,u24,2026-10-09T20:57:45+03:00,173961,6588901,transfer,rs_u24_fake_job_fee_silent,741,,من وين نبدأ بالتفصيل؟,1,fake_job_fee,c_u24_fake_job_fee_silent_1
-t_u24_00104,u24,2026-10-12T00:06:28+03:00,107757,2155960,transfer,r_u24_05,200,,,0,,
-t_u25_00180,u25,2026-07-12T15:00:00+03:00,392013,2543051,transfer,rs_u25_relative_new_number_fast,4,,محتاج مبلغ مستعجل، رقمك القديم ما يشتغل، كلمني على الواتساب,1,relative_new_number,c_u25_relative_new_number_fast_1
-t_u25_00181,u25,2026-07-12T15:06:00+03:00,705623,3181034,transfer,rs_u25_relative_new_number_fast,4,,محتاج مبلغ مستعجل، رقمك القديم ما يشتغل، كلمني على الواتساب,1,relative_new_number,c_u25_relative_new_number_fast_1
-t_u25_00182,u25,2026-07-12T15:18:00+03:00,980032,3028116,transfer,rs_u25_relative_new_number_fast,4,,محتاج مبلغ مستعجل، رقمك القديم ما يشتغل، كلمني على الواتساب,1,relative_new_number,c_u25_relative_new_number_fast_1
-t_u25_00176,u25,2026-08-18T09:17:28+03:00,902640,1230030,transfer,rs_u25_2,22,أول راتب من جهة العمل الجديدة,,0,,
-t_u25_00175,u25,2026-08-31T09:20:14+03:00,1793713,2419326,merchant,rm_u25_4,67,شراء ذهب,,0,,
-t_u25_00152,u25,2026-10-05T04:37:02+03:00,104213,1651896,transfer,r_u25_01,14,على الحساب,,0,,
-t_u25_00177,u25,2026-10-11T20:00:00+03:00,329718,1264350,transfer,rs_u25_otp_fake_agent_fast,2,,أرسل الكود من صفحة التحقق وراح يفعّلوا حسابك,1,otp_fake_agent,c_u25_otp_fake_agent_fast_0
-t_u25_00178,u25,2026-10-11T20:06:00+03:00,593492,2141083,transfer,rs_u25_otp_fake_agent_fast,2,,أرسل الكود من صفحة التحقق وراح يفعّلوا حسابك,1,otp_fake_agent,c_u25_otp_fake_agent_fast_0
-t_u25_00179,u25,2026-10-11T20:18:00+03:00,824295,2754642,transfer,rs_u25_otp_fake_agent_fast,2,,أرسل الكود من صفحة التحقق وراح يفعّلوا حسابك,1,otp_fake_agent,c_u25_otp_fake_agent_fast_0
-t_u25_00169,u25,2026-10-18T23:36:26+03:00,35962,1807047,bill,b_u_u25_3,324,فاتورة التأمين,,0,,
-t_u26_00002,u26,2026-07-14T13:36:58+03:00,87652,5795241,transfer,r_u26_04,282,دين لأخي,,0,,
-t_u26_00158,u26,2026-09-04T23:00:00+03:00,274501,5648680,transfer,rs_u26_advance_payment_seller_fast,3,,عربون نص المبلغ قبل الشحن، وخلاص الارسال بعد التحويل,1,advance_payment_seller,c_u26_advance_payment_seller_fast_1
-t_u26_00159,u26,2026-09-04T23:05:00+03:00,494101,6959360,transfer,rs_u26_advance_payment_seller_fast,3,,عربون نص المبلغ قبل الشحن، وخلاص الارسال بعد التحويل,1,advance_payment_seller,c_u26_advance_payment_seller_fast_1
-t_u26_00160,u26,2026-09-04T23:17:00+03:00,686252,8119504,transfer,rs_u26_advance_payment_seller_fast,3,,عربون نص المبلغ قبل الشحن، وخلاص الارسال بعد التحويل,1,advance_payment_seller,c_u26_advance_payment_seller_fast_1
-t_u26_00155,u26,2026-09-09T15:00:00+03:00,366667,3454857,transfer,rs_u26_prize_fee_fast,6,,وصلتك المجموعة الواردة ثلاثة مليون، ادفع رسوم الاستلام حتى نصرفها,1,prize_fee,c_u26_prize_fee_fast_0
-t_u26_00156,u26,2026-09-09T15:09:00+03:00,660000,4636752,transfer,rs_u26_prize_fee_fast,6,,وصلتك المجموعة الواردة ثلاثة مليون، ادفع رسوم الاستلام حتى نصرفها,1,prize_fee,c_u26_prize_fee_fast_0
-t_u26_00157,u26,2026-09-09T15:18:00+03:00,916667,5376617,transfer,rs_u26_prize_fee_fast,6,,وصلتك المجموعة الواردة ثلاثة مليون، ادفع رسوم الاستلام حتى نصرفها,1,prize_fee,c_u26_prize_fee_fast_0
-t_u26_00153,u26,2026-09-23T22:55:56+03:00,1466369,2423296,transfer,rb_u26_5,221,مبلغ العيد لأقربائي,,0,,
-t_u26_00154,u26,2026-09-24T04:04:54+03:00,103464,2184677,transfer,r_u26_04,200,,,0,,
-t_u27_00116,u27,2026-08-26T10:11:46+03:00,653128,768139,merchant,rm_u27_2,103,شراء ذهب,,0,,
-t_u27_00117,u27,2026-09-01T14:00:00+03:00,376624,693617,transfer,rs_u27_safe_account_fast,6,,الحساب موقوف، حوّل لحساب آمن حتى نكمل الإجراء,1,safe_account,c_u27_safe_account_fast_0
-t_u27_00118,u27,2026-09-01T14:09:00+03:00,677923,753623,transfer,rs_u27_safe_account_fast,6,,الحساب موقوف، حوّل لحساب آمن حتى نكمل الإجراء,1,safe_account,c_u27_safe_account_fast_0
-t_u27_00119,u27,2026-09-01T14:20:00+03:00,941560,569218,transfer,rs_u27_safe_account_fast,6,,الحساب موقوف، حوّل لحساب آمن حتى نكمل الإجراء,1,safe_account,c_u27_safe_account_fast_0
-t_u27_00056,u27,2026-09-08T12:36:16+03:00,12677,415567,transfer,rn_u27_38,349,,,0,,
-t_u27_00120,u27,2026-09-20T20:00:00+03:00,273297,197422,transfer,rs_u27_investment_doubling_fast,5,,استثمارك ينمو، صفقة مربحة كل أسبوع,1,investment_doubling,c_u27_investment_doubling_fast_1
-t_u27_00121,u27,2026-09-20T20:04:00+03:00,491934,402778,transfer,rs_u27_investment_doubling_fast,5,,استثمارك ينمو، صفقة مربحة كل أسبوع,1,investment_doubling,c_u27_investment_doubling_fast_1
-t_u27_00122,u27,2026-09-20T20:10:00+03:00,683242,415199,transfer,rs_u27_investment_doubling_fast,5,,استثمارك ينمو، صفقة مربحة كل أسبوع,1,investment_doubling,c_u27_investment_doubling_fast_1
-t_u27_00115,u27,2026-10-10T10:45:41+03:00,460411,753787,transfer,rr_u27_2,62,أول دفعة إيجار للمؤجر الجديد,,0,,
-t_u28_00087,u28,2026-08-24T11:09:21+03:00,788021,3003848,transfer,rs_u28_2,45,أول راتب من جهة العمل الجديدة,,0,,
-t_u28_00019,u28,2026-08-31T22:06:02+03:00,290724,2598127,merchant,m_u_u28_6,210,أدوات مدرسية,,0,,
-t_u28_00092,u28,2026-09-04T23:00:00+03:00,297984,6840568,transfer,rs_u28_fake_refund_fast,6,,استرجاع المبلغ يحتاج تحديث بياناتك وتأكيد البيانات,1,fake_refund,c_u28_fake_refund_fast_1
-t_u28_00093,u28,2026-09-04T23:09:00+03:00,536371,7740025,transfer,rs_u28_fake_refund_fast,6,,استرجاع المبلغ يحتاج تحديث بياناتك وتأكيد البيانات,1,fake_refund,c_u28_fake_refund_fast_1
-t_u28_00094,u28,2026-09-04T23:15:00+03:00,744960,8616674,transfer,rs_u28_fake_refund_fast,6,,استرجاع المبلغ يحتاج تحديث بياناتك وتأكيد البيانات,1,fake_refund,c_u28_fake_refund_fast_1
-t_u28_00089,u28,2026-10-01T19:00:00+03:00,281952,3653893,transfer,rs_u28_fake_job_fee_fast,6,,الراتب مضمون، بس ادفع رسوم التسجيل قبل ما نوثق العقد,1,fake_job_fee,c_u28_fake_job_fee_fast_0
-t_u28_00090,u28,2026-10-01T19:04:00+03:00,507513,4318434,transfer,rs_u28_fake_job_fee_fast,6,,الراتب مضمون، بس ادفع رسوم التسجيل قبل ما نوثق العقد,1,fake_job_fee,c_u28_fake_job_fee_fast_0
-t_u28_00091,u28,2026-10-01T19:17:00+03:00,704880,5290017,transfer,rs_u28_fake_job_fee_fast,6,,الراتب مضمون، بس ادفع رسوم التسجيل قبل ما نوثق العقد,1,fake_job_fee,c_u28_fake_job_fee_fast_0
-t_u28_00088,u28,2026-10-10T18:20:47+03:00,1471515,4028440,transfer,rb_u28_4,188,مبلغ العيد لأقربائي,,0,,
-t_u29_00117,u29,2026-08-21T01:52:26+03:00,366602,3121781,transfer,r_u29_03,200,,,0,,
-t_u29_00119,u29,2026-08-28T23:00:00+03:00,39636,5701083,transfer,rs_u29_relative_new_number_slow,370,,شنو رأيك، نكمل بالطريقة اللي تحبج؟,1,relative_new_number,c_u29_relative_new_number_slow_0
-t_u29_00120,u29,2026-08-29T23:00:00+03:00,61435,7325277,transfer,rs_u29_relative_new_number_slow,370,,شنو رأيك، نكمل بالطريقة اللي تحبج؟,1,relative_new_number,c_u29_relative_new_number_slow_0
-t_u29_00121,u29,2026-08-30T23:00:00+03:00,95225,9086573,transfer,rs_u29_relative_new_number_slow,370,,شنو رأيك، نكمل بالطريقة اللي تحبج؟,1,relative_new_number,c_u29_relative_new_number_slow_0
-t_u29_00122,u29,2026-09-01T23:00:00+03:00,147599,11014370,transfer,rs_u29_relative_new_number_slow,370,,شنو رأيك، نكمل بالطريقة اللي تحبج؟,1,relative_new_number,c_u29_relative_new_number_slow_0
-t_u29_00123,u29,2026-09-02T23:00:00+03:00,228779,12749608,transfer,rs_u29_relative_new_number_slow,370,,شنو رأيك، نكمل بالطريقة اللي تحبج؟,1,relative_new_number,c_u29_relative_new_number_slow_0
-t_u29_00124,u29,2026-09-03T23:00:00+03:00,354607,14063987,transfer,rs_u29_relative_new_number_slow,370,,شنو رأيك، نكمل بالطريقة اللي تحبج؟,1,relative_new_number,c_u29_relative_new_number_slow_0
-t_u29_00125,u29,2026-10-08T23:00:00+03:00,42383,15374556,transfer,rs_u29_otp_fake_agent_slow,730,,تمام، شنو المطلوب مني الحين؟,1,otp_fake_agent,c_u29_otp_fake_agent_slow_1
-t_u29_00126,u29,2026-10-09T23:00:00+03:00,65693,17397026,transfer,rs_u29_otp_fake_agent_slow,730,,تمام، شنو المطلوب مني الحين؟,1,otp_fake_agent,c_u29_otp_fake_agent_slow_1
-t_u29_00127,u29,2026-10-11T23:00:00+03:00,101825,18848372,transfer,rs_u29_otp_fake_agent_slow,730,,تمام، شنو المطلوب مني الحين؟,1,otp_fake_agent,c_u29_otp_fake_agent_slow_1
-t_u29_00118,u29,2026-10-12T13:35:12+03:00,385086,4634912,transfer,rr_u29_1,89,أول دفعة إيجار للمؤجر الجديد,,0,,
-t_u29_00128,u29,2026-10-12T23:00:00+03:00,157828,20232416,transfer,rs_u29_otp_fake_agent_slow,730,,تمام، شنو المطلوب مني الحين؟,1,otp_fake_agent,c_u29_otp_fake_agent_slow_1
-t_u29_00129,u29,2026-10-14T23:00:00+03:00,244634,21913573,transfer,rs_u29_otp_fake_agent_slow,730,,تمام، شنو المطلوب مني الحين؟,1,otp_fake_agent,c_u29_otp_fake_agent_slow_1
-t_u29_00130,u29,2026-10-15T23:00:00+03:00,379184,23462934,transfer,rs_u29_otp_fake_agent_slow,730,,تمام، شنو المطلوب مني الحين؟,1,otp_fake_agent,c_u29_otp_fake_agent_slow_1
-t_u30_00147,u30,2026-08-16T21:00:00+03:00,43617,2993589,transfer,rs_u30_advance_payment_seller_slow,336,,أريد أعرف التفاصيل أكثر، نچي,1,advance_payment_seller,c_u30_advance_payment_seller_slow_0
-t_u30_00145,u30,2026-08-17T15:07:12+03:00,675296,2377853,merchant,rm_u30_1,31,أثاث جديد,,0,,
-t_u30_00148,u30,2026-08-17T21:00:00+03:00,67606,4204010,transfer,rs_u30_advance_payment_seller_slow,336,,أريد أعرف التفاصيل أكثر، نچي,1,advance_payment_seller,c_u30_advance_payment_seller_slow_0
-t_u30_00149,u30,2026-08-18T21:00:00+03:00,104789,4810520,transfer,rs_u30_advance_payment_seller_slow,336,,أريد أعرف التفاصيل أكثر، نچي,1,advance_payment_seller,c_u30_advance_payment_seller_slow_0
-t_u30_00150,u30,2026-08-20T21:00:00+03:00,162424,5957730,transfer,rs_u30_advance_payment_seller_slow,336,,أريد أعرف التفاصيل أكثر، نچي,1,advance_payment_seller,c_u30_advance_payment_seller_slow_0
-t_u30_00151,u30,2026-08-21T21:00:00+03:00,251757,6578598,transfer,rs_u30_advance_payment_seller_slow,336,,أريد أعرف التفاصيل أكثر، نچي,1,advance_payment_seller,c_u30_advance_payment_seller_slow_0
-t_u30_00152,u30,2026-08-22T21:00:00+03:00,390224,7492626,transfer,rs_u30_advance_payment_seller_slow,336,,أريد أعرف التفاصيل أكثر، نچي,1,advance_payment_seller,c_u30_advance_payment_seller_slow_0
-t_u30_00146,u30,2026-09-03T12:36:19+03:00,984184,2719884,transfer,rs_u30_2,62,أول راتب من جهة العمل الجديدة,,0,,
-t_u30_00153,u30,2026-10-03T23:00:00+03:00,44740,7779216,transfer,rs_u30_prize_fee_slow,565,,عندي خبر حلو، بعدين احچيك,1,prize_fee,c_u30_prize_fee_slow_1
-t_u30_00154,u30,2026-10-04T23:00:00+03:00,69347,8963323,transfer,rs_u30_prize_fee_slow,565,,عندي خبر حلو، بعدين احچيك,1,prize_fee,c_u30_prize_fee_slow_1
-t_u30_00155,u30,2026-10-06T23:00:00+03:00,107487,9523195,transfer,rs_u30_prize_fee_slow,565,,عندي خبر حلو، بعدين احچيك,1,prize_fee,c_u30_prize_fee_slow_1
-t_u30_00156,u30,2026-10-07T23:00:00+03:00,166606,10468588,transfer,rs_u30_prize_fee_slow,565,,عندي خبر حلو، بعدين احچيك,1,prize_fee,c_u30_prize_fee_slow_1
-t_u30_00157,u30,2026-10-09T23:00:00+03:00,258239,11238105,transfer,rs_u30_prize_fee_slow,565,,عندي خبر حلو، بعدين احچيك,1,prize_fee,c_u30_prize_fee_slow_1
-t_u30_00158,u30,2026-10-10T23:00:00+03:00,400271,11600349,transfer,rs_u30_prize_fee_slow,565,,عندي خبر حلو، بعدين احچيك,1,prize_fee,c_u30_prize_fee_slow_1
+t_u01_00179,u01,2026-07-16T21:44:56+03:00,230843,32103183,transfer,r_2562,0,هاي رقمي الجديد بدل رقم، محتاج سلفة مستعجلة,,1,relative_new_number,c_9653
+t_u01_00180,u01,2026-07-16T21:51:46+03:00,415517,31872340,transfer,r_2562,0,,بدل رقم، ما اكدر اتصل، كلمني على الواتساب,1,relative_new_number,c_9653
+t_u01_00181,u01,2026-07-16T22:00:52+03:00,577107,31456823,transfer,r_2562,0,,محتاج مبلغ مستعجل، رقمك القديم ما يشتغل، كلمني على الواتساب,1,relative_new_number,c_9653
+t_u01_00176,u01,2026-07-23T12:30:03+03:00,318843,28956182,transfer,r_2320,0,,موظف الدعم يطلب رمز تحقق منك، بعده يفعّل الحساب,1,otp_fake_agent,c_1519
+t_u01_00177,u01,2026-07-23T12:32:07+03:00,573917,28637339,transfer,r_2320,0,,موظف الدعم يطلب رمز تحقق منك، بعده يفعّل الحساب,1,otp_fake_agent,c_1519
+t_u01_00178,u01,2026-07-23T12:36:02+03:00,797107,28063422,transfer,r_2320,0,,موظف الدعم يطلب رمز تحقق منك، بعده يفعّل الحساب,1,otp_fake_agent,c_1519
+t_u01_00175,u01,2026-07-27T04:44:14+03:00,290647,26373801,transfer,r_9928,200,,,0,,
+t_u01_00047,u01,2026-08-06T14:07:18+03:00,193218,23878880,transfer,r_9935,4,,,0,,
+t_u01_00174,u01,2026-09-12T20:50:25+03:00,864679,10889916,transfer,p_9625,388,مبلغ العيد لأقربائي,,0,,
+t_u02_00024,u02,2026-08-08T23:07:01+03:00,50663,9546168,transfer,r_2674,11,دين قديم,,0,,
+t_u02_00142,u02,2026-08-18T10:41:38+03:00,518180,9022651,transfer,p_1120,114,أول دفعة إيجار للمؤجر الجديد,,0,,
+t_u02_00063,u02,2026-09-02T17:08:24+03:00,43923,7500877,transfer,r_7924,6,على الحساب,,0,,
+t_u02_00144,u02,2026-09-06T19:57:03+03:00,391210,7313579,transfer,r_5278,1,,مبروك ربحت الجائزة، حول رسوم المعالجة ونرسل لك المكافأة,1,prize_fee,c_5895
+t_u02_00145,u02,2026-09-06T20:02:29+03:00,704178,6922369,transfer,r_5278,1,شكرا لمشاركتك، فزت بسحب المحفظة، ادفع رسوم التوصيل,,1,prize_fee,c_5895
+t_u02_00146,u02,2026-09-06T20:08:56+03:00,978025,6218191,transfer,r_5278,1,وصلتك المجموعة الواردة ثلاثة مليون، ادفع رسوم الاستلام حتى نصرفها,,1,prize_fee,c_5895
+t_u02_00147,u02,2026-09-07T21:42:22+03:00,369422,5210573,transfer,r_4111,5,,بيع تكي، ترسل دفعة مقدمة قبل الشحن ونحجز الطرد,1,advance_payment_seller,c_6622
+t_u02_00148,u02,2026-09-07T21:48:41+03:00,664959,4841151,transfer,r_4111,5,دفعة مقدمة قبل الشحن، بعدها الارسال بعد التحويل,,1,advance_payment_seller,c_6622
+t_u02_00149,u02,2026-09-07T21:54:48+03:00,923555,4176192,transfer,r_4111,5,,بيع تكي، ترسل دفعة مقدمة قبل الشحن ونحجز الطرد,1,advance_payment_seller,c_6622
+t_u02_00073,u02,2026-09-09T19:54:36+03:00,10050,3219772,transfer,r_6881,219,,,0,,
+t_u02_00143,u02,2026-10-02T13:40:20+03:00,853423,1858587,merchant,p_5890,91,شراء جهاز,,0,,
+t_u03_00027,u03,2026-07-21T02:21:17+03:00,141492,63466635,transfer,r_2169,838,حصة الأرض,,0,,
+t_u03_00175,u03,2026-09-10T21:39:59+03:00,717830,26644115,transfer,p_2405,26,أول راتب من جهة العمل الجديدة,,0,,
+t_u03_00176,u03,2026-09-23T18:28:30+03:00,959946,18911717,transfer,p_1225,357,مبلغ العيد لأقربائي,,0,,
+t_u03_00180,u03,2026-09-24T06:42:17+03:00,124369,16268264,transfer,r_5444,3,استثمر معنا، أرباح مضمونة وعائد يومي,,1,investment_doubling,c_1869
+t_u03_00181,u03,2026-09-24T06:47:21+03:00,223864,16143895,transfer,r_5444,3,استثمر معنا، أرباح مضمونة وعائد يومي,,1,investment_doubling,c_1869
+t_u03_00182,u03,2026-09-24T06:50:11+03:00,310922,15920031,transfer,r_5444,3,,استثمر معنا، أرباح مضمونة وعائد يومي,1,investment_doubling,c_1869
+t_u03_00177,u03,2026-10-05T19:35:30+03:00,394342,12101344,transfer,r_4424,1,,حسابك مخترق، حوّل المبلغ لحساب أمان، بعدها نرجّعه,1,safe_account,c_9814
+t_u03_00178,u03,2026-10-05T19:38:42+03:00,709815,11707002,transfer,r_4424,1,,حسابك مخترق، حوّل المبلغ لحساب أمان، بعدها نرجّعه,1,safe_account,c_9814
+t_u03_00179,u03,2026-10-05T19:40:00+03:00,985855,10997187,transfer,r_4424,1,حسابك مخترق، حوّل المبلغ لحساب أمان، بعدها نرجّعه,,1,safe_account,c_9814
+t_u04_00102,u04,2026-09-07T01:23:35+03:00,510320,24435399,transfer,r_4752,200,,,0,,
+t_u04_00057,u04,2026-09-20T12:39:15+03:00,149369,18364181,transfer,r_5304,671,تسديد دين,,0,,
+t_u04_00107,u04,2026-09-23T22:39:44+03:00,245437,17167053,transfer,r_5439,3,,حسابك موقوف لتسوية مالية، أكد بياناتك وحوّل رسوم الاسترجاع,1,fake_refund,c_9570
+t_u04_00108,u04,2026-09-23T22:42:03+03:00,441786,16921616,transfer,r_5439,3,,حسابك موقوف لتسوية مالية، أكد بياناتك وحوّل رسوم الاسترجاع,1,fake_refund,c_9570
+t_u04_00109,u04,2026-09-23T22:53:13+03:00,613592,16479830,transfer,r_5439,3,,حسابك موقوف لتسوية مالية، أكد بياناتك وحوّل رسوم الاسترجاع,1,fake_refund,c_9570
+t_u04_00104,u04,2026-09-25T06:00:11+03:00,375311,15459262,transfer,r_7162,0,,وظيفة جديدة، تدفع رسوم التسجيل وبعدها التقديم ينجح,1,fake_job_fee,c_3584
+t_u04_00105,u04,2026-09-25T06:02:56+03:00,675559,15083951,transfer,r_7162,0,,عندك عرض عمل، تدفع رسوم التقديم وتدخل مرحلة التوظيف,1,fake_job_fee,c_3584
+t_u04_00106,u04,2026-09-25T06:14:03+03:00,938277,14408392,transfer,r_7162,0,,الراتب مضمون، بس ادفع رسوم التسجيل قبل ما نوثق العقد,1,fake_job_fee,c_3584
+t_u04_00103,u04,2026-10-02T16:06:50+03:00,555128,10240894,transfer,p_4991,35,أول دفعة إيجار للمؤجر الجديد,,0,,
+t_u05_00158,u05,2026-07-19T13:10:18+03:00,40404,20534471,transfer,r_7834,319,,الحساب يحتاج خطوة ثانية، ساعدني أكملها,1,otp_fake_agent,c_8755
+t_u05_00159,u05,2026-07-20T13:32:14+03:00,62626,20195463,transfer,r_7834,319,,الحساب يحتاج خطوة ثانية، ساعدني أكملها,1,otp_fake_agent,c_8755
+t_u05_00160,u05,2026-07-22T11:38:54+03:00,97070,19766303,transfer,r_7834,319,,الحساب يحتاج خطوة ثانية، ساعدني أكملها,1,otp_fake_agent,c_8755
+t_u05_00161,u05,2026-07-23T21:46:45+03:00,150459,19644827,transfer,r_7834,319,,الحساب يحتاج خطوة ثانية، ساعدني أكملها,1,otp_fake_agent,c_8755
+t_u05_00162,u05,2026-07-25T20:43:41+03:00,233212,19471112,transfer,r_7834,319,,الحساب يحتاج خطوة ثانية، ساعدني أكملها,1,otp_fake_agent,c_8755
+t_u05_00163,u05,2026-07-26T20:54:10+03:00,361478,19216468,transfer,r_7834,319,,الحساب يحتاج خطوة ثانية، ساعدني أكملها,1,otp_fake_agent,c_8755
+t_u05_00019,u05,2026-07-30T03:08:21+03:00,65945,18232887,transfer,r_3927,900,دين قديم,,0,,
+t_u05_00151,u05,2026-08-11T09:28:31+03:00,774174,15018608,transfer,p_2908,39,أول راتب من جهة العمل الجديدة,,0,,
+t_u05_00152,u05,2026-08-30T07:54:45+03:00,38659,10221777,transfer,r_8364,406,شنو الحل؟ محتاج مساعدة بسرية,,1,relative_new_number,c_4975
+t_u05_00153,u05,2026-08-31T20:47:37+03:00,59921,9954275,transfer,r_8364,406,,الجوال صوبح، ما أگدر أگولج,1,relative_new_number,c_4975
+t_u05_00154,u05,2026-09-01T23:02:31+03:00,92878,9693832,transfer,r_8364,406,,شنو الحل؟ محتاج مساعدة بسرية,1,relative_new_number,c_4975
+t_u05_00082,u05,2026-09-03T02:19:45+03:00,89441,9239395,merchant,p_8114,623,أدوات مدرسية,,0,,
+t_u05_00155,u05,2026-09-03T16:39:59+03:00,143961,9149954,transfer,r_8364,406,,الجوال صوبح، ما أگدر أگولج,1,relative_new_number,c_4975
+t_u05_00156,u05,2026-09-04T21:14:45+03:00,223139,8785713,transfer,r_8364,406,,شنو الحل؟ محتاج مساعدة بسرية,1,relative_new_number,c_4975
+t_u05_00157,u05,2026-09-05T13:20:35+03:00,345866,8501599,transfer,r_8364,406,,الجوال صوبح، ما أگدر أگولج,1,relative_new_number,c_4975
+t_u05_00150,u05,2026-09-21T12:09:30+03:00,1200753,5799969,merchant,p_8139,41,شراء ذهب,,0,,
+t_u05_00125,u05,2026-10-01T02:01:18+03:00,41260,2653789,transfer,p_4102,234,دفعة أولى,,0,,
+t_u05_00133,u05,2026-10-10T23:51:28+03:00,76952,1836973,transfer,p_3478,304,,,0,,
+t_u06_00009,u06,2026-07-07T18:15:09+03:00,245263,28324354,transfer,r_2133,617,تسديد دين,,0,,
+t_u06_00168,u06,2026-07-29T18:42:08+03:00,28441,22676164,transfer,r_7283,425,,هاي أول مرة نحچي بيه، حول مبلغ وبعدها نكمل,1,prize_fee,c_5593
+t_u06_00169,u06,2026-07-30T14:50:44+03:00,44083,22400846,transfer,r_7283,425,,هاي أول مرة نحچي بيه، حول مبلغ وبعدها نكمل,1,prize_fee,c_5593
+t_u06_00162,u06,2026-07-30T21:50:54+03:00,26392,22356763,transfer,r_2645,500,,المنتج موجود؟ كم آخر سعر؟,1,advance_payment_seller,c_7305
+t_u06_00163,u06,2026-07-31T14:05:19+03:00,40907,22015909,transfer,r_2645,500,أريد السلعة، كيف أدفع؟,,1,advance_payment_seller,c_7305
+t_u06_00170,u06,2026-08-01T22:49:59+03:00,68329,21975002,transfer,r_7283,425,,هاي أول مرة نحچي بيه، حول مبلغ وبعدها نكمل,1,prize_fee,c_5593
+t_u06_00171,u06,2026-08-02T11:58:45+03:00,105910,21906673,transfer,r_7283,425,هاي أول مرة نحچي بيه، حول مبلغ وبعدها نكمل,,1,prize_fee,c_5593
+t_u06_00164,u06,2026-08-02T14:57:28+03:00,63406,21800763,transfer,r_2645,500,,المنتج موجود؟ كم آخر سعر؟,1,advance_payment_seller,c_7305
+t_u06_00165,u06,2026-08-03T15:15:13+03:00,98280,21626957,transfer,r_2645,500,,أريد السلعة، كيف أدفع؟,1,advance_payment_seller,c_7305
+t_u06_00046,u06,2026-08-04T17:18:41+03:00,71911,21379155,transfer,r_6310,20,,,0,,
+t_u06_00172,u06,2026-08-04T20:54:27+03:00,164161,21307244,transfer,r_7283,425,,هاي أول مرة نحچي بيه، حول مبلغ وبعدها نكمل,1,prize_fee,c_5593
+t_u06_00173,u06,2026-08-05T07:05:07+03:00,254450,21143083,transfer,r_7283,425,هاي أول مرة نحچي بيه، حول مبلغ وبعدها نكمل,,1,prize_fee,c_5593
+t_u06_00166,u06,2026-08-05T17:05:06+03:00,152334,20226879,transfer,r_2645,500,,المنتج موجود؟ كم آخر سعر؟,1,advance_payment_seller,c_7305
+t_u06_00167,u06,2026-08-06T01:59:59+03:00,236118,20074545,transfer,r_2645,500,,أريد السلعة، كيف أدفع؟,1,advance_payment_seller,c_7305
+t_u06_00161,u06,2026-09-14T02:59:59+03:00,92660,10631585,transfer,r_2133,200,,,0,,
+t_u06_00160,u06,2026-09-19T20:14:38+03:00,1515862,8960092,transfer,p_6901,191,مبلغ العيد لأقربائي,,0,,
+t_u06_00114,u06,2026-09-20T12:41:56+03:00,140639,7238282,merchant,p_6959,372,شراء من السوق,,0,,
+t_u07_00140,u07,2026-08-03T15:33:48+03:00,434660,8139859,transfer,p_6762,99,أول دفعة إيجار للمؤجر الجديد,,0,,
+t_u07_00142,u07,2026-08-10T20:06:05+03:00,43006,7448373,transfer,r_7251,647,,شنو رأيك بالفرصة اللي شرحتها؟,1,investment_doubling,c_5669
+t_u07_00148,u07,2026-08-10T21:58:26+03:00,28769,7367684,transfer,r_7138,719,حسابي ما يشتغل، ساعدني خطوة؟,,1,safe_account,c_4668
+t_u07_00143,u07,2026-08-11T07:47:48+03:00,66659,7338915,transfer,r_7251,647,,تحتاط التوقيع؟,1,investment_doubling,c_5669
+t_u07_00149,u07,2026-08-11T21:02:00+03:00,44591,7249349,transfer,r_7138,719,حسابي ما يشتغل، ساعدني خطوة؟,,1,safe_account,c_4668
+t_u07_00150,u07,2026-08-13T12:52:33+03:00,69117,7191665,transfer,r_7138,719,حسابي ما يشتغل، ساعدني خطوة؟,,1,safe_account,c_4668
+t_u07_00144,u07,2026-08-13T13:37:51+03:00,103321,7122548,transfer,r_7251,647,شنو رأيك بالفرصة اللي شرحتها؟,,1,investment_doubling,c_5669
+t_u07_00151,u07,2026-08-14T08:36:27+03:00,107132,6995747,transfer,r_7138,719,حسابي ما يشتغل، ساعدني خطوة؟,,1,safe_account,c_4668
+t_u07_00145,u07,2026-08-14T09:49:29+03:00,160148,6888615,transfer,r_7251,647,,تحتاط التوقيع؟,1,investment_doubling,c_5669
+t_u07_00152,u07,2026-08-16T12:39:41+03:00,166054,6636229,transfer,r_7138,719,,حسابي ما يشتغل، ساعدني خطوة؟,1,safe_account,c_4668
+t_u07_00146,u07,2026-08-16T21:07:22+03:00,248230,6470175,transfer,r_7251,647,شنو رأيك بالفرصة اللي شرحتها؟,,1,investment_doubling,c_5669
+t_u07_00147,u07,2026-08-17T17:50:47+03:00,384757,6221945,transfer,r_7251,647,,تحتاط التوقيع؟,1,investment_doubling,c_5669
+t_u07_00153,u07,2026-08-17T20:36:27+03:00,257385,5819667,transfer,r_7138,719,,حسابي ما يشتغل، ساعدني خطوة؟,1,safe_account,c_4668
+t_u07_00141,u07,2026-08-23T10:38:10+03:00,2324445,5225728,merchant,p_3880,84,شراء ذهب,,0,,
+t_u07_00052,u07,2026-08-24T23:12:07+03:00,28182,2737264,transfer,r_4770,722,على الحساب,,0,,
+t_u08_00101,u08,2026-08-30T14:05:13+03:00,31358,36418050,transfer,r_9870,306,,أريد أرسل السيرة الذاتية، من وين أبدأ؟,1,fake_job_fee,c_9248
+t_u08_00102,u08,2026-08-31T15:19:47+03:00,48604,36263831,transfer,r_9870,306,,أريد أرسل السيرة الذاتية، من وين أبدأ؟,1,fake_job_fee,c_9248
+t_u08_00103,u08,2026-09-01T12:52:50+03:00,75337,36215227,transfer,r_9870,306,أريد أرسل السيرة الذاتية، من وين أبدأ؟,,1,fake_job_fee,c_9248
+t_u08_00094,u08,2026-09-01T18:15:52+03:00,1195642,36139890,transfer,p_9785,191,مبلغ العيد لأقربائي,,0,,
+t_u08_00104,u08,2026-09-03T09:28:41+03:00,116773,33521157,transfer,r_9870,306,أريد أرسل السيرة الذاتية، من وين أبدأ؟,,1,fake_job_fee,c_9248
+t_u08_00105,u08,2026-09-04T07:31:53+03:00,180998,32415826,transfer,r_9870,306,,أريد أرسل السيرة الذاتية، من وين أبدأ؟,1,fake_job_fee,c_9248
+t_u08_00106,u08,2026-09-05T16:19:52+03:00,280547,32234828,transfer,r_9870,306,أريد أرسل السيرة الذاتية، من وين أبدأ؟,,1,fake_job_fee,c_9248
+t_u08_00026,u08,2026-09-05T20:12:46+03:00,777084,31287825,transfer,r_6559,865,تسديد دين,,0,,
+t_u08_00095,u08,2026-09-23T17:15:18+03:00,29260,19623199,transfer,r_1928,649,عندي مبلغ واصلني، شنو الخطوات؟,,1,fake_refund,c_3076
+t_u08_00096,u08,2026-09-24T14:07:42+03:00,45353,19102008,transfer,r_1928,649,,عندي مبلغ واصلني، شنو الخطوات؟,1,fake_refund,c_3076
+t_u08_00097,u08,2026-09-25T22:13:31+03:00,70297,18228948,transfer,r_1928,649,عندي مبلغ واصلني، شنو الخطوات؟,,1,fake_refund,c_3076
+t_u08_00098,u08,2026-09-26T12:58:54+03:00,108960,17838145,transfer,r_1928,649,,عندي مبلغ واصلني، شنو الخطوات؟,1,fake_refund,c_3076
+t_u08_00099,u08,2026-09-27T11:23:49+03:00,168888,17729185,transfer,r_1928,649,,عندي مبلغ واصلني، شنو الخطوات؟,1,fake_refund,c_3076
+t_u08_00093,u08,2026-09-27T15:37:00+03:00,849739,17560297,transfer,p_1949,49,أول راتب من جهة العمل الجديدة,,0,,
+t_u08_00100,u08,2026-09-28T17:33:57+03:00,261777,16499004,transfer,r_1928,649,عندي مبلغ واصلني، شنو الخطوات؟,,1,fake_refund,c_3076
+t_u09_00105,u09,2026-08-30T21:46:15+03:00,239581,24311836,transfer,r_4283,508,رد عليج، وضع طارئ,,1,relative_new_number,c_3819
+t_u09_00104,u09,2026-09-11T11:29:00+03:00,231723,18719884,transfer,r_1881,516,لازم أگبل خطوة التأكيد حتى أتابع,,1,otp_fake_agent,c_2481
+t_u09_00103,u09,2026-09-17T20:08:08+03:00,354051,14049965,transfer,p_9586,102,أول دفعة إيجار للمؤجر الجديد,,0,,
+t_u09_00055,u09,2026-09-21T04:38:58+03:00,232056,12777741,bill,p_8594,634,فاتورة الكهرباء,,0,,
+t_u09_00102,u09,2026-10-05T04:59:19+03:00,246993,5665797,transfer,r_4872,200,,,0,,
+t_u09_00088,u09,2026-10-12T22:12:41+03:00,122375,3161053,bill,p_1935,311,رسوم الاشتراك,,0,,
+t_u10_00167,u10,2026-07-11T19:55:43+03:00,1162468,20210752,merchant,p_9162,98,شراء جهاز,,0,,
+t_u10_00170,u10,2026-07-31T23:29:59+03:00,116099,15115418,transfer,r_9494,302,,كم يوصلني إذا طلبت الحين؟,1,advance_payment_seller,c_3742
+t_u10_00168,u10,2026-08-27T18:32:09+03:00,785522,10213202,transfer,p_7130,76,أول راتب من جهة العمل الجديدة,,0,,
+t_u10_00169,u10,2026-09-14T11:22:43+03:00,73671,6605129,transfer,r_8292,239,,خلّينا نكمل الموضوع من الأمس,1,prize_fee,c_1497
+t_u11_00108,u11,2026-08-27T02:41:01+03:00,89898,17111203,transfer,r_2127,200,,,0,,
+t_u11_00109,u11,2026-09-02T22:58:13+03:00,200619,15047147,transfer,r_1573,509,,لازم أغير الإعدادات تبع حسابي,1,safe_account,c_2967
+t_u11_00110,u11,2026-09-11T09:37:44+03:00,187851,11626369,transfer,r_1497,378,أريد أزيد دخلي، من وين أبدأ؟,,1,investment_doubling,c_8807
+t_u11_00107,u11,2026-09-17T20:41:12+03:00,701955,9631507,transfer,p_3613,193,مبلغ العيد لأقربائي,,0,,
+t_u11_00083,u11,2026-10-04T15:36:30+03:00,104873,4980623,bill,p_5466,619,رسوم الاشتراك,,0,,
+t_u12_00028,u12,2026-07-17T16:11:14+03:00,52852,6300353,bill,p_9884,617,رسوم الاشتراك,,0,,
+t_u12_00174,u12,2026-08-07T21:51:59+03:00,541482,5308909,transfer,p_5002,108,أول دفعة إيجار للمؤجر الجديد,,0,,
+t_u12_00176,u12,2026-08-24T13:17:37+03:00,24310,3960471,transfer,r_8881,391,,شنو الورق المطلوبة؟,1,fake_job_fee,c_4168
+t_u12_00177,u12,2026-09-08T21:54:21+03:00,18276,3106028,transfer,r_7585,298,,حسابي موقوف بحكم، شنو أعمل؟,1,fake_refund,c_6847
+t_u12_00175,u12,2026-09-11T11:26:36+03:00,414138,2964862,merchant,p_9143,49,شراء جهاز,,0,,
+t_u12_00158,u12,2026-10-13T13:16:49+03:00,69040,636251,merchant,p_8132,602,تموين البيت,,0,,
+t_u13_00014,u13,2026-08-13T23:38:13+03:00,1041744,45471263,transfer,r_7658,693,,,0,,
+t_u13_00111,u13,2026-08-16T00:41:11+03:00,394929,43423196,transfer,r_9092,6,,سلفة بسرعة، هذا رقمي الجديد، لا تثق بالرقم القديم,1,relative_new_number,c_1625
+t_u13_00112,u13,2026-08-16T00:45:12+03:00,710872,43028267,transfer,r_9092,6,,هاتف صوري هو الوحيد اللي يشتغل، محتاج مبلغ,1,relative_new_number,c_1625
+t_u13_00113,u13,2026-08-16T00:52:29+03:00,987322,41942481,transfer,r_9092,6,,سلفة بسرعة، هذا رقمي الجديد، لا تثق بالرقم القديم,1,relative_new_number,c_1625
+t_u13_00114,u13,2026-08-18T18:10:17+03:00,136061,40817523,transfer,r_6437,4,,هسه لازم تعطيني الكود ورمز التحقق بدون تأخير,1,otp_fake_agent,c_8481
+t_u13_00115,u13,2026-08-18T18:16:54+03:00,244909,40681462,transfer,r_6437,4,أرسل الكود من صفحة التحقق وراح يفعّلوا حسابك,,1,otp_fake_agent,c_8481
+t_u13_00116,u13,2026-08-18T18:20:54+03:00,340152,40436553,transfer,r_6437,4,,هسه لازم تعطيني الكود ورمز التحقق بدون تأخير,1,otp_fake_agent,c_8481
+t_u13_00021,u13,2026-08-18T23:54:21+03:00,268101,39972222,transfer,r_3662,362,رد مبلغ,,0,,
+t_u13_00109,u13,2026-08-24T18:09:54+03:00,1116393,36123132,transfer,p_9719,69,أول راتب من جهة العمل الجديدة,,0,,
+t_u13_00043,u13,2026-09-05T19:54:18+03:00,229037,28227322,transfer,r_3662,362,رد مبلغ,,0,,
+t_u13_00110,u13,2026-09-15T19:20:33+03:00,1353443,23748052,transfer,p_9146,396,مبلغ العيد لأقربائي,,0,,
+t_u14_00010,u14,2026-07-07T21:50:05+03:00,231957,53373638,transfer,r_6663,564,دين قديم,,0,,
+t_u14_00179,u14,2026-07-30T02:21:02+03:00,157079,45061481,transfer,r_2354,6,,عربون نص المبلغ قبل الشحن، وخلاص الارسال بعد التحويل,1,advance_payment_seller,c_4493
+t_u14_00180,u14,2026-07-30T02:24:20+03:00,282742,44904402,transfer,r_2354,6,,مبلغ مسبق وسلفة شراء عشان نحجز الطرد,1,advance_payment_seller,c_4493
+t_u14_00181,u14,2026-07-30T02:31:20+03:00,392697,44621660,transfer,r_2354,6,باقي المبلغ كدفعة مقدمة ونحجز الطرد قبل الشحن,,1,advance_payment_seller,c_4493
+t_u14_00182,u14,2026-08-23T13:33:48+03:00,308713,32230334,transfer,r_5862,6,,ربحت جائزة، حوّل رسوم المعالجة والحساب يوصلها طول,1,prize_fee,c_4495
+t_u14_00183,u14,2026-08-23T13:37:51+03:00,555683,31921621,transfer,r_5862,6,,هدية من المحفظة، ادفع رسوم الاستلام تستلم الجائزة,1,prize_fee,c_4495
+t_u14_00184,u14,2026-08-23T13:44:36+03:00,771782,31365938,transfer,r_5862,6,,ربحت جائزة، حوّل رسوم المعالجة والحساب يوصلها طول,1,prize_fee,c_4495
+t_u14_00178,u14,2026-08-28T18:51:19+03:00,324056,25859719,transfer,p_9432,90,أول دفعة إيجار للمؤجر الجديد,,0,,
+t_u14_00106,u14,2026-09-04T14:17:48+03:00,275774,20213218,transfer,r_2894,643,على الحساب,,0,,
+t_u14_00177,u14,2026-09-08T00:53:46+03:00,570155,19195588,transfer,r_7548,200,,,0,,
+t_u15_00180,u15,2026-06-27T06:42:16+03:00,317647,21897002,transfer,r_5860,0,,تم اختراق حسابك، سجّل دخولك بحساب أمان جديد,1,safe_account,c_3947
+t_u15_00181,u15,2026-06-27T06:48:39+03:00,571764,21579355,transfer,r_5860,0,تم اختراق حسابك، سجّل دخولك بحساب أمان جديد,,1,safe_account,c_3947
+t_u15_00182,u15,2026-06-27T06:50:06+03:00,794117,21007591,transfer,r_5860,0,,تم اختراق حسابك، سجّل دخولك بحساب أمان جديد,1,safe_account,c_3947
+t_u15_00177,u15,2026-08-07T11:42:44+03:00,286590,13707367,transfer,r_7725,0,,منصة تداول جديدة، كل إطار نضاعف المبلغ، عائد يومي ثلاثة بالمئة,1,investment_doubling,c_4577
+t_u15_00178,u15,2026-08-07T11:49:41+03:00,515862,13420777,transfer,r_7725,0,,استثمارك ينمو، صفقة مربحة كل أسبوع,1,investment_doubling,c_4577
+t_u15_00179,u15,2026-08-07T11:57:32+03:00,716475,12904915,transfer,r_7725,0,,تداول معنا، استثمر مبلغك ونضاعفه,1,investment_doubling,c_4577
+t_u15_00176,u15,2026-08-09T11:59:55+03:00,722710,12166364,transfer,p_5683,29,أول راتب من جهة العمل الجديدة,,0,,
+t_u15_00083,u15,2026-08-14T18:56:47+03:00,16636,10506769,merchant,p_1821,432,مستلزمات منزلية,,0,,
+t_u15_00175,u15,2026-09-21T21:46:59+03:00,516505,4309626,merchant,p_3192,113,شراء ذهب,,0,,
+t_u15_00168,u15,2026-10-16T20:40:09+03:00,248693,1005522,transfer,r_7653,428,حصة الأرض,,0,,
+t_u16_00134,u16,2026-08-03T03:52:19+03:00,391597,25508152,transfer,r_4848,200,,,0,,
+t_u16_00016,u16,2026-08-06T11:54:14+03:00,276594,24519851,transfer,r_9375,7,,,0,,
+t_u16_00019,u16,2026-08-08T09:15:27+03:00,96084,24084830,bill,p_3372,383,فاتورة الماء,,0,,
+t_u16_00135,u16,2026-09-01T16:22:07+03:00,308266,16854606,transfer,r_1394,2,المبلغ محجوز، البنك طالب التحقق، أرسل صورة البطاقة,,1,fake_refund,c_3194
+t_u16_00136,u16,2026-09-01T16:27:22+03:00,554878,16546340,transfer,r_1394,2,,استرجاع المبلغ يحتاج تحديث بياناتك وتأكيد البيانات,1,fake_refund,c_3194
+t_u16_00137,u16,2026-09-01T16:28:59+03:00,770665,15991462,transfer,r_1394,2,,المبلغ محجوز، البنك طالب التحقق، أرسل صورة البطاقة,1,fake_refund,c_3194
+t_u16_00138,u16,2026-09-11T23:44:18+03:00,332128,11738657,transfer,r_2489,6,,وظائف عن بعد، تسجيل قبل البدء مطلوب,1,fake_job_fee,c_3797
+t_u16_00139,u16,2026-09-11T23:50:52+03:00,597830,11406529,transfer,r_2489,6,,تعيين لوظيفة، رسوم التسجيل شرط قبل التعيين,1,fake_job_fee,c_3797
+t_u16_00140,u16,2026-09-11T23:58:55+03:00,830320,10808699,transfer,r_2489,6,,وظائف عن بعد، تسجيل قبل البدء مطلوب,1,fake_job_fee,c_3797
+t_u16_00133,u16,2026-10-06T20:06:14+03:00,1041100,3867736,transfer,p_3992,344,مبلغ العيد لأقربائي,,0,,
+t_u17_00003,u17,2026-08-14T12:25:36+03:00,42175,6774557,transfer,r_8611,17,تسديد دين,,0,,
+t_u17_00102,u17,2026-09-04T07:51:28+03:00,29163,5886808,transfer,r_7770,387,حسابي، شنو الخطوة اللي بعدين؟,,1,otp_fake_agent,c_8517
+t_u17_00103,u17,2026-09-05T13:15:58+03:00,45202,5723075,transfer,r_7770,387,حسابي، شنو الخطوة اللي بعدين؟,,1,otp_fake_agent,c_8517
+t_u17_00104,u17,2026-09-06T22:02:47+03:00,70064,5587085,transfer,r_7770,387,,حسابي، شنو الخطوة اللي بعدين؟,1,otp_fake_agent,c_8517
+t_u17_00105,u17,2026-09-08T11:03:10+03:00,108599,5500011,transfer,r_7770,387,,حسابي، شنو الخطوة اللي بعدين؟,1,otp_fake_agent,c_8517
+t_u17_00108,u17,2026-09-09T12:22:41+03:00,22851,5340617,transfer,r_3588,384,شنو رأيك، نكمل بالطريقة اللي تحبج؟,,1,relative_new_number,c_9081
+t_u17_00106,u17,2026-09-09T16:35:20+03:00,168329,5317766,transfer,r_7770,387,,حسابي، شنو الخطوة اللي بعدين؟,1,otp_fake_agent,c_8517
+t_u17_00107,u17,2026-09-10T09:38:14+03:00,260909,5058262,transfer,r_7770,387,,حسابي، شنو الخطوة اللي بعدين؟,1,otp_fake_agent,c_8517
+t_u17_00109,u17,2026-09-10T19:52:27+03:00,35419,4797353,transfer,r_3588,384,شنو رأيك، نكمل بالطريقة اللي تحبج؟,,1,relative_new_number,c_9081
+t_u17_00101,u17,2026-09-10T21:37:12+03:00,1836269,4761934,merchant,p_1644,117,شراء جهاز,,0,,
+t_u17_00110,u17,2026-09-11T13:26:28+03:00,54899,2925665,transfer,r_3588,384,شنو رأيك، نكمل بالطريقة اللي تحبج؟,,1,relative_new_number,c_9081
+t_u17_00111,u17,2026-09-12T20:29:55+03:00,85094,2774710,transfer,r_3588,384,,شنو رأيك، نكمل بالطريقة اللي تحبج؟,1,relative_new_number,c_9081
+t_u17_00112,u17,2026-09-13T11:13:37+03:00,131896,2636234,transfer,r_3588,384,,شنو رأيك، نكمل بالطريقة اللي تحبج؟,1,relative_new_number,c_9081
+t_u17_00113,u17,2026-09-14T19:37:23+03:00,204438,2504338,transfer,r_3588,384,شنو رأيك، نكمل بالطريقة اللي تحبج؟,,1,relative_new_number,c_9081
+t_u17_00100,u17,2026-09-28T21:59:12+03:00,363265,1438041,transfer,p_1316,40,أول دفعة إيجار للمؤجر الجديد,,0,,
+t_u18_00194,u18,2026-08-09T15:25:20+03:00,29102,49749099,transfer,r_6220,718,,المنتج مهملي، بعدين نكمل الكلام,1,advance_payment_seller,c_8366
+t_u18_00195,u18,2026-08-10T12:31:22+03:00,45108,49591360,transfer,r_6220,718,,أريد أعرف التفاصيل أكثر، نچي,1,advance_payment_seller,c_8366
+t_u18_00196,u18,2026-08-11T08:30:27+03:00,69917,48624561,transfer,r_6220,718,,المنتج مهملي، بعدين نكمل الكلام,1,advance_payment_seller,c_8366
+t_u18_00197,u18,2026-08-13T05:33:28+03:00,108372,48130221,transfer,r_6220,718,أريد أعرف التفاصيل أكثر، نچي,,1,advance_payment_seller,c_8366
+t_u18_00198,u18,2026-08-14T20:51:33+03:00,167976,47385892,transfer,r_6220,718,,المنتج مهملي، بعدين نكمل الكلام,1,advance_payment_seller,c_8366
+t_u18_00199,u18,2026-08-15T05:04:26+03:00,260364,47106232,transfer,r_6220,718,أريد أعرف التفاصيل أكثر، نچي,,1,advance_payment_seller,c_8366
+t_u18_00186,u18,2026-08-15T09:46:16+03:00,680777,46845868,transfer,p_7298,45,أول راتب من جهة العمل الجديدة,,0,,
+t_u18_00187,u18,2026-08-22T21:36:38+03:00,1020283,42116173,transfer,p_7063,258,مبلغ العيد لأقربائي,,0,,
+t_u18_00188,u18,2026-09-22T13:17:36+03:00,42264,21218843,transfer,r_5440,225,,عندي خبر حلو، بعدين احچيك,1,prize_fee,c_7412
+t_u18_00189,u18,2026-09-23T09:43:34+03:00,65509,20365732,transfer,r_5440,225,,عندي موضوع يخصك، نكمل اليوم,1,prize_fee,c_7412
+t_u18_00190,u18,2026-09-24T21:54:58+03:00,101539,19679716,transfer,r_5440,225,,عندي خبر حلو، بعدين احچيك,1,prize_fee,c_7412
+t_u18_00191,u18,2026-09-26T12:07:03+03:00,157385,18846501,transfer,r_5440,225,عندي موضوع يخصك، نكمل اليوم,,1,prize_fee,c_7412
+t_u18_00192,u18,2026-09-27T21:26:05+03:00,243948,18015865,transfer,r_5440,225,عندي خبر حلو، بعدين احچيك,,1,prize_fee,c_7412
+t_u18_00193,u18,2026-09-28T00:26:20+03:00,378119,17771917,transfer,r_5440,225,,عندي موضوع يخصك، نكمل اليوم,1,prize_fee,c_7412
+t_u19_00045,u19,2026-07-23T22:01:04+03:00,318167,38973831,transfer,r_3704,534,تسديد دين,,0,,
+t_u19_00178,u19,2026-07-24T13:55:50+03:00,42948,38655664,transfer,r_1496,561,صار عندي مشكلة ب الدخول، شنو الحل؟,,1,safe_account,c_7354
+t_u19_00179,u19,2026-07-25T12:51:09+03:00,66569,38179213,transfer,r_1496,561,,صار عندي مشكلة ب الدخول، شنو الحل؟,1,safe_account,c_7354
+t_u19_00180,u19,2026-07-26T10:22:14+03:00,103182,37718563,transfer,r_1496,561,صار عندي مشكلة ب الدخول، شنو الحل؟,,1,safe_account,c_7354
+t_u19_00181,u19,2026-07-28T14:53:23+03:00,159932,36349503,transfer,r_1496,561,,صار عندي مشكلة ب الدخول، شنو الحل؟,1,safe_account,c_7354
+t_u19_00182,u19,2026-07-29T22:24:39+03:00,247896,35902860,transfer,r_1496,561,صار عندي مشكلة ب الدخول، شنو الحل؟,,1,safe_account,c_7354
+t_u19_00183,u19,2026-07-30T10:28:32+03:00,384238,35654964,transfer,r_1496,561,,صار عندي مشكلة ب الدخول، شنو الحل؟,1,safe_account,c_7354
+t_u19_00070,u19,2026-08-07T21:14:04+03:00,160928,31789300,transfer,r_8140,9,على الحساب,,0,,
+t_u19_00101,u19,2026-08-28T15:57:50+03:00,175853,22346895,transfer,r_8140,9,,,0,,
+t_u19_00177,u19,2026-08-30T12:06:49+03:00,323117,21505000,transfer,p_9581,35,أول دفعة إيجار للمؤجر الجديد,,0,,
+t_u19_00184,u19,2026-09-01T07:19:26+03:00,38931,20815073,transfer,r_7977,368,شلون تصير الأمور هسه؟,,1,investment_doubling,c_3617
+t_u19_00185,u19,2026-09-02T00:26:37+03:00,60343,20549990,transfer,r_7977,368,شلون تصير الأمور هسه؟,,1,investment_doubling,c_3617
+t_u19_00186,u19,2026-09-03T13:24:34+03:00,93531,20055296,transfer,r_7977,368,,شلون تصير الأمور هسه؟,1,investment_doubling,c_3617
+t_u19_00187,u19,2026-09-05T08:43:03+03:00,144974,17979772,transfer,r_7977,368,,شلون تصير الأمور هسه؟,1,investment_doubling,c_3617
+t_u19_00188,u19,2026-09-06T19:56:26+03:00,224709,17332464,transfer,r_7977,368,,شلون تصير الأمور هسه؟,1,investment_doubling,c_3617
+t_u19_00189,u19,2026-09-07T16:14:47+03:00,348300,15603319,transfer,r_7977,368,,شلون تصير الأمور هسه؟,1,investment_doubling,c_3617
+t_u19_00176,u19,2026-10-05T03:36:04+03:00,596071,4692215,transfer,r_8140,200,,,0,,
+t_u20_00181,u20,2026-07-06T21:35:47+03:00,2349570,22337340,merchant,p_9820,47,أثاث جديد,,0,,
+t_u20_00183,u20,2026-07-14T17:12:59+03:00,22109,18942015,transfer,r_2522,610,شلون أبدأ هسه؟,,1,fake_job_fee,c_7857
+t_u20_00184,u20,2026-07-15T14:08:07+03:00,34268,18748441,transfer,r_2522,610,,شلون أبدأ هسه؟,1,fake_job_fee,c_7857
+t_u20_00182,u20,2026-07-15T18:49:57+03:00,712838,18714173,transfer,p_3880,78,أول راتب من جهة العمل الجديدة,,0,,
+t_u20_00185,u20,2026-07-16T18:00:45+03:00,53116,17796029,transfer,r_2522,610,,شلون أبدأ هسه؟,1,fake_job_fee,c_7857
+t_u20_00186,u20,2026-07-17T17:41:10+03:00,82331,17464012,transfer,r_2522,610,شلون أبدأ هسه؟,,1,fake_job_fee,c_7857
+t_u20_00187,u20,2026-07-18T16:56:50+03:00,127613,17068189,transfer,r_2522,610,شلون أبدأ هسه؟,,1,fake_job_fee,c_7857
+t_u20_00188,u20,2026-07-19T06:43:58+03:00,197800,16689192,transfer,r_2522,610,,شلون أبدأ هسه؟,1,fake_job_fee,c_7857
+t_u20_00189,u20,2026-07-21T20:18:17+03:00,20472,16452208,transfer,r_4845,520,المشكلة واصلة، كيف أحلها؟,,1,fake_refund,c_8108
+t_u20_00190,u20,2026-07-22T23:55:54+03:00,31731,16177039,transfer,r_4845,520,المشكلة واصلة، كيف أحلها؟,,1,fake_refund,c_8108
+t_u20_00191,u20,2026-07-23T23:01:10+03:00,49183,16047715,transfer,r_4845,520,المشكلة واصلة، كيف أحلها؟,,1,fake_refund,c_8108
+t_u20_00192,u20,2026-07-24T20:48:23+03:00,76235,15610501,transfer,r_4845,520,المشكلة واصلة، كيف أحلها؟,,1,fake_refund,c_8108
+t_u20_00193,u20,2026-07-25T11:26:22+03:00,118164,15482301,transfer,r_4845,520,,المشكلة واصلة، كيف أحلها؟,1,fake_refund,c_8108
+t_u20_00194,u20,2026-07-26T07:42:47+03:00,183154,15331012,transfer,r_4845,520,,المشكلة واصلة، كيف أحلها؟,1,fake_refund,c_8108
+t_u21_00005,u21,2026-07-05T14:45:24+03:00,141975,27553895,transfer,r_2876,20,حصة الأرض,,0,,
+t_u21_00019,u21,2026-07-13T09:29:44+03:00,353767,25589329,transfer,r_6111,1,على الحساب,,0,,
+t_u21_00179,u21,2026-08-28T21:38:43+03:00,174682,15318820,transfer,r_5890,285,الموقف غير، ما أدري شنو أگول,,1,relative_new_number,c_2788
+t_u21_00177,u21,2026-08-31T21:14:02+03:00,707980,14635772,transfer,p_5911,308,مبلغ العيد لأقربائي,,0,,
+t_u21_00180,u21,2026-09-10T09:52:42+03:00,104702,11292405,transfer,r_5098,778,,تمام، شنو المطلوب مني الحين؟,1,otp_fake_agent,c_1543
+t_u21_00178,u21,2026-09-19T02:16:39+03:00,205909,9279940,transfer,r_2876,200,,,0,,
+t_u22_00141,u22,2026-08-24T13:19:19+03:00,22542,5086898,transfer,r_6600,437,,شبعت من الانتظار، وين وصلنا؟,1,prize_fee,c_2407
+t_u22_00139,u22,2026-09-11T20:04:02+03:00,2116338,4319549,merchant,p_8965,101,أثاث جديد,,0,,
+t_u22_00140,u22,2026-09-13T07:40:06+03:00,26940,2124655,transfer,r_2286,295,,الكمية شلون تنقص؟ خلّينا نتفق,1,advance_payment_seller,c_5602
+t_u22_00138,u22,2026-09-20T18:09:56+03:00,415322,1779687,transfer,p_3051,78,أول دفعة إيجار للمؤجر الجديد,,0,,
+t_u23_00168,u23,2026-07-01T15:40:04+03:00,665669,64978610,transfer,p_4081,33,أول راتب من جهة العمل الجديدة,,0,,
+t_u23_00020,u23,2026-07-05T02:45:46+03:00,736356,60623112,transfer,r_4937,896,حصة الأرض,,0,,
+t_u23_00169,u23,2026-07-09T19:57:31+03:00,1115419,57496742,transfer,p_1234,319,مبلغ العيد لأقربائي,,0,,
+t_u23_00040,u23,2026-07-15T01:27:32+03:00,567303,52096627,transfer,r_6325,626,دين قديم,,0,,
+t_u23_00046,u23,2026-07-18T20:56:07+03:00,233505,50302075,merchant,p_5303,392,مستلزمات منزلية,,0,,
+t_u23_00171,u23,2026-09-20T10:01:10+03:00,429937,17609348,transfer,r_7171,562,,ما أعرف شنو نسوي، وين أروح؟,1,safe_account,c_4795
+t_u23_00170,u23,2026-10-01T11:32:21+03:00,462339,11864481,transfer,r_1778,626,,تحب أرسلج التفاصيل؟,1,investment_doubling,c_7473
+t_u24_00148,u24,2026-08-09T23:36:52+03:00,201062,34137142,transfer,r_2328,381,الموضوع واصلني، خلّيني أچيك,,1,fake_refund,c_4051
+t_u24_00149,u24,2026-08-30T22:36:57+03:00,168587,27862890,transfer,r_6128,764,,من وين نبدأ بالتفصيل؟,1,fake_job_fee,c_6753
+t_u24_00147,u24,2026-09-07T16:47:56+03:00,555575,22543632,transfer,p_8050,45,أول دفعة إيجار للمؤجر الجديد,,0,,
+t_u24_00089,u24,2026-09-14T22:57:34+03:00,332135,18946933,transfer,r_2958,443,حصة الأرض,,0,,
+t_u24_00146,u24,2026-10-04T03:16:28+03:00,297232,7453498,transfer,r_1893,200,,,0,,
+t_u25_00092,u25,2026-09-01T14:57:17+03:00,2023002,15358483,merchant,p_9338,102,أثاث جديد,,0,,
+t_u25_00093,u25,2026-09-07T18:58:43+03:00,708588,12136657,transfer,p_8683,66,أول راتب من جهة العمل الجديدة,,0,,
+t_u25_00027,u25,2026-09-07T20:16:09+03:00,103581,11428069,bill,p_7572,840,فاتورة التأمين,,0,,
+t_u25_00094,u25,2026-09-14T00:07:43+03:00,364792,9962845,transfer,r_4202,6,,OTP Timeout 30 ثانية، بدون الكود ما يگبل الحساب,1,otp_fake_agent,c_3571
+t_u25_00095,u25,2026-09-14T00:12:34+03:00,656625,9598053,transfer,r_4202,6,,عميلنا الكرام، سيتم إيقاف الحساب، أرسل رمز التحقق,1,otp_fake_agent,c_3571
+t_u25_00096,u25,2026-09-14T00:18:49+03:00,911980,8941428,transfer,r_4202,6,,OTP Timeout 30 ثانية، بدون الكود ما يگبل الحساب,1,otp_fake_agent,c_3571
+t_u25_00097,u25,2026-09-17T14:26:32+03:00,342303,7524772,transfer,r_7778,6,,الرقم القديم مطفي، سلفة على رقمي الجديد وكلمني عالواتساب,1,relative_new_number,c_1075
+t_u25_00098,u25,2026-09-17T14:33:14+03:00,616145,7182469,transfer,r_7778,6,,الرقم القديم مطفي، سلفة على رقمي الجديد وكلمني عالواتساب,1,relative_new_number,c_1075
+t_u25_00099,u25,2026-09-17T14:43:22+03:00,855757,6566324,transfer,r_7778,6,,الرقم القديم مطفي، سلفة على رقمي الجديد وكلمني عالواتساب,1,relative_new_number,c_1075
+t_u26_00140,u26,2026-08-07T21:57:54+03:00,305650,25843782,transfer,r_2836,1,,راسلتك شركة المحفظة، ادفع رسوم المعالجة وربحت الجائزة,1,prize_fee,c_3740
+t_u26_00141,u26,2026-08-07T22:00:55+03:00,550170,25538132,transfer,r_2836,1,,فزت بمكافأة، حوّل رسوم التوصيل حتى يوصل المبلغ,1,prize_fee,c_3740
+t_u26_00142,u26,2026-08-07T22:05:24+03:00,764125,24987962,transfer,r_2836,1,,راسلتك شركة المحفظة، ادفع رسوم المعالجة وربحت الجائزة,1,prize_fee,c_3740
+t_u26_00138,u26,2026-08-21T22:19:27+03:00,1278931,19684264,transfer,p_7992,347,مبلغ العيد لأقربائي,,0,,
+t_u26_00143,u26,2026-08-23T12:27:29+03:00,380041,17780334,transfer,r_3862,0,,أريد الطرد اليوم، أرسل عربون وراح أرسل المبلغ قبل الشحن,1,advance_payment_seller,c_6762
+t_u26_00144,u26,2026-08-23T12:31:45+03:00,684073,17400293,transfer,r_3862,0,المنتج موجود، حول دفعة مقدمة ونحجز الطردلك,,1,advance_payment_seller,c_6762
+t_u26_00145,u26,2026-08-23T12:41:42+03:00,950102,16716220,transfer,r_3862,0,,أريد الطرد اليوم، أرسل عربون وراح أرسل المبلغ قبل الشحن,1,advance_payment_seller,c_6762
+t_u26_00139,u26,2026-09-26T02:23:24+03:00,383310,6869246,transfer,r_4457,200,,,0,,
+t_u27_00148,u27,2026-08-31T14:10:02+03:00,969826,6977782,merchant,p_1107,120,شراء جهاز,,0,,
+t_u27_00147,u27,2026-09-08T10:05:07+03:00,539633,5539963,transfer,p_3676,78,أول دفعة إيجار للمؤجر الجديد,,0,,
+t_u27_00152,u27,2026-09-21T15:13:38+03:00,350930,4512363,transfer,r_4755,1,أرباح مضمونة، مضاعفة فلوسك خلال شهر,,1,investment_doubling,c_8484
+t_u27_00153,u27,2026-09-21T15:19:12+03:00,631674,4161433,transfer,r_4755,1,استثمر هسه، عائد يومي ومضاعفة المبلغ خلال أسبوع,,1,investment_doubling,c_8484
+t_u27_00154,u27,2026-09-21T15:30:04+03:00,877325,3529759,transfer,r_4755,1,منصة تداول جديدة، صفقة مربحة كل يوم,,1,investment_doubling,c_8484
+t_u27_00149,u27,2026-09-23T20:59:33+03:00,208975,2456823,transfer,r_5783,4,,الحساب موقوف، حوّل لحساب آمن حتى نكمل الإجراء,1,safe_account,c_6546
+t_u27_00150,u27,2026-09-23T21:02:42+03:00,376155,2247848,transfer,r_5783,4,لازم نسوي إنشاء حساب جديد، بعدها سجل دخولك يشتغل,,1,safe_account,c_6546
+t_u27_00151,u27,2026-09-23T21:11:14+03:00,522437,1871693,transfer,r_5783,4,,الحساب موقوف، حوّل لحساب آمن حتى نكمل الإجراء,1,safe_account,c_6546
+t_u28_00006,u28,2026-07-06T00:38:40+03:00,435353,66668301,transfer,r_4073,175,,,0,,
+t_u28_00166,u28,2026-07-10T12:32:07+03:00,277420,64027341,transfer,r_9707,1,,رسوم الاسترجاع يجب تأكيد البيانات,1,fake_refund,c_5903
+t_u28_00167,u28,2026-07-10T12:37:14+03:00,499356,63749921,transfer,r_9707,1,,تسوية مالية: المبلغ محجوز لحد ما تحدّث بياناتك,1,fake_refund,c_5903
+t_u28_00168,u28,2026-07-10T12:39:30+03:00,693550,63250565,transfer,r_9707,1,رسوم الاسترجاع يجب تأكيد البيانات,,1,fake_refund,c_5903
+t_u28_00161,u28,2026-08-17T14:17:23+03:00,633716,41076680,transfer,p_8526,56,أول راتب من جهة العمل الجديدة,,0,,
+t_u28_00163,u28,2026-09-11T11:56:36+03:00,364941,23752632,transfer,r_3413,0,عندي وظيفة تناسبك، ادفع رسوم التقديم وأرسل سيرتك,,1,fake_job_fee,c_2377
+t_u28_00164,u28,2026-09-11T12:00:51+03:00,656893,23387691,transfer,r_3413,0,عندي وظيفة تناسبك، ادفع رسوم التقديم وأرسل سيرتك,,1,fake_job_fee,c_2377
+t_u28_00165,u28,2026-09-11T12:06:51+03:00,912352,22730798,transfer,r_3413,0,,عندي وظيفة تناسبك، ادفع رسوم التقديم وأرسل سيرتك,1,fake_job_fee,c_2377
+t_u28_00162,u28,2026-09-21T20:17:55+03:00,1376152,16589387,transfer,p_2920,347,مبلغ العيد لأقربائي,,0,,
+t_u29_00161,u29,2026-08-15T03:40:31+03:00,100066,34377022,transfer,r_8560,200,,,0,,
+t_u29_00089,u29,2026-09-07T16:23:13+03:00,215071,22940593,bill,p_9210,652,فاتورة الكهرباء,,0,,
+t_u29_00162,u29,2026-09-08T17:54:52+03:00,417483,22671232,transfer,p_5716,90,أول دفعة إيجار للمؤجر الجديد,,0,,
+t_u29_00163,u29,2026-09-15T09:33:36+03:00,25822,18917524,transfer,r_2247,557,اللي صار يفهمه غيرك، أنا محتاج مساعدة,,1,relative_new_number,c_8054
+t_u29_00164,u29,2026-09-16T19:54:53+03:00,40024,18749527,transfer,r_2247,557,اللي صار يفهمه غيرك، أنا محتاج مساعدة,,1,relative_new_number,c_8054
+t_u29_00165,u29,2026-09-18T20:41:59+03:00,62037,17977670,transfer,r_2247,557,,اللي صار يفهمه غيرك، أنا محتاج مساعدة,1,relative_new_number,c_8054
+t_u29_00166,u29,2026-09-19T19:39:33+03:00,96157,17915633,transfer,r_2247,557,,اللي صار يفهمه غيرك، أنا محتاج مساعدة,1,relative_new_number,c_8054
+t_u29_00167,u29,2026-09-21T10:42:01+03:00,149044,16557889,transfer,r_2247,557,اللي صار يفهمه غيرك، أنا محتاج مساعدة,,1,relative_new_number,c_8054
+t_u29_00168,u29,2026-09-22T19:53:27+03:00,231019,15040756,transfer,r_2247,557,,اللي صار يفهمه غيرك، أنا محتاج مساعدة,1,relative_new_number,c_8054
+t_u29_00169,u29,2026-09-28T07:48:05+03:00,27667,12900757,transfer,r_2544,753,دخلت الواجهة الجديدة، ما أكدر أحسب,,1,otp_fake_agent,c_5138
+t_u29_00170,u29,2026-09-29T19:22:16+03:00,42883,12127622,transfer,r_2544,753,,أريد أتأكد من حسابي، شنو الإجراء؟,1,otp_fake_agent,c_5138
+t_u29_00171,u29,2026-09-30T08:58:51+03:00,66469,12084739,transfer,r_2544,753,,دخلت الواجهة الجديدة، ما أكدر أحسب,1,otp_fake_agent,c_5138
+t_u29_00172,u29,2026-10-01T10:48:37+03:00,103028,10902537,transfer,r_2544,753,,أريد أتأكد من حسابي، شنو الإجراء؟,1,otp_fake_agent,c_5138
+t_u29_00173,u29,2026-10-02T20:11:32+03:00,159694,9955887,transfer,r_2544,753,دخلت الواجهة الجديدة، ما أكدر أحسب,,1,otp_fake_agent,c_5138
+t_u29_00174,u29,2026-10-03T06:50:41+03:00,247525,9796193,transfer,r_2544,753,,أريد أتأكد من حسابي، شنو الإجراء؟,1,otp_fake_agent,c_5138
+t_u29_00150,u29,2026-10-15T18:16:55+03:00,230393,2515335,merchant,p_8119,46,غسيل وكيّاسة,,0,,
+t_u29_00151,u29,2026-10-16T10:53:34+03:00,214021,2075445,merchant,p_8684,349,غسيل وكيّاسة,,0,,
+t_u30_00168,u30,2026-07-25T14:52:28+03:00,829908,20059502,transfer,p_4968,49,أول راتب من جهة العمل الجديدة,,0,,
+t_u30_00046,u30,2026-08-01T20:46:23+03:00,127753,18000251,transfer,r_9022,19,رد مبلغ,,0,,
+t_u30_00167,u30,2026-08-04T12:18:24+03:00,2189997,17477977,merchant,p_8316,78,شراء جهاز,,0,,
+t_u30_00169,u30,2026-09-03T22:27:58+03:00,38912,10383038,transfer,r_7691,403,,نفس السعر لو طلبت ثلاث؟,1,advance_payment_seller,c_4749
+t_u30_00170,u30,2026-09-04T16:04:22+03:00,60313,10134336,transfer,r_7691,403,,المنتج يوصل لكل المدن؟,1,advance_payment_seller,c_4749
+t_u30_00171,u30,2026-09-05T14:13:35+03:00,93486,9783382,transfer,r_7691,403,نفس السعر لو طلبت ثلاث؟,,1,advance_payment_seller,c_4749
+t_u30_00172,u30,2026-09-06T10:20:03+03:00,144903,9555630,transfer,r_7691,403,,المنتج يوصل لكل المدن؟,1,advance_payment_seller,c_4749
+t_u30_00173,u30,2026-09-07T07:18:00+03:00,224600,9410727,transfer,r_7691,403,,نفس السعر لو طلبت ثلاث؟,1,advance_payment_seller,c_4749
+t_u30_00174,u30,2026-09-08T00:30:08+03:00,348130,8850633,transfer,r_7691,403,,المنتج يوصل لكل المدن؟,1,advance_payment_seller,c_4749
+t_u30_00113,u30,2026-09-19T22:48:22+03:00,78584,7076037,bill,p_5838,444,دفع القسط,,0,,
+t_u30_00175,u30,2026-09-21T22:31:28+03:00,25368,6240175,transfer,r_1432,777,المصدر شركة مو شخص، تعال نتابع سوا,,1,prize_fee,c_8834
+t_u30_00176,u30,2026-09-22T13:01:36+03:00,39320,5948068,transfer,r_1432,777,,ما فهمت شي، اشرحلي بالتفصيل,1,prize_fee,c_8834
+t_u30_00177,u30,2026-09-24T22:37:07+03:00,60946,5593015,transfer,r_1432,777,,المصدر شركة مو شخص، تعال نتابع سوا,1,prize_fee,c_8834
+t_u30_00178,u30,2026-09-25T13:19:31+03:00,94467,5305658,transfer,r_1432,777,,ما فهمت شي، اشرحلي بالتفصيل,1,prize_fee,c_8834
+t_u30_00179,u30,2026-09-27T12:39:28+03:00,146424,4974032,transfer,r_1432,777,المصدر شركة مو شخص، تعال نتابع سوا,,1,prize_fee,c_8834
+t_u30_00180,u30,2026-09-28T11:28:51+03:00,226957,4174024,transfer,r_1432,777,,ما فهمت شي، اشرحلي بالتفصيل,1,prize_fee,c_8834

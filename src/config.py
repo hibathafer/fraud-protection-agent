@@ -48,3 +48,10 @@ CUMULATIVE_MIN_COUNT = 3         # 3 تحويلات لنفس المستلم ال
 CUMULATIVE_SUM_FACTOR = 2        # مجموعها >= 2 × median
 TRUSTED_MIN_COUNT = 3            # تحويلات سابقة
 TRUSTED_MIN_SPAN_DAYS = 14       # بين أول وآخر تحويل
+
+# طبقة التوعية (قسم 8): القوالب تشتغل دائماً، والـ LLM اختياري ومطفي افتراضياً
+COACHING_MAX_WORDS = 60          # حد الكلمات بالقوالب (نفس حد الـ prompt)
+LLM_ENABLED = False              # مطفي افتراضياً: المشروع يشتغل بدون نت
+LLM_MODEL = "gemini-2.0-flash"
+LLM_TIMEOUT_S = 4.0              # بعده نرجع للقالب
+LLM_VALIDATION_MAX_WORDS = 70    # تسامح بسيط فوق حد الـ prompt

@@ -3,7 +3,9 @@ __pycache__/
 .pytest_cache/
 .venv/
 venv/
+.env
 
 # local runtime artifacts
 logs/
-data/fraud.db
+*.db
+docs/eval_results.json

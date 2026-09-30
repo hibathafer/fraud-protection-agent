@@ -9,6 +9,7 @@
 """
 
 import argparse
+import json
 import sys
 import time
 from datetime import datetime
@@ -26,6 +27,8 @@ TARGET_FPR = 0.05
 TARGET_PRECISION = 0.50
 
 LOG_PATH = ROOT / "docs" / "test_runs.log"
+# نفس الملف اللي يقراه GET /api/eval (قسم 10)
+RESULTS_PATH = ROOT / "docs" / "eval_results.json"
 
 
 def load_split(split):
@@ -229,6 +232,25 @@ def log_final_run(split, all_m, m_any, per_type):
     print(f"\nسُجّل التشغيل في {LOG_PATH}")
 
 
+def save_results(split, results, all_m, m_any, per_type, elapsed):
+    """يكتب آخر النتائج بملف JSON حتى يقراها GET /api/eval (قسم 10)."""
+    payload = {
+        "generated_at": datetime.now().isoformat(timespec="seconds"),
+        "split": split,
+        "rules_version": RULES_VERSION,
+        "n_transactions": len(results),
+        "n_scam": sum(r["is_scam"] for r in results),
+        "elapsed_s": round(elapsed, 2),
+        "metrics": all_m,
+        "per_scam_type": per_type,
+    }
+    RESULTS_PATH.parent.mkdir(parents=True, exist_ok=True)
+    with open(RESULTS_PATH, "w", encoding="utf-8") as f:
+        json.dump(payload, f, ensure_ascii=False, indent=2)
+    print(f"\nالنتائج محفوظة بـ {RESULTS_PATH} (تقراها GET /api/eval)")
+    return payload
+
+
 def main(split="dev"):
     try:
         sys.stdout.reconfigure(encoding="utf-8", errors="replace")
@@ -246,6 +268,7 @@ def main(split="dev"):
           f"{len(catalogue)} نمط")
     all_m, m_any, per_type = report(results, y_true, preds, split, elapsed)
     show_cases(results)
+    save_results(split, results, all_m, m_any, per_type, elapsed)
 
     if split == "test":
         log_final_run(split, all_m, m_any, per_type)

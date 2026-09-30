@@ -1,11 +1,13 @@
 """SQLite: إنشاء الجداول (قسم 4.2)، تحميل CSV، وقراءة/كتابة."""
 
 import csv
+import json
 import sqlite3
 import sys
+from datetime import datetime
 from pathlib import Path
 
-from src.config import DB_PATH, SEALED_DIR, SYNTH_DIR
+from src.config import BAGHDAD_TZ, DB_PATH, SEALED_DIR, SYNTH_DIR
 
 SCHEMA = """
 CREATE TABLE IF NOT EXISTS users(
@@ -126,6 +128,134 @@ def main(split="dev"):
     counts = load_csvs(split=split)
     print(f"تم تحميل {split}: {counts['users']} مستخدم و {counts['transactions']} معاملة")
     print("decision_log و trusted_recipients يتعبونون وقت التشغيل (فارغين الحين)")
+
+
+# ------------------------------------------------- قراءة/كتابة وقت التشغيل (قسم 9)
+# هذه الدوال للـ API والديمو فقط: ما تلمس split=test إلا عبر evaluate --final.
+
+
+def list_users(conn, split="dev") -> list:
+    """المستخدمين مع عدد معاملاتهم وآخر وقت. الافتراضي dev بس (ما نكشف test)."""
+    rows = conn.execute(
+        "SELECT u.user_id, u.name, u.archetype, u.split, "
+        "  (SELECT COUNT(*) FROM transactions t WHERE t.user_id = u.user_id) AS n_tx, "
+        "  (SELECT MAX(t.ts) FROM transactions t WHERE t.user_id = u.user_id) AS last_ts "
+        "FROM users u WHERE u.split = ? ORDER BY u.user_id",
+        (split,),
+    ).fetchall()
+    return [dict(r) for r in rows]
+
+
+def get_user(conn, user_id) -> dict | None:
+    row = conn.execute("SELECT * FROM users WHERE user_id = ?", (user_id,)).fetchone()
+    return dict(row) if row else None
+
+
+def user_history(conn, user_id, until=None) -> list:
+    """معاملات المستخدم مرتبة بالوقت. until يفلتر اللي بعده (لو مرّرناه)."""
+    sql = "SELECT * FROM transactions WHERE user_id = ?"
+    params = [user_id]
+    if until:
+        sql += " AND ts < ?"
+        params.append(until)
+    return [dict(r) for r in conn.execute(sql + " ORDER BY ts, tx_id", params).fetchall()]
+
+
+def last_balance(conn, user_id) -> int:
+    """آخر رصيد معروف للمستخدم، حتى تشتغل قاعدة BALANCE_DRAIN بلا مدخل."""
+    row = conn.execute(
+        "SELECT balance_before_iqd FROM transactions WHERE user_id = ? "
+        "ORDER BY ts DESC LIMIT 1",
+        (user_id,),
+    ).fetchone()
+    return int(row[0]) if row and row[0] is not None else 0
+
+
+def trusted_recipients(conn, user_id) -> list:
+    rows = conn.execute(
+        "SELECT recipient_id FROM trusted_recipients WHERE user_id = ? ORDER BY recipient_id",
+        (user_id,),
+    ).fetchall()
+    return [r[0] for r in rows]
+
+
+def add_trusted_recipient(conn, user_id, recipient_id, added_at=None) -> bool:
+    """يضيف المستلم لقائمة الموثوقين. يرجع False إذا كان موجود أصلاً."""
+    stamp = added_at or datetime.now(BAGHDAD_TZ).isoformat(timespec="seconds")
+    cur = conn.execute(
+        "INSERT OR IGNORE INTO trusted_recipients(user_id, recipient_id, added_at) VALUES (?, ?, ?)",
+        (user_id, recipient_id, stamp),
+    )
+    conn.commit()
+    return cur.rowcount > 0
+
+
+def log_assessment(conn, tx_id, user_id, assessment, coaching, created_at=None) -> int:
+    """يكتب صف بجدول decision_log (قسم 9) ويرجّع log_id."""
+    stamp = created_at or datetime.now(BAGHDAD_TZ).isoformat(timespec="seconds")
+    cur = conn.execute(
+        "INSERT INTO decision_log(tx_id, user_id, created_at, risk_score, decision, "
+        "reasons_json, matched_pattern, coaching_message, coaching_source, rules_version) "
+        "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+        (
+            tx_id,
+            user_id,
+            stamp,
+            int(assessment["score"]),
+            assessment["decision"],
+            json.dumps(assessment["reasons"], ensure_ascii=False),
+            assessment.get("matched_pattern"),
+            coaching.get("message"),
+            coaching.get("source"),
+            assessment.get("rules_version"),
+        ),
+    )
+    conn.commit()
+    return int(cur.lastrowid)
+
+
+def set_choice(conn, tx_id, choice, at=None) -> dict | None:
+    """يحدّث نفس صف السجل بقرار المستخدم. يرجع الصف أو None إذا ما موجود."""
+    stamp = at or datetime.now(BAGHDAD_TZ).isoformat(timespec="seconds")
+    cur = conn.execute(
+        "UPDATE decision_log SET user_choice = ?, choice_at = ? WHERE tx_id = ?",
+        (choice, stamp, tx_id),
+    )
+    conn.commit()
+    if cur.rowcount == 0:
+        return None
+    return get_log_row(conn, tx_id)
+
+
+def get_log_row(conn, tx_id) -> dict | None:
+    row = conn.execute(
+        "SELECT * FROM decision_log WHERE tx_id = ? ORDER BY log_id DESC LIMIT 1", (tx_id,)
+    ).fetchone()
+    return dict(row) if row else None
+
+
+def read_decision_log(conn, limit=100, offset=0, decision=None, user_id=None) -> list:
+    sql = "SELECT * FROM decision_log WHERE 1 = 1"
+    params = []
+    if decision:
+        sql += " AND decision = ?"
+        params.append(decision)
+    if user_id:
+        sql += " AND user_id = ?"
+        params.append(user_id)
+    sql += " ORDER BY log_id DESC LIMIT ? OFFSET ?"
+    params += [int(limit), int(offset)]
+    return [dict(r) for r in conn.execute(sql, params).fetchall()]
+
+
+def all_decisions(conn) -> list:
+    """كل صفوف السجل للتصدير (9)."""
+    return [dict(r) for r in conn.execute("SELECT * FROM decision_log ORDER BY log_id").fetchall()]
+
+
+def count_decisions(conn) -> int:
+    return int(conn.execute("SELECT COUNT(*) FROM decision_log").fetchone()[0])
+
 
 
 if __name__ == "__main__":

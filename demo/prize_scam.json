@@ -1,0 +1,15 @@
+{
+  "name_ar": "احتيال جائزة",
+  "description_ar": "رسالة تدعي الفوز بجائزة وتطلب رسوم",
+  "payload": {
+    "user_id": "u01",
+    "transaction": {
+      "amount_iqd": 750000,
+      "recipient_id": "r_scam1",
+      "recipient_age_days": 2,
+      "tx_type": "transfer",
+      "note": "رسوم استلام الجائزة",
+      "context_message": "مبروك ربحت سحب المحفظة، حول الرسوم حتى نرسلك الجائزة"
+    }
+  }
+}

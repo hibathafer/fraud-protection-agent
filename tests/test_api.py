@@ -393,14 +393,16 @@ def test_openapi_documents_every_endpoint():
     schema_paths = TestClient(api.app).get("/openapi.json").json()["paths"]
     assert set(schema_paths) == {
         "/api/assess", "/api/choice", "/api/scenario", "/api/users",
-        "/api/users/{user_id}/profile", "/api/log", "/api/log/export", "/api/eval", "/",
+        "/api/users/{user_id}/profile", "/api/log", "/api/log/export", "/api/eval",
+        "/api/demo_scenarios", "/api",
     }
     assert "post" in schema_paths["/api/assess"]
     assert "get" in schema_paths["/api/eval"]
 
 
 def test_root_and_docs_are_available(client):
-    assert client.get("/").json()["docs"] == "/docs"
+    # / الآن يخدم الواجهة (HTML)، والـ API root على /api
+    assert client.get("/api").json()["docs"] == "/docs"
     assert client.get("/docs").status_code == 200
     schema = client.get("/openapi.json").json()
     assert "/api/assess" in schema["paths"]

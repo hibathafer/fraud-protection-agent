@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>وكيل حماية من الاحتيال</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="phone-frame">
+    <div class="header">
+      <h1>وكيل حماية من الاحتيال</h1>
+      <p>قبل ما تكمل التحويل، نتأكد لك من العملية</p>
+    </div>
+
+    <div class="content">
+      <!-- رسالة النجاح -->
+      <div id="successMessage" class="success-message"></div>
+
+      <!-- نموذج التحويل -->
+      <form id="transferForm">
+        <div class="form-group">
+          <label for="userSelect">المستخدم</label>
+          <select id="userSelect" required>
+            <option value="">-- اختر مستخدم --</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="demoSelect">أو جرّب سيناريو جاهز</label>
+          <select id="demoSelect" onchange="applyDemoScenario()">
+            <option value="">-- اختر سيناريو --</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="recipientId">المستلم (رقم الحساب)</label>
+          <input type="text" id="recipientId" placeholder="مثال: r_1234" required>
+        </div>
+
+        <div class="form-group">
+          <label for="amount">المبلغ (بالدينار العراقي)</label>
+          <input type="number" id="amount" placeholder="مثال: 500000" required>
+        </div>
+
+        <div class="form-group">
+          <label for="recipientAge">عمر حساب المستلم (بالأيام، اختياري)</label>
+          <input type="number" id="recipientAge" placeholder="مثال: 30">
+        </div>
+
+        <div class="form-group">
+          <label for="note">ملاحظة (اختياري)</label>
+          <input type="text" id="note" placeholder="مثال: فاتورة كهرباء">
+        </div>
+
+        <div class="form-group">
+          <label for="contextMessage">رسالة وصلتك (اختياري)</label>
+          <textarea id="contextMessage" placeholder="الصق الرسالة اللي وصلتك من الطرف الآخر"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary">تحويل</button>
+      </form>
+    </div>
+
+    <div class="nav">
+      <a href="/" class="active">الرئيسية</a>
+      <a href="/log.html">السجل</a>
+      <a href="/results.html">النتائج</a>
+    </div>
+  </div>
+
+  <!-- نافذة التحذير -->
+  <div id="warningModal" class="modal-overlay">
+    <div class="modal">
+      <div class="modal-header">
+        <div id="decisionBadge" class="decision-badge warn">⚠ تنبيه</div>
+        <h3 id="warningText">العملية لم تكتمل بعد</h3>
+      </div>
+
+      <div class="modal-body">
+        <h3>شنو المريب:</h3>
+        <ul id="reasonsList" class="reasons-list"></ul>
+
+        <div class="coaching-message" id="coachingMessage"></div>
+        <div class="coaching-source" id="coachingSource"></div>
+
+        <!-- مربع "فهمت المخاطرة" لحالة hold -->
+        <div id="holdCheckbox" class="hold-checkbox" style="display: none;">
+          <input type="checkbox" id="holdCheckboxInput">
+          <label for="holdCheckboxInput">فهمت المخاطرة وأريد المتابعة</label>
+        </div>
+
+        <div id="countdown" class="countdown" style="display: none;"></div>
+      </div>
+
+      <div class="modal-footer">
+        <button id="cancelBtn" class="btn btn-danger">إلغاء التحويل</button>
+        <button id="continueBtn" class="btn btn-success">أكمل التحويل</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- حقل مخفي لـ tx_id -->
+  <input type="hidden" id="txId" value="">
+
+  <script src="/app.js"></script>
+</body>
+</html>

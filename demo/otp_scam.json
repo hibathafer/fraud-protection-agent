@@ -1,0 +1,15 @@
+{
+  "name_ar": "احتيال OTP",
+  "description_ar": "موظف مزيف يطلب رمز التحقق",
+  "payload": {
+    "user_id": "u01",
+    "transaction": {
+      "amount_iqd": 500000,
+      "recipient_id": "r_scam2",
+      "recipient_age_days": 1,
+      "tx_type": "transfer",
+      "note": "تفعيل الحساب",
+      "context_message": "موظف الدعم: أدخل رمز التحقق المرسل لتفعيل حسابك"
+    }
+  }
+}

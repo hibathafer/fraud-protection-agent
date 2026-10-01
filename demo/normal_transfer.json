@@ -1,0 +1,13 @@
+{
+  "name_ar": "تحويل عادي",
+  "description_ar": "تحويل لمستلم معروف بمبلغ معتاد",
+  "payload": {
+    "user_id": "u01",
+    "transaction": {
+      "amount_iqd": 100000,
+      "recipient_id": "r_known",
+      "tx_type": "transfer",
+      "note": "فاتورة كهرباء"
+    }
+  }
+}

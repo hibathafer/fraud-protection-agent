@@ -84,9 +84,21 @@ def get_db():
 
 
 def lifespan(app: FastAPI):
-    """عند التشغيل: ينشئ الجداول إذا ناقصة ويجهّز مجلد التصدير."""
+    """عند التشغيل: ينشئ الجداول، ويرمّل بيانات dev إذا القاعدة فاضية.
+
+    مهم للنشر على سيرفر: الحاوية تبدأ بدون ملف fraud.db، فنحمّل البيانات
+    الاصطناعية (dev فقط) تلقائياً حتى الديمو يشتغل من أول لحظة.
+    """
     init_db()
     EXPORT_DIR.mkdir(parents=True, exist_ok=True)
+    conn = get_connection()
+    try:
+        n_users = conn.execute("SELECT COUNT(*) FROM users").fetchone()[0]
+    finally:
+        conn.close()
+    if n_users == 0:
+        from src.db import load_csvs
+        load_csvs(split="dev")  # dev فقط — data/test_sealed/ ما تنلمس هنا أبداً
     yield
 
 
@@ -101,7 +113,7 @@ app = FastAPI(
 app.mount("/logs", StaticFiles(directory=str(EXPORT_DIR), check_dir=False), name="logs")
 
 
-@app.get("/")
+@app.get("/api")
 def root():
     return {
         "name_ar": "وكيل حماية من الاحتيال",
@@ -361,3 +373,28 @@ def api_eval():
         "hint_ar": "النتائج محفوظة من آخر تشغيل.",
         "results": data,
     }
+
+
+# ----------------------------------------------------------------- السيناريوهات الجاهزة
+@app.get("/api/demo_scenarios")
+def api_demo_scenarios():
+    """قائمة السيناريوهات الجاهزة من ملفات demo/."""
+    demo_dir = ROOT / "demo"
+    if not demo_dir.exists():
+        return {"count": 0, "scenarios": []}
+    scenarios = []
+    for f in sorted(demo_dir.glob("*.json")):
+        with open(f, encoding="utf-8") as fh:
+            data = json.load(fh)
+        scenarios.append({
+            "id": f.stem,
+            "name_ar": data.get("name_ar", f.stem),
+            "description_ar": data.get("description_ar", ""),
+            "payload": data.get("payload", data),
+        })
+    return {"count": len(scenarios), "scenarios": scenarios}
+
+
+# ----------------------------------------------------------------- خدمة الواجهة
+# صفحات الويب تُخدم من مجلد web/ (بعد كل الـ routes حتى ما تتداخل)
+app.mount("/", StaticFiles(directory=str(ROOT / "web"), html=True), name="web")

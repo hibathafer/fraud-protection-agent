@@ -37,7 +37,7 @@ POINTS = {
 AMOUNT_HIGH_FACTOR = 3          # 3 × median
 MIN_TX_FOR_PROFILE = 10         # أقل عدد معاملات قبل ما نستخدم العتبة الثابتة
 AMOUNT_HIGH_FALLBACK = 300_000   # عتبة ثابتة إذا التاريخ قصير
-YOUNG_ACCOUNT_DAYS = 14          # عمر حساب المستمل الجديد
+YOUNG_ACCOUNT_DAYS = 14          # عمر حساب المستعمل الجديد
 DRAIN_RATIO = 0.7                # المبلغ >= 70% من الرصيد
 ODD_HOURS = (0, 1, 2, 3, 4, 5)   # الساعات اللي نعدّها وقت غريب
 TYPICAL_HOURS_SHARE = 0.05       # ساعة "مألوفة" إذا >= 5% من النشاط

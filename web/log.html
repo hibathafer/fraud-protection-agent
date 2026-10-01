@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>سجل القرارات</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="phone-frame">
+    <div class="header">
+      <h1>سجل القرارات</h1>
+      <p>كل التقييمات والاختيارات مسجلة هنا</p>
+    </div>
+
+    <div class="content">
+      <!-- فلاتر -->
+      <div class="filters">
+        <select id="filterDecision">
+          <option value="">كل القرارات</option>
+          <option value="allow">سماح</option>
+          <option value="warn">تنبيه</option>
+          <option value="hold">تحذير شديد</option>
+        </select>
+        <select id="filterUser">
+          <option value="">كل المستخدمين</option>
+        </select>
+        <button class="btn btn-outline" onclick="exportLog()" style="flex: 0 0 auto;">تصدير</button>
+      </div>
+
+      <!-- الجدول -->
+      <table class="log-table">
+        <thead>
+          <tr>
+            <th>الوقت</th>
+            <th>المستخدم</th>
+            <th>النقاط</th>
+            <th>القرار</th>
+            <th>النمط</th>
+            <th>الاختيار</th>
+          </tr>
+        </thead>
+        <tbody id="logTableBody">
+          <tr><td colspan="6" style="text-align: center;">جاري التحميل...</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="nav">
+      <a href="/">الرئيسية</a>
+      <a href="/log.html" class="active">السجل</a>
+      <a href="/results.html">النتائج</a>
+    </div>
+  </div>
+
+  <script src="/app.js"></script>
+  <script>
+    // تحميل المستخدمين للفلتر
+    fetch('/api/users')
+      .then(res => res.json())
+      .then(data => {
+        const select = document.getElementById('filterUser');
+        data.users.forEach(u => {
+          const option = document.createElement('option');
+          option.value = u.user_id;
+          option.textContent = u.name || u.user_id;
+          select.appendChild(option);
+        });
+      });
+
+    // تطبيق الفلاتر
+    document.getElementById('filterDecision').addEventListener('change', loadLog);
+    document.getElementById('filterUser').addEventListener('change', loadLog);
+
+    // إعادة تعريف loadLog مع الفلاتر
+    loadLog = async function() {
+      const decision = document.getElementById('filterDecision').value;
+      const userId = document.getElementById('filterUser').value;
+
+      let url = '/api/log?limit=100';
+      if (decision) url += `&decision=${decision}`;
+      if (userId) url += `&user_id=${userId}`;
+
+      try {
+        const res = await fetch(url);
+        const data = await res.json();
+        const tbody = document.getElementById('logTableBody');
+        tbody.innerHTML = '';
+
+        if (data.rows.length === 0) {
+          tbody.innerHTML = '<tr><td colspan="6" style="text-align: center;">لا توجد سجلات</td></tr>';
+          return;
+        }
+
+        data.rows.forEach(row => {
+          const tr = document.createElement('tr');
+          tr.innerHTML = `
+            <td>${row.created_at || ''}</td>
+            <td>${row.user_id || ''}</td>
+            <td>${row.risk_score ?? ''}</td>
+            <td>${row.decision || ''}</td>
+            <td>${row.matched_pattern || ''}</td>
+            <td>${row.user_choice || ''}</td>
+          `;
+          tbody.appendChild(tr);
+        });
+      } catch (err) {
+        console.error('خطأ بتحميل السجل:', err);
+      }
+    };
+
+    loadLog();
+  </script>
+</body>
+</html>

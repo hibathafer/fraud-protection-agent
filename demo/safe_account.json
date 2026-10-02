@@ -1,0 +1,15 @@
+{
+  "name_ar": "احتيال الحساب الآمن",
+  "description_ar": "رسالة تدعي اختراق الحساب وتطلب التحويل لحساب وهمي",
+  "payload": {
+    "user_id": "u01",
+    "transaction": {
+      "amount_iqd": 400000,
+      "recipient_id": "r_safe1",
+      "recipient_age_days": 1,
+      "tx_type": "transfer",
+      "note": "تأمين الحساب",
+      "context_message": "تنبيه عاجل: تم اختراق حسابك، حوّل لحساب امان فورا"
+    }
+  }
+}

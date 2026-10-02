@@ -1,0 +1,21 @@
+#!/bin/sh
+# Auto-commit safety gate (AGENTS.md): never commit .env or a real API key.
+# Activated by: git config core.hooksPath .cac/hooks
+# Runs automatically on every `git commit`. Exits 1 = commit is blocked.
+fail=0
+
+if git diff --cached --name-only | grep -qE '(^|/)\.env$'; then
+  echo "pre-commit safety: BLOCKED - .env is staged" >&2
+  fail=1
+fi
+
+if git diff --cached | grep -qE 'AIza[A-Za-z0-9_-]{20,}'; then
+  echo "pre-commit safety: BLOCKED - real API key found in staged changes" >&2
+  fail=1
+fi
+
+if [ "$fail" -eq 0 ]; then
+  echo "pre-commit safety: OK (no .env, no API keys)"
+fi
+
+exit $fail

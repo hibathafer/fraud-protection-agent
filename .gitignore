@@ -8,4 +8,3 @@ venv/
 # local runtime artifacts
 logs/
 *.db
-docs/eval_results.json

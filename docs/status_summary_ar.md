@@ -1,28 +1,39 @@
 # ملخص الوضع الحالي
 
+> تاريخ التحديث: 2026-10-02 — **كل المهام T0–T12 مكتملة** (بما فيها الاختيارية).
+> السجل التفصيلي: `docs/PROGRESS.md`.
+
 ## المشروع
-مشروع **Fraud & Scam Protection Agent** لمحفظة موبايل بالعراق — قبل اكتمال التحويل، النظام يقيّمها وإذا مريبة يوقف الشاشة ويشرح للمستخدمة بلهجة عراقية.
+مشروع **Fraud & Scam Protection Agent** لمحفظة موبايل بالعراق — قبل اكتمال
+التحويل، النظام يقيّمها وإذا مريبة يوقف الشاشة ويشرح للمستخدم بلهجة عراقية،
+والمستخدم يقرر (أكمل/ألغي) والقرار يتسجّل.
 
 ## الـ Git
-- 5 commits، آخرها: `45c7745 add AGENTS.md guidelines`
-- commits السابقة تبين إن المهام T0–T4 مكتملة
+- آخر commits بحسابك على `https://github.com/hibathafer/fraud-protection-agent.git`
+- **مهم:** كل شغل T5b وما بعده **غير مُرسل بعد** — الـ commits يسوينها إنتِ
+  بعد مراجعة كل مهمة (قاعدة AGENTS.md رقم 9).
 
 ## الاختبارات
-- **134 اختبار ينجح**، 0 يفشل
+- **294 اختبار ينجح**، 0 يفشل — بدون إنترنت وبدون مفتاح (mock فقط)
 - تحذير واحد فقط (Starlette deprecation — مو خطير)
+- تحقق: `python -m pytest -q`
 
 ## هيكل المشروع
 | المجلد | المحتوى |
 |--------|---------|
-| `src/` | `api/`, `coaching/`, `detection/`, `eval/`, `generator/` + `config.py`, `db.py`, `models.py` |
-| `tests/` | 8 ملفات اختبار (API, catalogue, coaching, engine, eval, features, rules, text_norm) |
-| `docs/` | `eval_results.json` فقط — **ما فيه `PROGRESS.md`** (هذا من مخرجات T0) |
-| `data/` | `synthetic/`, `test_sealed/` (معزول), `fraud.db`, `scam_catalogue.json` |
-| `web/` | **فاضي** — الواجهة ما بدأت (T5) |
+| `src/` | `api/` (16 نقطة) + `detection/` (القرار — مجمّد v1) + `coaching/` + `agents/` (Intake/Dialogue/Training) + `eval/` + `integrations/` |
+| `tests/` | 13 ملف اختبار (API، قواعد، محرك، قوالب، أمان LLM، نص حر، حوار، تدريب، محفظة، ويب...) |
+| `docs/` | التقدم، التقييم المعزول، حالات الفشل، الخصوصية، الإفصاح، مراجعة البيانات، مقابلات المستخدمين |
+| `data/` | `synthetic/` (30 مستخدم) + `test_sealed/` (معزول — استُخدم مرة وحدة T9) + كتالوج 8 أنماط |
+| `web/` | واجهة كاملة بستايل Zain Cash: تحويل، سيناريوهات، نص حر، حوار، تدريب، سجل، نتائج |
+| `demo/` | 6 سيناريوهات + سكربت العرض + أسئلة اللجنة |
 
 ## الـ ROADMAP
-- ✅ **T0–T4 مكتملة:** مواءمة الوثائق، رسائل التوعية، ربط Gemini، توليد البيانات بالـ LLM، مراجعة التقييم وضبط القواعد
-- ⏭️ **التالية: T5 — الواجهة (`web/`)** — شاشة تشبه محفظة موبايل، RTL، بدون CDN
+- ✅ **T0–T10 مكتملة** (الأساسية كلها) + **T11 حوار** و **T12 تدريب** (الاختيارية)
+- ✅ الاختبار المعزول T9 نُفّذ 2026-10-01: FPR 3.2%، hold precision 91.3%
+- ⏳ **المتبقي كله يدوي لكِ:** مقابلات `user_research.md`، جدول `data_review.md`،
+  ✋ بـ `DISCLOSURE.md`، تشغيل `llm_eval`، تحقق رابط Render، الـ commits
 
 ## التقنية
-Python 3.14 / FastAPI / SQLite / pandas — الواجهة HTML+CSS+JS عادي بدون frameworks.
+Python 3.14 / FastAPI / SQLite / pandas / Pydantic — واجهة HTML+CSS+JS بدون
+أي framework وبدون CDN — LLM اختياري عبر `COACH_MODE` (template | llm | auto).

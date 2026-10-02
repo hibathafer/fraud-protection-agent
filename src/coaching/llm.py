@@ -62,15 +62,19 @@ def _numbers(text) -> list:
     return [d.translate(_DIGIT_MAP) for d in _DIGITS.findall(str(text))]
 
 
-def validate(text, source_text: str) -> bool:
-    """يتفقّص ناتج الـ LLM قبل ما نستخدمه: عربي، بطول معقول، بدون أرقام أو روابط جديدة."""
+def validate(text, source_text: str, max_words: int | None = None) -> bool:
+    """يتفقّص ناتج الـ LLM قبل ما نستخدمه: عربي، بطول معقول، بدون أرقام أو روابط جديدة.
+
+    max_words: حد اختياري بدل LLM_VALIDATION_MAX_WORDS (الحوار T11 يشترط 50).
+    """
     text = str(text or "").strip()
     source = str(source_text or "")
     if not text:
         return False
     if not _ARABIC.search(text):  # لازم عربي
         return False
-    if len(text.split()) > LLM_VALIDATION_MAX_WORDS:  # حد الطول
+    limit = LLM_VALIDATION_MAX_WORDS if max_words is None else max_words
+    if len(text.split()) > limit:  # حد الطول
         return False
 
     source_digits = set(_numbers(source))
@@ -110,7 +114,11 @@ def rewrite(template_text: str, reasons_text: str = "", client=None) -> str | No
             from google import genai
             from google.genai import types
 
-            client = genai.Client(api_key=load_api_key())
+            # http_options على الـ Client (SDK 2.x) — مو على generate_content
+            client = genai.Client(
+                api_key=load_api_key(),
+                http_options=types.HttpOptions(timeout=int(LLM_TIMEOUT_S * 1000)),
+            )
             response = client.models.generate_content(
                 model=config.LLM_MODEL,
                 contents=build_prompt(template_text, reasons_text),
@@ -119,7 +127,6 @@ def rewrite(template_text: str, reasons_text: str = "", client=None) -> str | No
                     temperature=0.3,
                     max_output_tokens=200,
                 ),
-                http_options=types.HttpOptions(timeout=int(LLM_TIMEOUT_S * 1000)),
             )
         else:
             response = client.models.generate_content(
@@ -133,3 +140,71 @@ def rewrite(template_text: str, reasons_text: str = "", client=None) -> str | No
     if not validate(text, template_text + " " + reasons_text):
         return None
     return text
+
+
+def generate(
+    system_instruction: str,
+    contents: str,
+    source_text: str = "",
+    client=None,
+    temperature: float = 0.3,
+    max_output_tokens: int = 250,
+    max_words: int | None = None,
+) -> str | None:
+    """استدعاء عام للوكيل (T11 — Dialogue): يرجع نصاً صالحاً أو None.
+
+    - system_instruction: تعليمات الدور الثابتة (تُكتب بالكود، مو من المستخدم).
+    - contents: المدخل — النص غير الموثوق ينعزل داخل وسوم <user_message>.
+    - source_text: مرجع التحقق: الأرقام/الروابط بالناتج لازم تكون منه فقط.
+    - client: اختياري للاختبارات (أي شي عنده .models.generate_content).
+
+    أي خطأ شبكة/مهلة/مفتاح أو خروج غير صالح => None، والوكيل يرجع لردّه
+    الجاهز (نفس فلسفة rewrite — ما نعرض المستخدم لأي خطأ).
+    """
+    if not enabled() and client is None:
+        return None
+    try:
+        if client is None:
+            response = _generate_real(
+                system_instruction, contents, temperature, max_output_tokens
+            )
+        else:
+            # مسار الاختبارات: نفس الاستدعاء بس بدون اتصال حقيقي
+            response = client.models.generate_content(
+                model=config.LLM_MODEL,
+                contents=contents,
+                config={
+                    "system_instruction": system_instruction,
+                    "temperature": temperature,
+                    "max_output_tokens": max_output_tokens,
+                },
+            )
+    except Exception:  # خطأ شبكة أو مهلة أو مفتاح غلط: نرجع للرد الجاهز
+        return None
+
+    text = _extract_text(response).strip()
+    if not validate(text, source_text, max_words=max_words):
+        return None
+    return text
+
+
+def _generate_real(system_instruction: str, contents: str,
+                   temperature: float, max_output_tokens: int):
+    """مسار google-genai الحقيقي (import كسول حتى ما يتطلب المكتبة بدون LLM)."""
+    from google import genai
+    from google.genai import types
+
+    # http_options على الـ Client (SDK 2.x) — مو على generate_content
+    client = genai.Client(
+        api_key=load_api_key(),
+        http_options=types.HttpOptions(timeout=int(LLM_TIMEOUT_S * 1000)),
+    )
+    return client.models.generate_content(
+        model=config.LLM_MODEL,
+        contents=contents,
+        config=types.GenerateContentConfig(
+            system_instruction=system_instruction,
+            temperature=temperature,
+            max_output_tokens=max_output_tokens,
+        ),
+    )

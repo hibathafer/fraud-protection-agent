@@ -1,0 +1,127 @@
+{
+  "generated_at": "2026-10-01T22:59:48",
+  "split": "test",
+  "rules_version": "v1",
+  "n_transactions": 1561,
+  "n_scam": 56,
+  "elapsed_s": 5.74,
+  "metrics": {
+    "any_alert": {
+      "tp": 25,
+      "fp": 48,
+      "fn": 31,
+      "tn": 1457,
+      "precision": 0.3424657534246575,
+      "recall": 0.44642857142857145,
+      "fpr": 0.03189368770764119,
+      "n": 1561,
+      "scam_total": 56,
+      "legit_total": 1505,
+      "alerted": 73
+    },
+    "hold_only": {
+      "tp": 21,
+      "fp": 2,
+      "fn": 35,
+      "tn": 1503,
+      "precision": 0.9130434782608695,
+      "recall": 0.375,
+      "fpr": 0.00132890365448505,
+      "n": 1561,
+      "scam_total": 56,
+      "legit_total": 1505,
+      "alerted": 23
+    },
+    "baseline_new_recipient": {
+      "tp": 20,
+      "fp": 180,
+      "fn": 36,
+      "tn": 1325,
+      "precision": 0.1,
+      "recall": 0.35714285714285715,
+      "fpr": 0.11960132890365449,
+      "n": 1561,
+      "scam_total": 56,
+      "legit_total": 1505,
+      "alerted": 200
+    },
+    "baseline_large_amount": {
+      "tp": 25,
+      "fp": 351,
+      "fn": 31,
+      "tn": 1154,
+      "precision": 0.06648936170212766,
+      "recall": 0.44642857142857145,
+      "fpr": 0.23322259136212625,
+      "n": 1561,
+      "scam_total": 56,
+      "legit_total": 1505,
+      "alerted": 376
+    }
+  },
+  "per_scam_type": {
+    "—": {
+      "tp": 0,
+      "fn": 0,
+      "n": 1505,
+      "scam_total": 0,
+      "recall": 0.0
+    },
+    "relative_new_number": {
+      "tp": 3,
+      "fn": 7,
+      "n": 10,
+      "scam_total": 10,
+      "recall": 0.3
+    },
+    "otp_fake_agent": {
+      "tp": 3,
+      "fn": 7,
+      "n": 10,
+      "scam_total": 10,
+      "recall": 0.3
+    },
+    "prize_fee": {
+      "tp": 3,
+      "fn": 7,
+      "n": 10,
+      "scam_total": 10,
+      "recall": 0.3
+    },
+    "advance_payment_seller": {
+      "tp": 4,
+      "fn": 6,
+      "n": 10,
+      "scam_total": 10,
+      "recall": 0.4
+    },
+    "safe_account": {
+      "tp": 3,
+      "fn": 1,
+      "n": 4,
+      "scam_total": 4,
+      "recall": 0.75
+    },
+    "investment_doubling": {
+      "tp": 3,
+      "fn": 1,
+      "n": 4,
+      "scam_total": 4,
+      "recall": 0.75
+    },
+    "fake_refund": {
+      "tp": 3,
+      "fn": 1,
+      "n": 4,
+      "scam_total": 4,
+      "recall": 0.75
+    },
+    "fake_job_fee": {
+      "tp": 3,
+      "fn": 1,
+      "n": 4,
+      "scam_total": 4,
+      "recall": 0.75
+    }
+  }
+}

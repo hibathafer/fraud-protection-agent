@@ -385,6 +385,7 @@ def test_all_plan_endpoints_exist():
     for path in (
         "/api/assess", "/api/choice", "/api/scenario", "/api/users",
         "/api/users/{user_id}/profile", "/api/log", "/api/log/export", "/api/eval",
+        "/api/chat", "/api/training/start", "/api/training/answer",
     ):
         assert path in paths, path
 
@@ -394,10 +395,15 @@ def test_openapi_documents_every_endpoint():
     assert set(schema_paths) == {
         "/api/assess", "/api/choice", "/api/scenario", "/api/users",
         "/api/users/{user_id}/profile", "/api/log", "/api/log/export", "/api/eval",
-        "/api/demo_scenarios", "/api",
+        "/api/demo_scenarios", "/api/wallet/transfer", "/api/scenario_text",
+        "/api/failure_modes", "/api/chat",
+        "/api/training/start", "/api/training/answer",
+        "/api",
     }
     assert "post" in schema_paths["/api/assess"]
+    assert "post" in schema_paths["/api/wallet/transfer"]
     assert "get" in schema_paths["/api/eval"]
+    assert "get" in schema_paths["/api/failure_modes"]
 
 
 def test_root_and_docs_are_available(client):

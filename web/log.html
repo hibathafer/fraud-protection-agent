@@ -38,10 +38,11 @@
             <th>القرار</th>
             <th>النمط</th>
             <th>الاختيار</th>
+            <th>الحالة</th>
           </tr>
         </thead>
         <tbody id="logTableBody">
-          <tr><td colspan="6" style="text-align: center;">جاري التحميل...</td></tr>
+          <tr><td colspan="7" style="text-align: center;">جاري التحميل...</td></tr>
         </tbody>
       </table>
     </div>
@@ -88,7 +89,7 @@
         tbody.innerHTML = '';
 
         if (data.rows.length === 0) {
-          tbody.innerHTML = '<tr><td colspan="6" style="text-align: center;">لا توجد سجلات</td></tr>';
+          tbody.innerHTML = '<tr><td colspan="7" style="text-align: center;">لا توجد سجلات</td></tr>';
           return;
         }
 
@@ -101,6 +102,7 @@
             <td>${row.decision || ''}</td>
             <td>${row.matched_pattern || ''}</td>
             <td>${row.user_choice || ''}</td>
+            <td>${row.final_status || ''}</td>
           `;
           tbody.appendChild(tr);
         });

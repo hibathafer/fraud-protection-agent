@@ -16,6 +16,7 @@ Fraud & Scam Protection Agent/
 │   ├── config.py           # العتبات والأوزان والمسارات
 │   ├── models.py           # مخططات Pydantic (التحقق من المدخلات)
 │   ├── db.py               # قاعدة بيانات SQLite
+│   ├── demo_check.py       # فحص جاهزية الديمو (6 فحوصات)
 │   ├── detection/          # طبقة الكشف (قواعد Python فقط)
 │   │   ├── features.py     # إحصاءات المستخدم
 │   │   ├── rules.py        # قواعد الكشف + كتالوج الأنماط
@@ -24,26 +25,28 @@ Fraud & Scam Protection Agent/
 │   │   ├── templates.py    # قوالب الرسائل باللهجة العراقية
 │   │   ├── llm.py          # استدعاء Gemini (اختياري)
 │   │   └── coach.py        # ينسق: قالب أولاً، LLM اختياري
+│   ├── agents/             # الوكلاء: Intake (نص حر) + Dialogue (حوار) + Training (تدريب)
+│   ├── integrations/       # محفظة Zain Cash (محاكاة) + طبقة الاعتراض
 │   ├── api/                # واجهة FastAPI
 │   │   └── main.py         # كل الـ endpoints
-│   ├── eval/                # التقييم
+│   ├── eval/               # التقييم + حالات الفشل + تقييم القالب llm_eval
 │   │   ├── metrics.py      # precision/recall/FPR
-│   │   └── evaluate.py     # يشغل التقييم ويكتب النتائج
+│   │   ├── evaluate.py     # يشغل التقييم ويكتب النتائج
+│   │   ├── failure_modes.py# سيناريوهات الفشل الستة (T7)
+│   │   └── llm_eval.py     # تقييم القالب مقابل LLM (T8)
 │   └── generator/          # توليد البيانات الاصطناعية
 │       └── generate_data.py
 ├── web/                    # الواجهة (HTML + CSS + JS)
-│   ├── index.html          # شاشة المحفظة + نافذة التحذير
+│   ├── index.html          # شاشة المحفظة + نافذة التحذير + الحوار + التدريب
 │   ├── log.html            # جدول السجل
-│   ├── results.html        # نتائج التقييم
+│   ├── results.html        # نتائج التقييم + حالات الفشل
 │   ├── style.css           # التصميم (RTL، إطار هاتف)
 │   └── app.js              # JavaScript
-├── demo/                   # سيناريوهات جاهزة
-│   ├── normal_transfer.json
-│   ├── prize_scam.json
-│   └── otp_scam.json
+├── demo/                   # سيناريوهات جاهزة (6 ملفات JSON + SCRIPT + QA)
+├── prompts/                # صياغات توليد البيانات (من ملحق ROADMAP)
 ├── data/                   # البيانات
-│   ├── synthetic/          # بيانات dev (30 مستخدم)
-│   ├── test_sealed/        # بيانات test معزولة
+│   ├── synthetic/          # ملفات التطوير (profiles للـ 30 + سجلات الـ 20 dev)
+│   ├── test_sealed/        # بيانات test معزولة (10 مستخدمين)
 │   ├── fraud.db            # قاعدة SQLite
 │   └── scam_catalogue.json # كتالوج 8 أنماط احتيال
 ├── tests/                  # اختبارات pytest
@@ -59,8 +62,8 @@ Fraud & Scam Protection Agent/
         │
         ▼
 ┌─────────────────────────────┐
-│  Intake (اختياري - T6)      │  نص حر → JSON
-│  (حالياً: JSON مباشرة)      │
+│  Intake Agent (T6)          │  نص حر → JSON
+│  + سؤال توضيحي عند النقص   │
 └─────────────────────────────┘
         │
         ▼
@@ -165,14 +168,21 @@ Fraud & Scam Protection Agent/
 
 | Endpoint | الوصف |
 |----------|-------|
+| `GET /api` | فهرس النقاط (16) |
 | `POST /api/assess` | يقيم معاملة لمستخدم موجود |
 | `POST /api/scenario` | ديمو الحكم (مستخدم موجود أو تاريخ يدوي) |
+| `POST /api/scenario_text` | نص حر باللهجة → تقييم مهيكل (Intake) |
+| `POST /api/chat` | سؤال المستخدم وقت التحذير (≤50 كلمة، لا يغير القرار) |
+| `POST /api/training/start` | بدء جلسة وضع التدريب (بدون قاعدة بيانات) |
+| `POST /api/training/answer` | إجابة المستخدم بوضع التدريب (تحكم بايثون) |
+| `POST /api/wallet/transfer` | اعتراض التحويل قبل التنفيذ (تنفيذ/تعليق) |
 | `POST /api/choice` | قرار المستخدم (continue / cancel) |
 | `GET /api/users` | قائمة المستخدمين |
-| `GET /api/users/{id}/profile` | إحصاءات المستخدم |
+| `GET /api/users/{user_id}/profile` | إحصاءات المستخدم |
 | `GET /api/log` | السجل |
 | `GET /api/log/export` | تصدير JSONL/CSV |
 | `GET /api/eval` | نتائج التقييم |
+| `GET /api/failure_modes` | حالات الفشل الستة |
 | `GET /api/demo_scenarios` | السيناريوهات الجاهزة |
 
 ---
@@ -184,6 +194,8 @@ Fraud & Scam Protection Agent/
 - نموذج تحويل (مستلم، مبلغ، ملاحظة، رسالة وصلتك)
 - قائمة "جرّب سيناريو جاهز"
 - نافذة تحذير منبثقة
+- مربع حوار "اسأل عن هالتحذير" (T11) — ≤50 كلمة، 5 رسائل لكل معاملة
+- صندوق "وضع تدريب" (T12) — محاكاة تعليمية معلنة "تدريب"
 
 ### log.html — السجل:
 - جدول بكل القرارات
@@ -193,16 +205,18 @@ Fraud & Scam Protection Agent/
 ### results.html — النتائج:
 - مؤشرات (Recall, Precision, FPR)
 - مصفوفة الالتباس
+- جدول حالات الفشل الستة (T7)
 
 ---
 
 ## البيانات
 
-### بيانات dev (30 مستخدم):
-- 20 مستخدم dev + 10 مستخدم test (معزولين)
+### المكونون (30 مستخدم إجمالاً):
+- ملفات التطوير `data/synthetic/`: 20 مستخدم — **3,095 معاملة، 152 احتيال**
+- المعزول `data/test_sealed/`: 10 مستخدمين — **1,561 معاملة، 56 احتيال**
 - كل مستخدم 60-120 يوم سجل
 - 60% تحويل عادي، 20% فواتير، 15% تاجر، 5% مستلم جديد بريء
-- ≥ 30 حالة احتيال مزروعة
+- المجموع: 4,656 معاملة و208 احتيال (8 أنماط بالكتالوج)
 
 ### أنماط المستخدمين:
 - موظف براتب
@@ -215,8 +229,8 @@ Fraud & Scam Protection Agent/
 
 ## الاختبارات
 
-- **141 اختبار** ينجح
-- تغطي: API، الكشف، التوعية، الواجهة، التقييم
+- **294 اختبار** ينجح
+- تغطي: API، الكشف، التوعية، الواجهة، التقييم، المحفظة، النص الحر، الحوار، التدريب
 
 ---
 
@@ -234,7 +248,7 @@ Fraud & Scam Protection Agent/
 
 ## التقنية
 
-- **Python 3.14** + **FastAPI** + **SQLite** + **pandas**
+- **Python 3.14** + **FastAPI** + **SQLite**
 - الواجهة: HTML + CSS + JS عادي (بدون frameworks وبدون CDN)
 - الاختبارات: **pytest**
 - البيانات: اصطناعية بالكامل (مولّدة بالـ LLM + Python)

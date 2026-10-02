@@ -1,0 +1,11 @@
+أنت تساعد بمشروع أمني لتوعية المستخدمين من الاحتيال. ولّد مواصفات مستخدمين وهميين لمحفظة موبايل عراقية لأغراض اختبار نظام كشف. أرجع JSON فقط: {"users":[...]}.
+
+لكل مستخدم:
+{"name_fake": str, "archetype": "salaried|student|small_merchant|family_supporter|night_owl",
+ "monthly_income_iqd": int, "active_hours": [int, ...],
+ "contacts": [{"name_fake": str, "relation": str, "typical_amount_iqd": int, "frequency": "weekly|monthly|rare"}],
+ "recurring": [{"type": "bill|rent|installment", "payee_fake": str, "day_of_month": int, "amount_iqd": int}],
+ "special_events": [{"type": "eid_gift|first_salary|new_landlord|big_purchase", "approx_day": int, "amount_iqd": int}],
+ "note_style": str}
+
+قواعد: العدد N. نوّع الأنماط والدخل والعادات. أسماء وجهات وهمية فقط. لا أرقام هواتف ولا روابط ولا أسماء شركات أو أشخاص حقيقيين.

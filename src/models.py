@@ -148,6 +148,80 @@ class ChoiceRequest(ApiModel):
     recipient_id: str | None = Field(default=None, max_length=MAX_ID)
 
 
+# ------------------------------------------------------------------ /api/wallet/transfer
+MSISDN_PATTERN = r"^07\d{9}$"
+PIN_PATTERN = r"^\d{4,6}$"
+
+
+class WalletTransferRequest(ApiModel):
+    """طلب تحويل من محفظة Zain Cash (محاكاة) — يمر على الكشف قبل التنفيذ.
+
+    pin: الرمز السري يوصل للمحفظة الوهمية فقط. ما ينحفظ بالسجل، وما يمر
+    للكشف ولا للـ LLM.
+    """
+
+    sender_msisdn: str = Field(pattern=MSISDN_PATTERN, description="رقم المرسل: 11 رقم يبدأ بـ 07")
+    recipient_msisdn: str = Field(pattern=MSISDN_PATTERN, description="رقم المستلم: 11 رقم يبدأ بـ 07")
+    amount_iqd: int = Field(gt=0, le=MAX_AMOUNT, description="المبلغ بالدينار")
+    pin: str = Field(pattern=PIN_PATTERN, description="4-6 أرقام — لا يُسجَّل ولا يُرسل للكشف")
+    user_id: str | None = Field(
+        default=None, max_length=MAX_ID,
+        description="اختياري: ربط بمستخدم موجود حتى يستعمل تاريخ عاداته",
+    )
+    recipient_age_days: int | None = Field(default=None, ge=0, le=3650)
+    note: str | None = Field(default=None, max_length=MAX_NOTE)
+    context_message: str | None = Field(default=None, max_length=MAX_MESSAGE)
+    ts: str | None = Field(default=None, description="وقت التحويل، الافتراضي الحين")
+    use_llm: bool = Field(default=False, description="صياغة رسالة بالـ LLM (مطفي افتراضياً)")
+
+    _ts = field_validator("ts")(_check_ts)
+
+    @model_validator(mode="after")
+    def different_parties(self):
+        if self.sender_msisdn == self.recipient_msisdn:
+            raise ValueError("رقم المستلم لازم يختلف عن رقم المرسل")
+        return self
+
+
+# ------------------------------------------------------------------ /api/scenario_text (T6)
+class IntakeExtract(ApiModel):
+    """الـ JSON الناتج من Intake Agent — حقول T6 + سؤال توضيحي اختياري.
+
+    كل الحقول مسموح تجي null (ينقصها يتسأل المستخدم بسؤال بعدين).
+    """
+
+    user_id: str | None = Field(default=None, max_length=MAX_ID)
+    amount_iqd: int | None = Field(default=None, gt=0, le=MAX_AMOUNT)
+    recipient_id: str | None = Field(default=None, max_length=MAX_ID)
+    recipient_age_days: int | None = Field(default=None, ge=0, le=3650)
+    tx_type: TxType = Field(default="transfer")
+    note: str | None = Field(default=None, max_length=MAX_NOTE)
+    context_message: str | None = Field(default=None, max_length=MAX_MESSAGE)
+    needs_clarification: str | None = Field(default=None, max_length=300)
+
+
+class ScenarioTextRequest(ApiModel):
+    """نص حر (عربي/لهجة/إنجليزي) أو JSON جاهز — حد 2000 حرف (T6)."""
+
+    text: str = Field(max_length=2000, description="النص الحر أو JSON")
+    user_id: str | None = Field(
+        default=None, max_length=MAX_ID,
+        description="اختياري: ربط بمستخدم موجود لاستعادة تاريخ عاداته",
+    )
+    use_llm: bool = Field(default=False, description="صياغة رسالة التوعية بالـ LLM")
+
+
+class ChatRequest(ApiModel):
+    """سؤال المستخدم عن معاملة وحدة (T11 — الحوار)."""
+
+    tx_id: str = Field(max_length=MAX_ID, description="معرف المعاملة من آخر نافذة")
+    message: str = Field(
+        min_length=1, max_length=500,
+        description="سؤال المستخدم — بيانات غير موثوقة، ما تنفَّذ كتعليمات",
+    )
+    use_llm: bool = Field(default=False, description="صياغة الرد بالـ LLM (مطفي افتراضياً)")
+
+
 # ------------------------------------------------------------------ مخرجات
 class ReasonOut(BaseModel):
     rule_id: str
@@ -184,6 +258,90 @@ class ChoiceResponse(BaseModel):
     choice_at: str
     trusted_added: bool
     message_ar: str
+    final_status: str | None = Field(
+        default=None, description="pending / completed / cancelled لتحويل المحفظة"
+    )
+    receipt: dict | None = Field(default=None, description="إيصال Zain Cash بعد التنفيذ")
+
+
+class WalletTransferResponse(AssessResponse):
+    """نتيجة اعتراض التحويل: نُفّذ فوراً أو عُلّق بانتظار /api/choice."""
+
+    status: Literal["executed", "blocked"]
+    receipt: dict | None = Field(default=None, description="إيصال Zain Cash (عند allow فقط)")
+    cooling_off_seconds: int | None = Field(
+        default=None, description="فترة التهدئة قبل ما يكمل المستخدم (10 ثواني)"
+    )
+    final_status: str | None = Field(default=None, description="completed أو pending")
+
+
+class ScenarioTextResponse(BaseModel):
+    """نتيجة /api/scenario_text (T6): تقييم، أو سؤال توضيحي، أو رسالة آمنة."""
+
+    status: Literal["assessed", "needs_clarification", "cannot_parse"]
+    message_ar: str = Field(default="", description="السؤال التوضيحي أو رسالة الخطأ")
+    extracted: dict | None = Field(default=None, description="الحقائق المستخرجة من النص")
+    intake_source: str | None = Field(default=None, description="json أو llm")
+    assessment: AssessResponse | None = Field(
+        default=None, description="نتيجة الكشف (عند status=assessed فقط)"
+    )
+
+
+class ChatResponse(BaseModel):
+    """جواب الحوار (T11): ≤ 50 كلمة — لا يغيّر القرار أبداً."""
+
+    tx_id: str
+    turn: int = Field(description="رقم الجولة (1..5)")
+    reply_ar: str
+    source: str = Field(description="template / llm / limit")
+    turns_used: int = Field(description="كم رسالة مستخدم مسجّلة بالفعل")
+    limit_reached: bool = Field(default=False, description="انوصل للحد: 5 رسائل")
+
+
+# ------------------------------------------------------------------ /api/training (T12)
+class TrainingStartRequest(ApiModel):
+    """بداية سيناريو تدريبي — بلا نص حر وبلا أي بيانات مستخدم."""
+
+    scenario_id: str | None = Field(
+        default=None, max_length=MAX_ID,
+        description="سيناريو معروف، أو الأعلى تلقائياً",
+    )
+    use_llm: bool = Field(default=False, description="صوت المحادثة بالـ LLM")
+
+
+class TrainingAnswerRequest(ApiModel):
+    """إجابة تراكمية: كل الإجابات من أول سطر حتى الأخير (بلا حالة بالخادم)."""
+
+    scenario_id: str = Field(max_length=MAX_ID)
+    answers: list[Literal["flag", "continue"]] = Field(
+        min_length=1, max_length=20,
+        description="flag=هذا احتيال / continue=أكمل — enums فقط (بلا نص حر)",
+    )
+    use_llm: bool = Field(default=False, description="صوت المحادثة بالـ LLM")
+
+
+class TrainingEvaluation(BaseModel):
+    """تقييم بسيط بعد نهاية السيناريو (T12)."""
+
+    correct: int
+    total: int
+    score_pct: int = Field(ge=0, le=100)
+    verdict_ar: str = Field(description="ممتاز / زين / متوسط / ضعيف")
+    feedback_ar: str = Field(description="تعليق باللهجة العراقية")
+
+
+class TrainingResponse(BaseModel):
+    """رد التدريب: معلن "تدريب" بكل حالة (T12)."""
+
+    scenario_id: str
+    title_ar: str
+    training_notice_ar: str
+    status: Literal["playing", "finished"]
+    turn: int = Field(description="رقم السطر الحالي (1..N)")
+    total_turns: int
+    line_ar: str = Field(default="", description="سطر المحادثة (فارغ عند finish)")
+    line_source: str = Field(default="script", description="script / llm")
+    evaluation: TrainingEvaluation | None = None
 
 
 class UserOut(BaseModel):
@@ -222,6 +380,10 @@ class LogRow(BaseModel):
     user_choice: str | None
     choice_at: str | None
     rules_version: str | None
+    final_status: str | None = Field(
+        default=None, description="pending / completed / cancelled (تحويل المحفظة)"
+    )
+    receipt: dict | None = None
 
 
 class LogResponse(BaseModel):

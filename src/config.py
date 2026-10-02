@@ -1,5 +1,6 @@
 """العتبات والأوزان والمسارات (قسم 3). كل الأرقام القابلة للضبط تجمع هنا."""
 
+import os
 from datetime import date, timedelta, timezone
 from pathlib import Path
 
@@ -51,7 +52,56 @@ TRUSTED_MIN_SPAN_DAYS = 14       # بين أول وآخر تحويل
 
 # طبقة التوعية (قسم 8): القوالب تشتغل دائماً، والـ LLM اختياري ومطفي افتراضياً
 COACHING_MAX_WORDS = 60          # حد الكلمات بالقوالب (نفس حد الـ prompt)
-LLM_ENABLED = False              # مطفي افتراضياً: المشروع يشتغل بدون نت
-LLM_MODEL = "gemini-2.0-flash"
-LLM_TIMEOUT_S = 4.0              # بعده نرجع للقالب
+LLM_TIMEOUT_S = 10.0             # بعده نرجع للقالب (الحد الأدنى اللي يقبله Gemini API = 10 ثوانٍ)
 LLM_VALIDATION_MAX_WORDS = 70    # تسامح بسيط فوق حد الـ prompt
+
+# وضع التوعية COACH_MODE (AGENTS.md): من متغير البيئة أو من .env، القيم:
+#   template = قوالب فقط (الافتراضي — بدون نت وبدون مفتاح)
+#   llm / auto = تفعيل مسار الـ LLM (المفتاح شرط، وأي فشل يرجع للقالب تلقائياً)
+COACH_MODES = ("template", "llm", "auto")
+
+
+def _env_file_values() -> dict:
+    """قيم ملف .env فقط — بدون تحميلها للمتغيرات العامة (الأسرار تبقى باردة)."""
+    try:
+        from dotenv import dotenv_values
+
+        return dict(dotenv_values() or {})
+    except Exception:  # python-dotenv اختياري: نكمل بدونه
+        return {}
+
+
+_ENV_VALUES = _env_file_values()
+
+
+def _setting(name: str, default=None):
+    """قيمة إعداد: متغيّر البيئة أولاً، ثم .env، ثم الافتراضي."""
+    value = os.environ.get(name)
+    if value in (None, ""):
+        value = _ENV_VALUES.get(name)
+    return value if value not in (None, "") else default
+
+
+def coach_mode() -> str:
+    """وضع التوعية الحالي — يُقرأ مع كل استدعاء (البيئة تغلب على .env)."""
+    mode = str(_setting("COACH_MODE", "template")).strip().lower()
+    return mode if mode in COACH_MODES else "template"
+
+
+def _normalize_model(name: str) -> str:
+    """توحيد اسم الموديل: الـ API يقبل المعرّف فقط (أحرف صغيرة وشرطات).
+
+    أحياناً ينكتب بـ .env الاسم المعروض مثل "Gemini 3.7 Flash" —
+    نحوّله لـ "gemini-3.7-flash". الاسم الصحيح ما يتغير أبداً.
+    """
+    return name.strip().lower().replace(" ", "-")
+
+
+def _mode_enables_llm(mode: str) -> bool:
+    """template يشيل مسار الـ LLM، وllm/auto يفعّلونه (والرجع للقالب تلقائي)."""
+    return mode in ("llm", "auto")
+
+
+# مطفي افتراضياً (template): المشروع يشتغل بدون نت وبدون مفتاح
+LLM_ENABLED = _mode_enables_llm(coach_mode())
+LLM_MODEL = _normalize_model(str(_setting("GEMINI_MODEL", "gemini-3.7-flash")))

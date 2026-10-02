@@ -90,7 +90,7 @@ body {
   width: 100%;
   padding: 10px 12px;
   border: 1px solid var(--border);
-  border-radius: 8px;
+  border-radius: 10px;
   font-size: 0.95rem;
   font-family: inherit;
   transition: border-color 0.2s;
@@ -114,7 +114,7 @@ body {
   display: inline-block;
   padding: 12px 24px;
   border: none;
-  border-radius: 8px;
+  border-radius: 10px;
   font-size: 0.95rem;
   font-weight: 600;
   cursor: pointer;
@@ -305,6 +305,154 @@ body {
   cursor: pointer;
 }
 
+/* مربع حوار (T11): أسئلة عن هالتحذير بس — حد 5 رسائل */
+.chat-box {
+  margin-top: 4px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px;
+  background: #f8f9fa;
+}
+
+.chat-title {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+}
+
+.chat-log {
+  max-height: 130px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 8px;
+  min-height: 20px;
+}
+
+.chat-msg {
+  max-width: 85%;
+  padding: 6px 10px;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+
+.chat-msg.user {
+  align-self: flex-start;
+  background: var(--primary);
+  color: #fff;
+}
+
+.chat-msg.bot {
+  align-self: flex-end;
+  background: var(--card);
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+
+.chat-input-row {
+  display: flex;
+  gap: 8px;
+}
+
+.chat-input-row input {
+  flex: 1;
+  padding: 8px 10px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 0.85rem;
+}
+
+.chat-input-row input:disabled,
+.chat-input-row button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* وضع التدريب (T12): تعليمي معلن — ما يمسّ الحساب ولا القرار */
+.training-box {
+  margin-top: 16px;
+  padding: 14px;
+  background: var(--card);
+  border: 2px dashed #5b1382;
+  border-radius: var(--radius);
+}
+
+.training-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+.training-badge {
+  background: #5b1382;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: bold;
+  padding: 3px 10px;
+  border-radius: 999px;
+}
+
+.training-hint {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+.training-log {
+  max-height: 200px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.training-actions {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.training-actions .btn {
+  flex: 1;
+}
+
+.training-actions .btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.training-result {
+  margin-top: 10px;
+  padding: 12px;
+  background: #f3e9fb;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.training-score {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #5b1382;
+}
+
+.training-verdict {
+  font-size: 1rem;
+  font-weight: bold;
+  margin: 4px 0;
+}
+
+.training-feedback {
+  font-size: 0.85rem;
+  line-height: 1.7;
+  color: var(--text);
+  text-align: right;
+}
+
 /* رسالة النجاح */
 .success-message {
   display: none;
@@ -431,6 +579,222 @@ body {
   color: var(--danger);
   margin-bottom: 12px;
 }
+
+/* ---------------------------------------------------------------- Zain Cash
+   هوية Zain Cash الحديثة: بنفسجي عميق + كروت بيضاء + حواف دائرية
+   — عدّلي المتغيرات تحت إذا لزم تغيير التصميم */
+:root {
+  --zain-purple: #5b1382;
+  --zain-purple-dark: #450e64;
+  --zain-purple-light: #7b2fa0;
+  --zain-surface: #ffffff;
+  --zain-radius: 18px;
+}
+
+.header.zain-header {
+  background: linear-gradient(135deg, var(--zain-purple), var(--zain-purple-light));
+}
+
+.header.zain-header h1 {
+  color: #fff;
+}
+
+.header.zain-header p {
+  color: #eadef3;
+}
+
+.zain-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.zain-logo {
+  background: var(--zain-surface);
+  color: var(--zain-purple);
+  font-weight: 800;
+  font-size: 0.95rem;
+  padding: 5px 12px;
+  border-radius: 999px;
+  letter-spacing: 0.5px;
+}
+
+.zain-logo span {
+  color: var(--zain-purple-light);
+}
+
+.zain-badge {
+  font-size: 0.7rem;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  border-radius: 999px;
+  padding: 3px 10px;
+}
+
+/* بطاقة التحويل: كرت أبيض بحواف دائرية */
+.wallet-card {
+  background: var(--zain-surface);
+  border: 1px solid #ece4f2;
+  border-radius: var(--zain-radius);
+  padding: 16px;
+  margin-bottom: 16px;
+  box-shadow: 0 6px 18px rgba(91, 19, 130, 0.08);
+}
+
+.wallet-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(135deg, var(--zain-purple), var(--zain-purple-light));
+  color: #fff;
+  font-weight: 800;
+  font-size: 0.9rem;
+  padding: 10px 14px;
+  border-radius: 12px;
+  margin-bottom: 14px;
+}
+
+.wallet-chip {
+  width: 30px;
+  height: 20px;
+  border-radius: 5px;
+  background: linear-gradient(135deg, #fff, #d9c4e8);
+  opacity: 0.9;
+}
+
+.wallet-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.wallet-card .form-group label {
+  font-size: 0.8rem;
+  color: var(--zain-purple-dark);
+}
+
+.wallet-card .form-group input {
+  border-color: #ddd0e8;
+  border-radius: 10px;
+  background: #fbf9fd;
+}
+
+.wallet-card .form-group input:focus {
+  border-color: var(--zain-purple-light);
+  box-shadow: 0 0 0 3px rgba(91, 19, 130, 0.15);
+}
+
+.btn-zain {
+  background: var(--zain-purple);
+  color: #fff;
+  font-weight: 800;
+  border-radius: 12px;
+}
+
+.btn-zain:hover {
+  background: var(--zain-purple-dark);
+}
+
+/* تفاصيل الإيصال داخل رسالة النجاح */
+.receipt-line {
+  font-size: 0.85rem;
+  margin-top: 4px;
+  word-break: break-word;
+}
+
+.receipt-coach {
+  font-size: 0.8rem;
+  margin-top: 6px;
+  opacity: 0.9;
+}
+
+/* ------------------------------------------- سيناريو من الحكم: نص حر (T6) */
+.text-scenario {
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px dashed var(--border);
+}
+
+.text-scenario label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: var(--zain-purple-dark);
+}
+
+.text-scenario textarea {
+  width: 100%;
+  min-height: 80px;
+  padding: 10px 12px;
+  border: 1px solid #ddd0e8;
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 0.9rem;
+  resize: vertical;
+  margin-bottom: 8px;
+}
+
+.text-scenario textarea:focus {
+  outline: none;
+  border-color: var(--zain-purple-light);
+  box-shadow: 0 0 0 3px rgba(91, 19, 130, 0.15);
+}
+
+.text-scenario .btn-outline {
+  color: var(--zain-purple);
+  border-color: var(--zain-purple);
+}
+
+.text-scenario .btn-outline:hover {
+  background: rgba(91, 19, 130, 0.06);
+}
+
+/* صندوق السؤال التوضيحي / رسالة آمنة */
+.clarify-box {
+  margin-top: 12px;
+  padding: 12px;
+  background: #f4ecfa;
+  border: 1px solid #e0cff0;
+  border-radius: 12px;
+}
+
+.clarify-box.error {
+  background: #fdecea;
+  border-color: #f5c6c0;
+}
+
+.clarify-question {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--zain-purple-dark);
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.clarify-box.error .clarify-question {
+  color: var(--danger-dark);
+}
+
+.clarify-answer-row {
+  display: flex;
+  gap: 8px;
+}
+
+.clarify-answer-row input {
+  flex: 1;
+  padding: 8px 10px;
+  border: 1px solid #ddd0e8;
+  border-radius: 10px;
+  font-family: inherit;
+}
+
+.clarify-answer-row .btn {
+  width: auto;
+  padding: 8px 16px;
+}
+
 
 /* التجاوب */
 @media (max-width: 480px) {

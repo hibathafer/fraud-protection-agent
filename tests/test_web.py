@@ -53,17 +53,47 @@ def test_js_returns_200(client):
     assert "loadUsers" in res.text
 
 
+def test_index_has_free_text_box_for_intake(client):
+    """صندوق النص الحر (T6) موجود بالصفحة ومعه صندوق سؤال التوضيح."""
+    res = client.get("/")
+    assert res.status_code == 200
+    assert 'id="scenarioText"' in res.text
+    assert 'id="clarifyBox"' in res.text
+    assert "سيناريو من الحكم" in res.text
+
+
+def test_js_calls_scenario_text_endpoint(client):
+    """واجهة الويب تتصل بـ /api/scenario_text عند فحص النص."""
+    res = client.get("/app.js")
+    assert res.status_code == 200
+    assert "/api/scenario_text" in res.text
+    assert "submitScenarioText" in res.text
+
+
+def test_results_page_links_failure_modes(client):
+    """صفحة النتائج تعرض جدول حالات الفشل (T7) من /api/failure_modes."""
+    assert client.get("/results.html").status_code == 200
+    res = client.get("/app.js")
+    assert "/api/failure_modes" in res.text
+    assert "loadFailureModes" in res.text
+
+
 def test_demo_scenarios_endpoint(client):
     res = client.get("/api/demo_scenarios")
     assert res.status_code == 200
     data = res.json()
-    assert data["count"] >= 3
-    assert len(data["scenarios"]) >= 3
-    # كل سيناريو لازم يكون له name_ar و payload
+    # T10: ستة سيناريوهات على الأقل (عادية، جائزة، حساب آمن، OTP، بطيء، نص حر)
+    assert data["count"] >= 6
+    assert len(data["scenarios"]) >= 6
+    # كل سيناريو لازم يكون له name_ar و payload من أحد الأنواع الثلاثة
     for s in data["scenarios"]:
         assert "name_ar" in s
         assert "payload" in s
-        assert "user_id" in s["payload"] or "history" in s["payload"]
+        assert (
+            "user_id" in s["payload"]
+            or "history" in s["payload"]
+            or "text" in s["payload"]
+        )
 
 
 def test_demo_scenarios_have_valid_payload(client):
@@ -77,3 +107,65 @@ def test_demo_scenarios_have_valid_payload(client):
             assert "transaction" in payload
             assert "amount_iqd" in payload["transaction"]
             assert "recipient_id" in payload["transaction"]
+        elif "history" in payload:
+            # احتيال بطيء: تاريخ يدوي (3 تحويلات+) + المعاملة الحالية
+            assert len(payload["history"]) >= 3
+            assert payload["history"][0]["recipient_id"]
+            assert "transaction" in payload
+            assert "amount_iqd" in payload["transaction"]
+        elif "text" in payload:
+            # نص حر: جملة غير فارغة تفحصها صندوق Intake
+            assert payload["text"].strip()
+        else:
+            raise AssertionError(f"payload بدون نوع معروف: {payload}")
+
+
+def test_js_applies_all_scenario_kinds(client):
+    """app.js يطبّق الأنواع الثلاثة: نص حر + تاريخ يدوي + محفظة (T10)."""
+    res = client.get("/app.js")
+    assert res.status_code == 200
+    assert "payload.text" in res.text          # نص حر → الصندوق + فحص فوري
+    assert "payload.history" in res.text       # احتيال بطيء → /api/scenario
+    assert "postScenario" in res.text          # دالة الإرسال للمستمع اليدوي
+    assert "submitScenarioText" in res.text    # فحص النص الحر
+
+
+def test_warning_modal_has_chat_box(client):
+    """مربع الحوار (T11) موجود داخل نافذة التحذير."""
+    res = client.get("/")
+    assert res.status_code == 200
+    assert 'id="chatBox"' in res.text
+    assert 'id="chatInput"' in res.text
+    assert 'id="chatSendBtn"' in res.text
+
+
+def test_js_posts_chat_messages(client):
+    """app.js يرسل الرسائل لـ /api/chat بـ use_llm ويحترم حد الرسائل."""
+    res = client.get("/app.js")
+    assert res.status_code == 200
+    assert "/api/chat" in res.text
+    assert "sendChat" in res.text
+    assert "use_llm" in res.text
+    assert "limit_reached" in res.text  # انوصل للحد: نقفل الإدخال
+
+
+def test_training_box_present_and_labelled(client):
+    """صندوق التدريب (T12) موجود ومعلن بوضوح بالواجهة."""
+    res = client.get("/")
+    assert res.status_code == 200
+    assert 'id="trainingBox"' in res.text
+    assert 'id="trainingStartBtn"' in res.text
+    assert 'id="flagBtn"' in res.text
+    assert 'id="trainingContinueBtn"' in res.text
+    assert "وضع تدريب" in res.text  # الوسم ظاهر للمستخدم
+
+
+def test_js_calls_training_endpoints(client):
+    """app.js ينادي نقاط التدريب ويعرض التقييم."""
+    res = client.get("/app.js")
+    assert res.status_code == 200
+    assert "/api/training/start" in res.text
+    assert "/api/training/answer" in res.text
+    assert "startTraining" in res.text
+    assert "answerTraining" in res.text
+    assert "showTrainingResult" in res.text

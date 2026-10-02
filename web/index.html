@@ -3,63 +3,136 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#5b1382">
   <title>وكيل حماية من الاحتيال</title>
   <link rel="stylesheet" href="/style.css">
 </head>
 <body>
   <div class="phone-frame">
-    <div class="header">
+    <div class="header zain-header">
+      <div class="zain-topbar">
+        <span class="zain-logo">Zain<span>Cash</span></span>
+        <span class="zain-badge">محاكاة للعرض</span>
+      </div>
       <h1>وكيل حماية من الاحتيال</h1>
-      <p>قبل ما تكمل التحويل، نتأكد لك من العملية</p>
+      <p>قبل ما ينفّذ التحويل، الوكيل يفحص العملية ويحذّرك</p>
     </div>
 
     <div class="content">
-      <!-- رسالة النجاح -->
+      <!-- رسالة النجاح / الإيصال -->
       <div id="successMessage" class="success-message"></div>
 
-      <!-- نموذج التحويل -->
+      <!-- نموذج التحويل بستايل محفظة Zain Cash -->
       <form id="transferForm">
         <div class="form-group">
-          <label for="userSelect">المستخدم</label>
-          <select id="userSelect" required>
-            <option value="">-- اختر مستخدم --</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label for="demoSelect">أو جرّب سيناريو جاهز</label>
+          <label for="demoSelect">جرّب سيناريو جاهز</label>
           <select id="demoSelect" onchange="applyDemoScenario()">
             <option value="">-- اختر سيناريو --</option>
           </select>
         </div>
 
         <div class="form-group">
-          <label for="recipientId">المستلم (رقم الحساب)</label>
-          <input type="text" id="recipientId" placeholder="مثال: r_1234" required>
+          <label for="userSelect">حساب المستخدم (اختياري — يستخدم تاريخ عاداته)</label>
+          <select id="userSelect">
+            <option value="">-- بدون حساب (مستخدم جديد) --</option>
+          </select>
+        </div>
+
+        <div class="wallet-card">
+          <div class="wallet-card-header">
+            <span>تحويل أموال</span>
+            <span class="wallet-chip"></span>
+          </div>
+
+          <div class="wallet-row">
+            <div class="form-group">
+              <label for="senderMsisdn">من (رقم محفظتك)</label>
+              <input type="tel" id="senderMsisdn" value="07812345678" maxlength="11" required>
+            </div>
+            <div class="form-group">
+              <label for="recipientMsisdn">إلى (رقم المستلم)</label>
+              <input type="tel" id="recipientMsisdn" placeholder="07XXXXXXXXX" maxlength="11" required>
+            </div>
+          </div>
+
+          <div class="wallet-row">
+            <div class="form-group">
+              <label for="amount">المبلغ (دينار)</label>
+              <input type="number" id="amount" placeholder="مثال: 500000" min="1" required>
+            </div>
+            <div class="form-group">
+              <label for="pin">الرمز السري PIN</label>
+              <input type="password" id="pin" inputmode="numeric" placeholder="4-6 أرقام"
+                     maxlength="6" autocomplete="off" required>
+            </div>
+          </div>
         </div>
 
         <div class="form-group">
-          <label for="amount">المبلغ (بالدينار العراقي)</label>
-          <input type="number" id="amount" placeholder="مثال: 500000" required>
+          <label for="recipientAge">عمر حساب المستلم بالأيام (اختياري)</label>
+          <input type="number" id="recipientAge" placeholder="مثال: 30" min="0">
         </div>
 
         <div class="form-group">
-          <label for="recipientAge">عمر حساب المستلم (بالأيام، اختياري)</label>
-          <input type="number" id="recipientAge" placeholder="مثال: 30">
-        </div>
-
-        <div class="form-group">
-          <label for="note">ملاحظة (اختياري)</label>
+          <label for="note">ملاحظة التحويل (اختياري)</label>
           <input type="text" id="note" placeholder="مثال: فاتورة كهرباء">
         </div>
 
         <div class="form-group">
-          <label for="contextMessage">رسالة وصلتك (اختياري)</label>
-          <textarea id="contextMessage" placeholder="الصق الرسالة اللي وصلتك من الطرف الآخر"></textarea>
+          <label for="contextMessage">رسالة وصلتك من الطرف الآخر (اختياري)</label>
+          <textarea id="contextMessage" placeholder="الصق الرسالة اللي وصلتك — الوكيل يفحصها"></textarea>
         </div>
 
-        <button type="submit" class="btn btn-primary">تحويل</button>
+        <button type="submit" class="btn btn-zain">تحويل الأموال</button>
       </form>
+
+      <!-- سيناريو من الحكم: نص حر (T6) -->
+      <div class="text-scenario">
+        <label for="scenarioText">سيناريو من الحكم: نص حر أو JSON</label>
+        <textarea id="scenarioText" maxlength="2000"
+          placeholder="مثال: أبي أحول 750 ألف لشخص جديد، وصلتني رسالة تكول ربحت جائزة و لازم أحول رسوم..."></textarea>
+        <button type="button" class="btn btn-outline" id="scenarioTextBtn">افحص النص</button>
+
+        <!-- سؤال التوضيح / رسالة آمنة -->
+        <div id="clarifyBox" class="clarify-box" style="display: none;">
+          <div id="clarifyQuestion" class="clarify-question"></div>
+          <div id="clarifyAnswerRow" class="clarify-answer-row">
+            <input type="text" id="clarifyAnswer" placeholder="اكتب إجابتك هنا...">
+            <button type="button" class="btn btn-success" id="clarifyBtn">أكمل</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- وضع التدريب (T12): تعليمي — لا يمسّ الحساب ولا القرار -->
+      <div class="training-box" id="trainingBox">
+        <div class="training-header">
+          <span class="training-badge">وضع تدريب</span>
+          <span class="training-hint">محادثة تعليمية وهمية — ما تمسّ حسابك ولا قرارك</span>
+        </div>
+
+        <div class="form-group">
+          <label for="trainingSelect">السيناريو</label>
+          <select id="trainingSelect">
+            <option value="fake_support">مكالمة من «الدعم الفني»</option>
+            <option value="invoice_notice">رسائل فاتورة</option>
+          </select>
+        </div>
+
+        <div class="training-log" id="trainingLog"></div>
+
+        <div class="training-actions" id="trainingActions" style="display: none;">
+          <button type="button" class="btn btn-danger" id="flagBtn">هذا احتيال</button>
+          <button type="button" class="btn btn-outline" id="trainingContinueBtn">أكمل</button>
+        </div>
+
+        <button type="button" class="btn btn-zain" id="trainingStartBtn">ابدأ التدريب</button>
+
+        <div class="training-result" id="trainingResult" style="display: none;">
+          <div class="training-score" id="trainingScore"></div>
+          <div class="training-verdict" id="trainingVerdict"></div>
+          <div class="training-feedback" id="trainingFeedback"></div>
+        </div>
+      </div>
     </div>
 
     <div class="nav">
@@ -69,7 +142,7 @@
     </div>
   </div>
 
-  <!-- نافذة التحذير -->
+  <!-- نافذة التحذير / فترة التهدئة -->
   <div id="warningModal" class="modal-overlay">
     <div class="modal">
       <div class="modal-header">
@@ -91,6 +164,17 @@
         </div>
 
         <div id="countdown" class="countdown" style="display: none;"></div>
+
+        <!-- مربع حوار: أسئلة عن هالتحذير بس (T11) -->
+        <div class="chat-box" id="chatBox">
+          <div class="chat-title">اسأل عن هالتحذير</div>
+          <div class="chat-log" id="chatLog"></div>
+          <div class="chat-input-row">
+            <input type="text" id="chatInput" maxlength="300"
+                   placeholder="ليش وقفتوني؟ شنو أسوي؟">
+            <button type="button" id="chatSendBtn" class="btn btn-outline">إرسال</button>
+          </div>
+        </div>
       </div>
 
       <div class="modal-footer">

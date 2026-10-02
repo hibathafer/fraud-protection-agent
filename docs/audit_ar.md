@@ -27,7 +27,7 @@
 
 ---
 
-## 3. طبقة التوجيه باللهجة العراقية — ⚠️ منفذ جزئياً (Partially Implemented)
+## 3. طبقة التوجيه باللهجة العراقية — ✅ منفذ بالكامل (Fully Implemented)
 
 **المنفذ:**
 - `src/coaching/templates.py` — قوالب كاملة باللهجة العراقية (8 أنماط + عامة)، ≤ 60 كلمة
@@ -36,10 +36,10 @@
 - بوستركتات مكتوبة بالملحق أ من ROADMAP
 
 **الناقص (حسب ROADMAP T2):**
-- ❌ `COACH_MODE` بـ `.env` (template | llm | auto) — حالياً `LLM_ENABLED` ثابت بـ config
-- ❌ سكربت `try_llm` لتجربة 5 سيناريوهات
-- ❌ أعمدة `latency_ms`, `llm_error` بجدول السجل
-- ❌ Intake Agent (نص حر) — T6 بعد ما بدأ
+- ✅ `COACH_MODE` بـ `.env` (template | llm | auto) — نُفّذ بـ T10 بـ `src/config.py` (سابقاً كان `LLM_ENABLED` ثابت)
+- ✅ بديل سكربت `try_llm`: `python -m src.demo_check` (5 سيناريوهات + سلامات الموديل) و`python -m src.eval.llm_eval` (تقييم القالب مقابل LLM)
+- ✅ Intake Agent (نص حر) — نُفّذ بـ T6 (`src/agents/intake.py`)
+- ❌ أعمدة `latency_ms`, `llm_error` بجدول السجل — غير موجودة (القياس بـ `demo_check` وقت التشغيل بس؛ تحسين اختياري مو مطلوب بالخارطة)
 
 ---
 
@@ -53,8 +53,8 @@
 - اختيار "أكمل" على مستلم جديد يضيفه للموثوقين (تخفيف الإنذار القادم)
 
 **الناقص (حسب ROADMAP T2):**
-- ❌ `final_status` (pending / completed / cancelled) — حقل غير موجود
-- ❌ معالجة `no_response` (المستخدم سكّر النافذة بدون اختيار)
+- ✅ `final_status` (pending / completed / cancelled) — نُفّذ بـ T5b مع `receipt_json` (إيصال ZC...)
+- ❌ معالجة `no_response` (المستخدم سكّر النافذة بدون اختيار) — القيمة تُقبل وتُسجَّل، بس ما فيه معالجة تلقائية للإغلاق الصامت
 
 ---
 
@@ -67,19 +67,19 @@
 - `docs/eval_results.json` — نتائج dev محفوظة
 - قيود الانضباط: `--final` يشتغل مرة وحدة بأمر صريح فقط
 
-**ملاحظة:** التشغيل النهائي على test (T9) لم يُشغَّل بعد — وهذا **مقصود** مو ناقص (بواسطة أمر هبو فقط).
+**ملاحظة:** التشغيل النهائي على test (T9) **نُفّذ 2026-10-01 بأمر هبو** — النتائج بـ `docs/evaluation_report.md` (FPR 3.2%، hold precision 91.3%).
 
 ---
 
-## 6. حالات الفشل — ❌ غير منفذ (Not Implemented at All)
+## 6. حالات الفشل — ✅ منفذ بالكامل (Fully Implemented)
 
-**مفقود:**
-- ❌ `src/eval/failure_modes.py` (سكريبت السيناريوهات الثابتة FM1–FM6)
-- ❌ `docs/failure_modes.md` (التوثيق بالعربي)
-- ❌ `docs/evaluation_report.md`
-- ❌ ربط الحالات بـ `results.html`
+**الأدلة:**
+- ✅ `src/eval/failure_modes.py` (سكريبت السيناريوهات الثابتة FM1–FM6)
+- ✅ `docs/failure_modes.md` (التوثيق بالعربي — 6 حالات مع النتائج الفعلية)
+- ✅ `docs/evaluation_report.md` (نتيجة T9 المعزولة)
+- ✅ ربط الحالات بـ `results.html` (`loadFailureModes()` عبر `GET /api/failure_modes`)
 
-**اللي موجود ويعتبر fallback جزئي:**
+**ضمانات جانبية:**
 - ✅ Fallback للقوالب إذا الـ LLM فشل (يعمل ومجرب بالاختبارات)
 - ✅ المدخلات الغريبة ترجع 422 بدل الانهيار
 
@@ -91,9 +91,9 @@
 |---|-------|--------|
 | 1 | البيانات الاصطناعية + الكتالوج | ✅ منفذ بالكامل |
 | 2 | قواعد الكشف (بدون LLM) | ✅ منفذ بالكامل |
-| 3 | التوجيه باللهجة + LLM | ⚠️ منفذ جزئياً (T2 جزئي، T6 ناقص) |
-| 4 | خيار المستخدم + السجل | ⚠️ منفذ جزئياً (final_status ناقص) |
-| 5 | الاختبار المعزول + المقاييس | ✅ منفذ بالكامل (التشغيل النهائي T9 معلّق بأمر) |
-| 6 | حالات الفشل | ❌ غير منفذ (T7 لم يبدأ) |
+| 3 | التوجيه باللهجة + LLM | ✅ منفذ بالكامل (T2 + T6: `COACH_MODE` template/llm/auto + Intake + fallback مختبر) |
+| 4 | خيار المستخدم + السجل | ⚠️ منفذ جزئياً (final_status ✅ T5b مع إيصال، ناقص معالجة `no_response` تلقائية) |
+| 5 | الاختبار المعزول + المقاييس | ✅ منفذ بالكامل (T9 نُفّذ 2026-10-01: FPR 3.2%، hold precision 91.3%) |
+| 6 | حالات الفشل | ✅ منفذ بالكامل (T7: سكربت FM1–FM6 + `docs/failure_modes.md` — 6 حالات) |
 
-**ملفات مفقودة أيضاً:** `README.md`, `.env.example`, `docs/data_review.md`, `docs/user_research.md`
+**الملفات الأربعة المذكورة موجودة الآن** (`README.md`, `.env.example`, `docs/data_review.md`, `docs/user_research.md`) — الباقي بانتظارك: محتوى `user_research.md` (مقابلاتك) + المرور اليدوي بـ `data_review.md` + ✋ بـ `DISCLOSURE.md`.

@@ -29,11 +29,20 @@ CREATE TABLE IF NOT EXISTS decision_log(
   reasons_json TEXT, matched_pattern TEXT,
   coaching_message TEXT, coaching_source TEXT,  -- template / llm
   user_choice TEXT,                        -- continue / cancel / no_response
-  choice_at TEXT, rules_version TEXT
+  choice_at TEXT, rules_version TEXT,
+  final_status TEXT,                       -- pending / completed / cancelled
+  receipt_json TEXT                        -- إيصال Zain Cash بعد التنفيذ
 );
 
 CREATE TABLE IF NOT EXISTS trusted_recipients(user_id TEXT, recipient_id TEXT, added_at TEXT,
   PRIMARY KEY(user_id, recipient_id));
+
+CREATE TABLE IF NOT EXISTS chat_turns(
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  tx_id TEXT, turn INTEGER, role TEXT,   -- user / assistant
+  text TEXT, source TEXT,                -- template / llm / limit
+  ts TEXT
+);
 """
 
 
@@ -52,9 +61,18 @@ def init_db(db_path=None):
     conn = get_connection(db_path)
     try:
         conn.executescript(SCHEMA)
+        _ensure_columns(conn)  # قاعدة قديمة (بدون أعمدة السجل الجديدة) تترقّى
         conn.commit()
     finally:
         conn.close()
+
+
+def _ensure_columns(conn):
+    """يضيف أعمدة السجل الناقصة بقاعدة موجودة (ALTER آمن ويتسكر مرتين)."""
+    cols = {row[1] for row in conn.execute("PRAGMA table_info(decision_log)")}
+    for name in ("final_status", "receipt_json"):
+        if name not in cols:
+            conn.execute(f"ALTER TABLE decision_log ADD COLUMN {name} TEXT")
 
 
 USER_FIELDS = ("user_id", "name", "archetype", "split")
@@ -232,6 +250,56 @@ def get_log_row(conn, tx_id) -> dict | None:
         "SELECT * FROM decision_log WHERE tx_id = ? ORDER BY log_id DESC LIMIT 1", (tx_id,)
     ).fetchone()
     return dict(row) if row else None
+
+
+# ----------------------------------------------------------------- الحوار (T11)
+def log_chat_turn(conn, tx_id, turn, role, text, source, created_at=None) -> int:
+    """يكتب صف بجدول chat_turns (T11) ويرجع id."""
+    stamp = created_at or datetime.now(BAGHDAD_TZ).isoformat(timespec="seconds")
+    cur = conn.execute(
+        "INSERT INTO chat_turns(tx_id, turn, role, text, source, ts) "
+        "VALUES (?, ?, ?, ?, ?, ?)",
+        (tx_id, int(turn), role, str(text), source, stamp),
+    )
+    conn.commit()
+    return int(cur.lastrowid)
+
+
+def chat_turns(conn, tx_id) -> list:
+    """كل رسائل حوار هذه المعاملة بترتيبها."""
+    rows = conn.execute(
+        "SELECT * FROM chat_turns WHERE tx_id = ? ORDER BY turn, id", (tx_id,)
+    ).fetchall()
+    return [dict(r) for r in rows]
+
+
+def count_user_chat_messages(conn, tx_id) -> int:
+    """كم رسالة مستخدم مسجّلة (حد T11: 5 لكل معاملة)."""
+    row = conn.execute(
+        "SELECT COUNT(*) FROM chat_turns WHERE tx_id = ? AND role = 'user'", (tx_id,)
+    ).fetchone()
+    return int(row[0])
+
+
+def set_final_status(conn, tx_id, status, receipt=None) -> bool:
+    """يحدّث final_status (والإيصال إن وجد) بكل صفوف هذا التقييم.
+
+    pending   = التحويل معلّق بانتظار قرار المستخدم
+    completed = نُفّذ التحويل (يُخزَّن الإيصال معاه)
+    cancelled = المستخدم ألغى
+    """
+    if receipt is None:
+        cur = conn.execute(
+            "UPDATE decision_log SET final_status = ? WHERE tx_id = ?",
+            (status, tx_id),
+        )
+    else:
+        cur = conn.execute(
+            "UPDATE decision_log SET final_status = ?, receipt_json = ? WHERE tx_id = ?",
+            (status, json.dumps(receipt, ensure_ascii=False), tx_id),
+        )
+    conn.commit()
+    return cur.rowcount > 0
 
 
 def read_decision_log(conn, limit=100, offset=0, decision=None, user_id=None) -> list:

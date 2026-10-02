@@ -1,0 +1,19 @@
+{
+  "name_ar": "احتيال بطيء (أرقام فقط)",
+  "description_ar": "تحويلات صغيرة متتالية تبني ثقة ثم دفعة كبيرة — بدون أي كلمة احتيال",
+  "payload": {
+    "history": [
+      {"ts": "2026-10-10T11:20:00+03:00", "amount_iqd": 45000, "recipient_id": "r_7707", "tx_type": "transfer"},
+      {"ts": "2026-10-12T12:05:00+03:00", "amount_iqd": 60000, "recipient_id": "r_7707", "tx_type": "transfer"},
+      {"ts": "2026-10-14T13:40:00+03:00", "amount_iqd": 80000, "recipient_id": "r_7707", "tx_type": "transfer"}
+    ],
+    "transaction": {
+      "amount_iqd": 350000,
+      "recipient_id": "r_7707",
+      "recipient_age_days": 45,
+      "tx_type": "transfer",
+      "note": "دفعة أخيرة وبس",
+      "ts": "2026-10-15T14:00:00+03:00"
+    }
+  }
+}

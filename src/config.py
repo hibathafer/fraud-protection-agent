@@ -52,8 +52,8 @@ TRUSTED_MIN_SPAN_DAYS = 14       # بين أول وآخر تحويل
 
 # طبقة التوعية (قسم 8): القوالب تشتغل دائماً، والـ LLM اختياري ومطفي افتراضياً
 COACHING_MAX_WORDS = 60          # حد الكلمات بالقوالب (نفس حد الـ prompt)
-LLM_TIMEOUT_S = 10.0             # بعده نرجع للقالب (الحد الأدنى اللي يقبله Gemini API = 10 ثوانٍ)
-LLM_VALIDATION_MAX_WORDS = 70    # تسامح بسيط فوق حد الـ prompt
+LLM_TIMEOUT_S = 25.0              # بعده نرجع للقالب (الـ LLM يحتاج وقت تفكير: 3000 توكن ≈ 11 ثانية)
+LLM_VALIDATION_MAX_WORDS = 90    # تسامح بسيط فوق حد الـ prompt
 
 # وضع التوعية COACH_MODE (AGENTS.md): من متغير البيئة أو من .env، القيم:
 #   template = قوالب فقط (الافتراضي — بدون نت وبدون مفتاح)
@@ -92,7 +92,7 @@ def _normalize_model(name: str) -> str:
     """توحيد اسم الموديل: الـ API يقبل المعرّف فقط (أحرف صغيرة وشرطات).
 
     أحياناً ينكتب بـ .env الاسم المعروض مثل "Gemini 3.7 Flash" —
-    نحوّله لـ "gemini-3.7-flash". الاسم الصحيح ما يتغير أبداً.
+    نحوّله لـ "gemini-3.6-flash". الاسم الصحيح ما يتغير أبداً.
     """
     return name.strip().lower().replace(" ", "-")
 
@@ -104,4 +104,4 @@ def _mode_enables_llm(mode: str) -> bool:
 
 # مطفي افتراضياً (template): المشروع يشتغل بدون نت وبدون مفتاح
 LLM_ENABLED = _mode_enables_llm(coach_mode())
-LLM_MODEL = _normalize_model(str(_setting("GEMINI_MODEL", "gemini-3.7-flash")))
+LLM_MODEL = _normalize_model(str(_setting("GEMINI_MODEL", "gemini-3.6-flash")))

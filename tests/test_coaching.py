@@ -328,7 +328,7 @@ def test_validate_rejects_new_link():
 
 def test_validate_rejects_too_long():
     source = "رسالة قصيرة"
-    assert llm.validate(" ".join(["تحذير"] * 80), source) is False
+    assert llm.validate(" ".join(["تحذير"] * 95), source) is False
 
 
 def test_rewrite_returns_none_without_key(monkeypatch):

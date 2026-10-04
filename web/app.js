@@ -159,6 +159,7 @@ async function submitTransfer(event) {
     pin: pin,
     note: note || undefined,
     context_message: contextMessage || undefined,
+    use_llm: true,
   };
   choiceRecipient = recipient;
   if (userId) payload.user_id = userId;
@@ -381,8 +382,7 @@ async function postScenarioText(text) {
     const res = await fetch(`${API_BASE}/api/scenario_text`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ text: text })
-    });
+      body: JSON.stringify({ text: text, use_llm: true })    });
     const data = await res.json();
     if (!res.ok) {
       showIntakeNotice(
